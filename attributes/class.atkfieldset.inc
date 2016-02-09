@@ -41,7 +41,7 @@ class atkFieldSet extends atkAttribute
      */
     public function __construct($name, $template, $flags = 0)
     {
-        parent::__construct($name, $flags | AF_NO_SORT);
+        parent::__construct($name, $flags | AF_NO_SORT | AF_HIDE_SEARCH);
         $this->setTemplate($template);
         $this->setLoadType(NOLOAD);
         $this->setStorageType(NOSTORE);
@@ -49,7 +49,7 @@ class atkFieldSet extends atkAttribute
 
     /**
      * Is empty?
-     * 
+     *
      * @return boolean
      */
     public function isEmpty()
@@ -143,7 +143,7 @@ class atkFieldSet extends atkAttribute
      * @param array $record       record
      * @param string $mode        mode
      * @param string $fieldprefix fieldprefix
-     * 
+     *
      * @return string rendered HTML
      */
     protected function renderFieldSet($type, $record, $mode, $fieldprefix = '')

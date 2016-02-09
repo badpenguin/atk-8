@@ -193,7 +193,7 @@ class atkManyToOneRelation extends atkRelation
      * @access protected
      * @var integer
      */
-    protected $m_autocomplete_size = 30;
+    protected $m_autocomplete_size = 50;
 
     /**
      * Destination node for auto links (edit, new)
@@ -261,6 +261,7 @@ class atkManyToOneRelation extends atkRelation
         $this->m_autocomplete_minchars = atkconfig("manytoone_autocomplete_minchars", 2);
         $this->m_autocomplete_searchmode = atkconfig("manytoone_autocomplete_searchmode", "contains");
         $this->m_autocomplete_search_case_sensitive = atkconfig("manytoone_autocomplete_search_case_sensitive", false);
+        $this->m_autocomplete_size = atkconfig("manytoone_autocomplete_size", 50);
 
         if (is_array($name)) {
             $this->m_refKey = $name;
