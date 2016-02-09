@@ -35,7 +35,7 @@ class atkExpressionAttribute extends atkAttribute
      * @param string $name               The name of the attribute.
      * @param string $expression         The SQL expression.
      * @param mixed  $searchTypeOrFlags  The search type (string) or flags (numeric) for this attribute. At the moment
-     *                                   only search types "string" and "number" are supported.
+     *                                   only search types "string", "number" and "date" are supported.
      * @param int    $flags              The flags for this attribute.
      */
     function atkExpressionAttribute($name, $expression, $searchTypeOrFlags = 0, $flags = 0)
@@ -117,7 +117,7 @@ class atkExpressionAttribute extends atkAttribute
     /**
      * Sets the search type.
      *
-     * @param array $type the search type (string or number)
+     * @param array $type the search type (string, number or date)
      */
     function setSearchType($type)
     {
@@ -127,7 +127,7 @@ class atkExpressionAttribute extends atkAttribute
     /**
      * Returns the search type.
      *
-     * @return string the search type (string or number)
+     * @return string the search type (string, number or date)
      */
     function getSearchType()
     {
@@ -154,6 +154,8 @@ class atkExpressionAttribute extends atkAttribute
     {
         if ($this->getSearchType() == "number")
             return atkNumberAttribute::getSearchModes();
+        else if ($this->getSearchType() == "date")
+            return atkDateAttribute::getSearchModes();
         else
             return parent::getSearchModes();
     }
@@ -175,10 +177,15 @@ class atkExpressionAttribute extends atkAttribute
      */
     function search($record = "", $extended = false, $fieldprefix = "")
     {
-        if ($this->getSearchType() == "number")
+        if ($this->getSearchType() == "number") {
             return atkNumberAttribute::search($record, $extended, $fieldprefix);
-        else
+        } else if ($this->getSearchType() == "date") {
+            $attr = new atkDateAttribute($this->fieldName());
+            $attr->m_searchsize = 10;
+            return $attr->search($record, $extended, $fieldprefix);
+        } else {
             return parent::search($record, $extended, $fieldprefix);
+        }
     }
 
     /**
@@ -202,16 +209,25 @@ class atkExpressionAttribute extends atkAttribute
 
         $expression = "(" . str_replace("[table]", $table, $this->m_expression) . ")";
 
-        $searchcondition = "";
+        if ($this->getSearchType() == "date") {
+            $attr = new atkDateAttribute($this->fieldName());
+            return $attr->getSearchCondition($query, $table, $value, $searchmode, $expression);
+        }
 
-        if ($this->getSearchType() == "number")
-            $value = atkNumberAttribute::processSearchValue($value);
+        if ($this->getSearchType() == "number") {
+            $value = atkNumberAttribute::processSearchValue($value, $searchmode);
+        }
 
         if ($searchmode != "between") {
-            // Use default handler, and use only the first field.
-            if ($this->getSearchType() == "number")
-                $value = $value["from"];
-
+            if ($this->getSearchType() == "number") {
+                if ($value['from'] != '') {
+                    $value = $value['from'];
+                } else if ($value['to'] != '') {
+                    $value = $value['to'];
+                } else {
+                    return false;
+                }
+            }
             $func = $searchmode . "Condition";
             if (method_exists($query, $func) && $value !== "" && $value !== NULL) {
                 return $query->$func($expression, $this->escapeSQL($value));
@@ -222,7 +238,4 @@ class atkExpressionAttribute extends atkAttribute
             return atkNumberAttribute::getBetweenCondition($query, $expression, $value);
         }
     }
-
 }
-
-?>

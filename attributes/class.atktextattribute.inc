@@ -137,8 +137,7 @@ class atkTextAttribute extends atkAttribute
         }
 
 
-        (isset($record[$this->fieldName()])) ? $text = $record[$this->fieldName()]
-                    : $text = "";
+        $text = isset($record[$this->fieldName()]) ? $record[$this->fieldName()] : "";
 
         if ($this->m_cols != 0) {
             $cols = $this->m_cols;

@@ -44,7 +44,7 @@ class atkFileExport
      * @param String $type The type (csv / excel / xml)
      * @param String $compression Compression method (bzip / gzip)
      */
-    function export($data, $fileName, $type, $ext, $compression = "")
+    function export($data, $fileName, $type, $ext = "", $compression = "")
     {
         ob_end_clean();
         if ($compression == "bzip") {
@@ -53,14 +53,17 @@ class atkFileExport
         } elseif ($compression == "gzip") {
             $mime_type = 'application/x-gzip';
             $ext = "gz";
-        } elseif ($type == "csv" || $type == "excel") {
+        } elseif ($type == "csv") {
             $mime_type = 'text/x-csv';
             $ext = "csv";
+        } elseif ($type == "excel") {
+            $mime_type = 'application/octet-stream';
+            $ext = "xls";
         } elseif ($type == "xml") {
             $mime_type = 'text/xml';
             $ext = "xml";
         } else {
-            $mime_type = 'application/octetstream';
+            $mime_type = 'application/octet-stream';
         }
 
         header('Content-Type: ' . $mime_type);
@@ -91,7 +94,12 @@ class atkFileExport
         }
         // 3. on screen
         else {
-            echo $data;
+            if ($type == "csv" || $type == "excel") {
+                // in order to output UTF-8 content that Excel both on Windows and OS X will be able to successfully read
+                echo mb_convert_encoding($data, 'Windows-1252', 'UTF-8');
+            } else {
+                echo $data;
+            }
         }
 
         flush();

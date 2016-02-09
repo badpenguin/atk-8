@@ -1433,7 +1433,7 @@ class atkNode
      */
     function getOrder()
     {
-        return $this->m_default_order;
+        return str_replace('[table]', $this->getTable(), $this->m_default_order);
     }
 
     /**
@@ -1570,10 +1570,7 @@ class atkNode
             if ($p_attrib->hasFlag(AF_HIDE))
                 continue; // attributes to which we don't have access are explicitly hidden
 
-
-
-                
-// Only display the attribute if the attribute
+            // Only display the attribute if the attribute
             // resides on at least on visible tab
             for ($i = 0, $_i = sizeof($p_attrib->m_tabs); $i < $_i; $i ++) {
                 if ((is_array($list) && in_array($p_attrib->m_tabs[$i], $list)) || (!is_array($disable) || !in_array($p_attrib->m_tabs[$i], $disable))) {
