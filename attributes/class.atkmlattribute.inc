@@ -21,7 +21,7 @@
  * @author Peter Verhage <peter@ibuildings.nl>
  * @package atk
  * @subpackage attributes
- *
+ * @deprecated
  */
 class atkMlAttribute extends atkAttribute
 {

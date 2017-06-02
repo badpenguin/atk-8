@@ -15,7 +15,7 @@
  * @author Harrie Verveer <harrie@ibuildings.nl>
  * @package atk
  * @subpackage attributes
- *
+ * @deprecated
  */
 class atkMlFckAttribute extends atkMlTextAttribute
 {

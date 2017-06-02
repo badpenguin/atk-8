@@ -24,7 +24,7 @@ useattrib("atkmlattribute");
  * @author Peter Verhage <peter@ibuildings.nl>
  * @package atk
  * @subpackage attributes
- *
+ * @deprecated
  */
 class atkMlSelectorAttribute extends atkMlAttribute
 {

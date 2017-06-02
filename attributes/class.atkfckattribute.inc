@@ -11,6 +11,7 @@
  *
  * @copyright (c)2005 Ibuildings.nl BV
  * @license http://www.achievo.org/atk/licensing ATK Open Source License
+ * @deprecated
  *
  * @version $Revision: 6289 $
  * $Id$

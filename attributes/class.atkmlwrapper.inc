@@ -31,7 +31,7 @@
  * @author Ivo Jansch <ivo@achievo.org>
  * @package atk
  * @subpackage attributes
- *
+ * @deprecated
  */
 class atkMlWrapper extends atkAttribute
 {

@@ -26,7 +26,7 @@
  * @author Peter Verhage <peter@ibuildings.nl>
  * @package atk
  * @subpackage attributes
- *
+ * @deprecated
  */
 class atkMlHtmlAttribute extends atkMlTextAttribute
 {

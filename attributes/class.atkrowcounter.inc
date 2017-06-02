@@ -27,7 +27,7 @@
  *
  * @package atk
  * @subpackage attributes
- *
+ * @deprecated
  */
 atkimport("atk.attributes.atkdummyattribute");
 

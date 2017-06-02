@@ -27,6 +27,7 @@ useattrib("atkdummyattribute");
  * @author guido <guido@ibuildings.nl>
  * @package atk
  * @subpackage attributes
+ * @deprecated
  */
 class atkDocumentAttribute extends atkDummyAttribute
 {
