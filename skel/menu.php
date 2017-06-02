@@ -43,4 +43,3 @@ else
     atkerror("no menu object created!");;
 
 $output->outputFlush();
-?>

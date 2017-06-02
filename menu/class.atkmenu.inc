@@ -53,7 +53,7 @@ class atkMenu
     static function layoutToClass($layout)
     {
         // Check if the menu config is one of the default atk menus (deprecated)
-        if (in_array($layout, array("plain", "frames", "outlook", "dhtml", "modern", "cook", "dropdown"))) {
+        if (in_array($layout, array("plain", "dropdown"))) {
             $classname = "atk.menu.atk" . $layout . "menu";
         }
 

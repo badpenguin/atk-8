@@ -107,9 +107,7 @@ $config_menu_layout = "modern";
 
 // If you have a menu at either left or right, you can add an
 // extra topframe by setting the following option to 1.
-// If you set it to 1, you must provide a "top.php" file in
-// your application directory.
-$config_top_frame = 1;
+$config_top_frame = 0;
 
 // Show icons in the recordlist or text?
 $config_recordlist_icons = true;

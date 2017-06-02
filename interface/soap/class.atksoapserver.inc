@@ -24,6 +24,7 @@ include_once(atkconfig("atkroot") . "atk/interface/interface.atkserverinterface.
  * @author Ivo Jansch <ivo@achievo.org>
  * @package atk
  * @subpackage interface
+ * deprecated
  */
 class atkSoapServer implements atkServerInterface
 {

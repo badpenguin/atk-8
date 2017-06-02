@@ -12,14 +12,6 @@ This library is free software.
 You can redistribute and modify it even for commercial usage,
 but you must accept and respect the LPGL License (v2.1 or later).
 */
-// Check PHP version
-if (PHP_VERSION<'4.0.6') {
-  echo '<br><b>TinyButStrong Error</b> (PHP Version Check) : Your PHP version is '.PHP_VERSION.' while TinyButStrong needs PHP version 4.0.6 or higher.';
-} elseif (PHP_VERSION<'4.1.0') {
-  function array_key_exists (&$key,&$array) {
-    return key_exists($key,$array);
-  }
-}
 
 // Render flags
 define('TBS_NOTHING', 0);
