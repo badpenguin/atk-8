@@ -1805,7 +1805,7 @@ class atkAttribute
      */
     function isNotNullInDb()
     {
-        $db = &$this->getDb();
+        $db = $this->getDb();
         $meta = $db->tableMeta($this->m_ownerInstance->m_table);
         return hasFlag($meta[$this->fieldName()]['flags'], MF_NOT_NULL);
     }

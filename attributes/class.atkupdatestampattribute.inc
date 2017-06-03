@@ -88,7 +88,7 @@ class atkUpdateStampAttribute extends atkDateTimeAttribute
      * @return String A piece of htmlcode with hidden form elements that post
      *                This attribute's value without showing it.
      */
-    function hide($record = "", $fieldprefix)
+    function hide($record = "", $fieldprefix='')
     {
         $field = $record[$this->fieldName()];
         $result = "";
