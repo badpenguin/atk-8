@@ -47,11 +47,9 @@ class atkCreatedByAttribute extends atkUpdatedByAttribute
      * needsUpdate always returns false for this attribute.
      * @return false
      */
-    function needsUpdate()
+    function needsUpdate($record)
     {
         return false;
     }
 
 }
-
-?>

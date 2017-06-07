@@ -51,7 +51,7 @@ class atkUpdatedByAttribute extends atkManyToOneRelation
     /**
      * Adds this attribute to database queries.
      */
-    function addToQuery(&$query, $tablename = "", $fieldaliasprefix = "", $rec = "", $level = 0, $mode = "")
+    function addToQuery(&$query, $tablename = "", $fieldaliasprefix = "", &$rec = "", $level = 0, $mode = "")
     {
         if ($mode == 'add' || $mode == 'update') {
             // atkAttribute::addToQuery($query, $tablename, $fieldaliasprefix, $rec, $level, $mode);
@@ -88,5 +88,3 @@ class atkUpdatedByAttribute extends atkManyToOneRelation
     }
 
 }
-
-?>

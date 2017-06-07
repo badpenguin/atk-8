@@ -67,7 +67,7 @@ class atkMessageQueue
      * @param int $type 
      * @return boolean Success
      */
-    function addMessage($txt, $type = AMQ_GENERAL)
+    static function addMessage($txt, $type = AMQ_GENERAL)
     {
         $instance = &atkMessageQueue::getInstance();
         if (is_object($instance)) {

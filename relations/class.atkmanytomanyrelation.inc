@@ -440,7 +440,7 @@ class atkManyToManyRelation extends atkRelation
      * @param atkDb $notused
      * @param array $record
      */
-    function load($notused, $record)
+    function load(atkDb $notused, $record, $mode)
     {
         if ($this->createLink()) {
             $where = $this->_getLoadWhereClause($record);
