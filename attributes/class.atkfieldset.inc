@@ -52,7 +52,7 @@ class atkFieldSet extends atkAttribute
      *
      * @return boolean
      */
-    public function isEmpty()
+    public function isEmpty($record)
     {
         // always return false, this way you can mark a field-set as obligatory
         // as a visual cue without ATK complaining that no value has been set
@@ -149,13 +149,14 @@ class atkFieldSet extends atkAttribute
         $replacements = array();
 
 		// AGX
-		if ($this->hasFlag(AF_FIELDSET_OBLIGATORY)) {
+	    // This patch its not necessary anymore - 2017.06.14
+		/*if ($this->hasFlag(AF_FIELDSET_OBLIGATORY)) {
 			$theme = &atkinstance("atk.ui.atktheme");
 			$reqimg = '<img align="top" src="' . $theme->imgPath("required_field.gif") . '" border="0"
                    alt="' . atktext("field_obligatory") . '" title="' . atktext("field_obligatory") . '">';
 		} else {
 			$reqimg = '';
-		}
+		}*/
 		/* END */
 
         $fields = array_unique($this->getParser()->getFields());
