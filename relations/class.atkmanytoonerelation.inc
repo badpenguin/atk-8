@@ -1862,7 +1862,14 @@ class atkManyToOneRelation extends atkRelation
                     list(, $field) = explode('.', $field);
                 }
 
-                $newPart = $this->getDestination()->getAttribute($field)->getOrderByStatement('', $table, $fieldDirection);
+                $targetAttribute = $this->getDestination()->getAttribute($field);
+                if ($targetAttribute) {
+	                $newPart = $targetAttribute->getOrderByStatement('', $table, $fieldDirection);
+                } else {
+                	atkdebug('FATAL: target attribute not found for: '. $field);
+                	$newPart = false;
+                }
+
 
                 // realias if destination order contains the wrong tablename.
                 if (strpos($newPart, $this->m_destInstance->m_table . '.') !== false) {

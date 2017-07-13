@@ -131,6 +131,7 @@ class atkOneToOneRelation extends atkRelation
      */
     function display($record, $mode = "list")
     {
+
         if ($mode == 'view') {
             return null;
         }
@@ -155,7 +156,7 @@ class atkOneToOneRelation extends atkRelation
      */
 	function edit($record = "", $fieldprefix = "", $mode = "")
     {
-        
+
     }
 
     /**
@@ -627,7 +628,7 @@ class atkOneToOneRelation extends atkRelation
                 $mode = "add";
             }
 
-            $output.='<input type="hidden" name="' . $fieldprefix . $this->fieldName() . '[mode]" value="' . $mode . '">';
+            $output='<input type="hidden" name="' . $fieldprefix . $this->fieldName() . '[mode]" value="' . $mode . '">';
             $forceList = decodeKeyValueSet($this->getFilter());
             $output.= $this->m_destInstance->hideform($mode, $myrecord, $forceList, $fieldprefix . $this->fieldName() . "_AE_");
             return $output;
@@ -653,6 +654,7 @@ class atkOneToOneRelation extends atkRelation
      */
     function addToEditArray($mode, &$arr, &$defaults, &$error, $fieldprefix)
     {
+
         /* hide */
         if (($mode == "edit" && $this->hasFlag(AF_HIDE_EDIT)) || ($mode == "add" && $this->hasFlag(AF_HIDE_ADD))) {
             /* when adding, there's nothing to hide... */
@@ -774,6 +776,7 @@ class atkOneToOneRelation extends atkRelation
      */
     function addToViewArray($mode, &$arr, &$defaults)
     {
+
         if ($this->hasFlag(AF_HIDE_VIEW))
             return;
 
@@ -990,6 +993,7 @@ class atkOneToOneRelation extends atkRelation
      */
     function addToListArrayRow($action, &$arr, $nr, $fieldprefix, $flags, $edit = false, atkDataGrid $grid = null, $column = '*')
     {
+
         if ($this->hasFlag(AF_HIDE_LIST) || !$this->createDestination()) {
             return;
         }
