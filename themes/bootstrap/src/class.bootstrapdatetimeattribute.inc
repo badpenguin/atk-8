@@ -27,7 +27,7 @@ class bootstrapDateTimeAttribute extends atkAttribute
 
     function __construct($name, $flags = 0)
     {
-        atkAttribute::__construct($name, $flags);
+        $this->atkAttribute($name, $flags);
     }
 
     function postInit()
@@ -290,6 +290,7 @@ class bootstrapDateTimeAttribute extends atkAttribute
 
         if ($fromval == NULL && $toval == NULL) {
             // do nothing
+			// TODO REFACTOR
         } else if ($fromval != NULL && $toval != NULL) {
             if ($fromval > $toval) {
                 // User entered dates in wrong order. Let's put them in the right order.

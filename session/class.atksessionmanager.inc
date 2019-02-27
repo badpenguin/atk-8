@@ -446,9 +446,11 @@ class atkSessionManager
         // Prevent going more than 1 level above the current stack top which
         // causes a new stackitem to be pushed onto the stack at the wrong
         // location.
-        if ($atklevel > count($stack)) {
-            atkdebug("Requested ATKLevel (" . $atklevel . ") too high for stack, lowering to " . count($stack));
-            $atklevel = count($stack);
+        if (!is_array($stack)) $stack_count=0;
+            else $stack_count = count($stack);
+        if ($atklevel > $stack_count) {
+            atkdebug("Requested ATKLevel (" . $atklevel . ") too high for stack, lowering to " . $stack_count);
+            $atklevel = $stack_count;
         }
 
         if (isset($postvars["atkescape"]) && $postvars["atkescape"] != "") {

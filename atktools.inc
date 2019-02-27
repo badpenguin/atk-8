@@ -105,7 +105,7 @@ function atkErrorHandler($errtype, $errstr, $errfile, $errline)
         return;
     } else if (($errtype & (E_WARNING | E_USER_WARNING)) > 0) {
         // This is something we should pay attention to, but we don't need to die.
-        atkerror("[$errortypestring] $errstr in $errfile (line $errline)");
+        if (!strpos($errstr, 'should be compatible')) atkerror("[$errortypestring] $errstr in $errfile (line $errline)");
         return;
     } else {
         atkerror("[$errortypestring] $errstr in $errfile (line $errline)", ($errtype == 'EXCEPTION'));

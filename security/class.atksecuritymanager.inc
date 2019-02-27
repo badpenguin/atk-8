@@ -41,7 +41,7 @@ define("AUTH_ERROR", -1);
  */
 class atkSecurityManager
 {
-    var $m_authentication = "";
+    var $m_authentication;
     var $m_authorization = 0;
     var $m_scheme = "none";
     var $m_user = array();

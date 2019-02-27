@@ -33,6 +33,7 @@ $GLOBALS['g_user'] = array();
 function atksecure()
 {
     $securityMgr = &atkGetSecurityManager();
+    $securityMgr->addListener(atknew("atk_before_authenticate")); // NEW
 
     if (!$securityMgr->authenticate()) {
         echo '<b>' . atktext("login_failed", "atk") . '</b>';

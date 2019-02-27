@@ -681,7 +681,13 @@ class atkManyToOneRelation extends atkRelation
     function display($record, $mode = 'list')
     {
         if ($this->createDestination()) {
-            if (count($record[$this->fieldName()]) == count($this->m_refKey))
+
+        if (!is_array($record[$this->fieldName()])) $fieldname_count=0;
+            else $fieldname_count = count($record[$this->fieldName()]);
+        if (!is_array($this->m_refKey)) $refkey_count=0;
+            else $refkey_count = count($this->m_refKey);
+
+            if ($fieldname_count == $refkey_count)
                 $this->populate($record);
 
             if (!$this->isEmpty($record)) {

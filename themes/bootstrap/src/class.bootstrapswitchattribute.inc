@@ -21,7 +21,7 @@ class bootstrapSwitchAttribute extends atkBoolAttribute
             'onText' => mb_strtoupper($this->text("yes"), 'UTF-8'),
         );
         $this->switchOptions = array_merge($defaultOptions, $switchOptions);
-        atkBoolAttribute::__construct($name, $flags);
+        $this->atkBoolAttribute($name, $flags);
     }
 
     public function registerScriptsAndStyles($fieldprefix)

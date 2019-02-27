@@ -456,7 +456,7 @@ class atkFileAttribute extends atkAttribute
             $valid = false;
 
             if (function_exists('getimagesize')) {
-                $size = @getimagesize($filename);
+                $size = getimagesize($filename);
                 if (in_array($size['mime'], $this->m_allowedFileTypes)) {
                     $valid = true;
                 }

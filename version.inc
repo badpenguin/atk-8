@@ -19,5 +19,5 @@
 /**
  * The current atk version
  */
-$atk_version = "8.2.7";
+$atk_version = "8.2.8";
 return $atk_version; 
