@@ -134,7 +134,10 @@ class atkDGList extends atkDGComponent
             $headercols[] = array("content" => $lockHeadIcon);
         }
         if (($orientation == "left" || $orientation == "both") && ($hasActionCol && atkcount($list["rows"]) > 0)) {
-            $headercols[] = array("content" => "");
+			// original
+            //$headercols[] = array("content" => "");
+			// Add Search fields clear button
+			$headercols[] = array("content"=>"<input type='reset' value='Clear' />");
         }
 
         foreach (array_values($list["heading"]) as $head) {
