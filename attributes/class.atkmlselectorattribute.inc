@@ -93,9 +93,9 @@ class atkMlSelectorAttribute extends atkMlAttribute
      * attribute's value.
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $prefix The fieldprefix to put in front of the name
+     * @param string $prefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($record = "", $prefix = "", $mode = "")
@@ -176,11 +176,11 @@ class atkMlSelectorAttribute extends atkMlAttribute
      *
      * This is a framework method, it should never be called directly.
      *
-     * @param String $mode     the edit mode ("add" or "edit")
+     * @param string $mode     the edit mode ("add" or "edit")
      * @param array  $arr      pointer to the edit array
      * @param array  $defaults pointer to the default values array
      * @param array  $error    pointer to the error array
-     * @param String $fieldprefix   the fieldprefix
+     * @param string $fieldprefix   the fieldprefix
      */
     function addToEditArray($mode, &$arr, &$defaults, &$error, $fieldprefix)
     {

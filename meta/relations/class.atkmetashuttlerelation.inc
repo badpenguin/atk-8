@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -32,12 +32,12 @@ class atkMetaShuttleRelation extends atkShuttleRelation
     private $m_remoteVariants = null;
 
     /**
-     * Default constructor.  
-     * 
-     * @param String $name The name of the relation
-     * @param String $destination The full name of the node that is the other
+     * Default constructor.
+     *
+     * @param string $name The name of the relation
+     * @param string $destination The full name of the node that is the other
      *                            end of the relation.
-     * @param String $through The full name of the node that is used as
+     * @param string $through The full name of the node that is used as
      *                     intermediairy node. The intermediairy node is
      *                     assumed to have 2 attributes that are named
      *                     after the nodes at both ends of the relation.
@@ -49,7 +49,7 @@ class atkMetaShuttleRelation extends atkShuttleRelation
      *                     and setRemoteKey()
      * @param string $template The descriptor template
      * @param array $options Array with options
-     * @param int $flags Flags for the relation.  
+     * @param int $flags Flags for the relation.
      */
     public function __construct($name, $destination, $through, $template, $options, $flags = 0)
     {
@@ -92,7 +92,7 @@ class atkMetaShuttleRelation extends atkShuttleRelation
 
         if ($result && is_array($this->m_remoteVariants)) {
             foreach ($this->m_remoteVariants as $variant) {
-                // we *must* use $this->m_linkInstance (not $this->getLink()) else we will create an infinite loop    
+                // we *must* use $this->m_linkInstance (not $this->getLink()) else we will create an infinite loop
                 if ($this->m_linkInstance->getAttribute($variant) != null) {
                     $this->setRemoteKey($variant);
                     break;

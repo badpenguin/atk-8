@@ -55,7 +55,7 @@ class atkPasswordAttribute extends atkAttribute
     /**
      * Restrictions to apply when changing/setting the password
      *
-     * @var Array
+     * @var array
      */
     var $m_restrictions;
 
@@ -75,7 +75,7 @@ class atkPasswordAttribute extends atkAttribute
      *                     parameter of the setAttribSize() method for more
      *                     information on the possible values of this
      *                     parameter.
-     * @param array $restrictions  
+     * @param array $restrictions
      */
     function __construct($name, $generate, $flags = 0, $size = 0, $restrictions = "")
     {
@@ -108,7 +108,7 @@ class atkPasswordAttribute extends atkAttribute
     /**
      * Sets the restrictions on passwords
      *
-     * @param Array $restrictions Restrictions that should apply to this attribute
+     * @param array $restrictions Restrictions that should apply to this attribute
      */
     function setRestrictions($restrictions)
     {
@@ -127,7 +127,7 @@ class atkPasswordAttribute extends atkAttribute
     /**
      * Returns the password restrictions that apply to this password
      *
-     * @return Array Restrictions that should apply to this attribute
+     * @return array Restrictions that should apply to this attribute
      */
     function getRestrictions()
     {
@@ -360,7 +360,7 @@ class atkPasswordAttribute extends atkAttribute
 
     /**
      * Check if the attribute is empty
-     * 
+     *
      * @param array $record The record that holds this attribute's value.
      * @return true if it's empty
      */
@@ -374,7 +374,7 @@ class atkPasswordAttribute extends atkAttribute
      * Returns a piece of html code that can be used in a form to display
      * hidden values for this attribute.
      * @param array $record Array with values
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
      * @return Piece of htmlcode
      */
@@ -502,7 +502,7 @@ class atkPasswordAttribute extends atkAttribute
 
     /**
      * Overwriting the fetchValue to ensure all passwords are hashed
-     * 
+     *
      * @param array $rec The array with html posted values ($_POST, for
      *                        example) that holds this attribute's value.
      */
@@ -526,7 +526,7 @@ class atkPasswordAttribute extends atkAttribute
      *
      * Added a "dynamic" needsUpdate to cancel updates if no password fields where used
      * to alter the password. This overcomes the overwriting with an empty password.
-     * 
+     *
      * @param array $record The record that contains this attribute's value
      */
     function needsUpdate($record)

@@ -20,7 +20,7 @@ atkimport("atk.atkcontroller");
 /**
  * atkWizard class which is capable of using atknodes
  *
- * This class makes the distinction between update/save and 
+ * This class makes the distinction between update/save and
  * navigation actions and respondis correspondingly.
  *
  * @author maurice <maurice@ibuildings.nl>
@@ -44,13 +44,13 @@ class atkWizardBase extends atkController
      * Returns the form buttons for a certain page.
      *
      * Can be overridden by derived classes to define custom buttons.
-     * @param String $action The action for which the buttons are retrieved.
+     * @param string $action The action for which the buttons are retrieved.
      * @param array $record The record currently displayed/edited in the form.
      *                      This param can be used to define record specific
      *                      buttons.
-     * @return Array with html code elements with buttons
-     * 
-     * ToDo/Fixme this function has been refactored in atkController. 
+     * @return array with html code elements with buttons
+     *
+     * ToDo/Fixme this function has been refactored in atkController.
      * It should be refactored in the same way.
      */
     function getFormButtons($action, $record)
@@ -60,10 +60,10 @@ class atkWizardBase extends atkController
         if ($this->m_mode == WIZARD_MODE_ADD) {
             $currentPanel = $this->getCurrentPanel();
             // We post the action as key value in de atkwizardaction var. Therefor
-            // we have to convert the atkwizardaction value in atkWizard::start().                
+            // we have to convert the atkwizardaction value in atkWizard::start().
             $node = &$this->getNode();
             if ($node->m_action != 'admin') {
-                //if we explicitly don't want the finish button we set a hidden var to post the atkwizardaction          
+                //if we explicitly don't want the finish button we set a hidden var to post the atkwizardaction
                 if (($currentPanel->showFinishButton() == FINISH_BUTTON_DONT_SHOW) && $currentPanel->isFinishPanel())
                     $atkwizardaction = "finish";
                 else
@@ -92,7 +92,7 @@ class atkWizardBase extends atkController
         }
         elseif ($this->m_mode == WIZARD_MODE_EDIT) {
             // We post the action as key value in de atkwizardaction var. Therefor
-            // we have to convert the atkwizardaction value in atkWizard::start().        
+            // we have to convert the atkwizardaction value in atkWizard::start().
             $result[] = '<input type="submit" class="btn_save" name="atknoclose" value="' . atktext("save", "atk") . '">';
             $result[] = '<input type="submit" class="btn_next" name="atkwizardaction[finish]" value="' . atktext("finish", "atk") . '">';
             $result[] = '<input type="submit" class="btn_cancel" name="atkcancel" value="' . atktext("cancel", "atk") . '">';
@@ -105,7 +105,7 @@ class atkWizardBase extends atkController
 
     /**
      * Determine if this panel should show a finish button
-     * 
+     *
      * @return Boolean
      */
     function showFinishButton()

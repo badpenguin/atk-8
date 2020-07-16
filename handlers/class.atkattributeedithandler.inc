@@ -89,7 +89,7 @@ class atkAttributeEditHandler extends atkActionHandler
      */
     function getSelector()
     {
-        // The selector should be in the atkselector postvar      
+        // The selector should be in the atkselector postvar
         return $this->m_node->m_postvars['atkselector'];
     }
 
@@ -202,7 +202,7 @@ class atkAttributeEditHandler extends atkActionHandler
      *
      * @param Int $error
      * @param array $record The record
-     * @param String $customerror
+     * @param string $customerror
      * @return String HTML Error page
      */
     function getErrorPage($error, $record = null, $customerror = '')
@@ -242,7 +242,7 @@ class atkAttributeEditHandler extends atkActionHandler
 
     /**
      * AttributeEdit page.
-     * 
+     *
      * @return String The attribute edit page
      */
     function attributeEditPage()
@@ -380,7 +380,7 @@ class atkAttributeEditHandler extends atkActionHandler
      * Get the dropdown with the possible values for
      * the selected attribute.
      *
-     * @param String $selectedAttribute
+     * @param string $selectedAttribute
      * @return unknown
      */
     function _getDropDownValues($selectedAttribute = "")
@@ -465,8 +465,8 @@ class atkAttributeEditHandler extends atkActionHandler
      * Get a list of attributenames that we can ignore (i.e. when calling
      * validate() on a node.)
      *
-     * @param String $selectedattributename
-     * @return Array A list of attributenames.
+     * @param string $selectedattributename
+     * @return array A list of attributenames.
      */
     function getIgnoreList($selectedattributename)
     {

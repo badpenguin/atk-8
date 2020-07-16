@@ -227,7 +227,7 @@ class atkTableRenderer
      */
     function registerStyle($style, $module = "")
     {
-        $theme = &atkinstance("atk.ui.atktheme");
+        $theme =  atkinstance("atk.ui.atktheme");
         $page = &atkPage::getInstance();
         $page->register_style($theme->stylePath($style . ".css", $module));
     }
@@ -281,7 +281,7 @@ class atkTableRenderer
      *
      * <b>Example:</b>
      * <code>
-     *  $tbl = &atknew("atk.utils.atktablerenderer");
+     *  $tbl = atknew("atk.utils.atktablerenderer");
      *  $tbl->render($data, TBL_HEADER|TBL_ALTERNATE, "recordlist");
      * </code>
      *
@@ -623,7 +623,7 @@ class atkTableRenderer
      * Constructs the html class attribute string using a classname
      *
      * @access private
-     * @param String $class Classname
+     * @param string $class Classname
      * @return String HTML Class attribute string
      */
     function _classStr($class)

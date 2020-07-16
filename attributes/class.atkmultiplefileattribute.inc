@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -18,7 +18,7 @@
 useattrib("atkFileAttribute");
 
 /**
- * This is an extend of the famous atkfileattribute :). Now its possible 
+ * This is an extend of the famous atkfileattribute :). Now its possible
  * to insert one or more files in one database field
  *
  * @author Martin Roest <martin@ibuildings.nl>
@@ -29,7 +29,7 @@ useattrib("atkFileAttribute");
 class atkMultipleFileAttribute extends atkFileAttribute
 {
     /**
-     * private vars  
+     * private vars
      */
     var $m_delimiter = ";";
 
@@ -130,7 +130,7 @@ class atkMultipleFileAttribute extends atkFileAttribute
     /**
      * Convert value to string
      * @param array $rec Array with fields
-     * @return Array with tmpfile, orgfilename,filesize
+     * @return array with tmpfile, orgfilename,filesize
      */
     function db2value($rec)
     {
@@ -174,7 +174,7 @@ class atkMultipleFileAttribute extends atkFileAttribute
 
     /**
      * Return the database field type of the attribute.
-     * @return "string" which is the 'generic' type of the database field for 
+     * @return "string" which is the 'generic' type of the database field for
      *         this attribute.
      */
     function dbFieldType()

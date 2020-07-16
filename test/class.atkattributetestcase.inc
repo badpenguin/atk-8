@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -16,8 +16,8 @@
  */
 
 /**
- * Baseclass for attribute unittests. This class is an extension to the 
- * default UnitTestCase. It provides an apiTest method that performs a 
+ * Baseclass for attribute unittests. This class is an extension to the
+ * default UnitTestCase. It provides an apiTest method that performs a
  * basic test if the attribute responds to standard api calls correctly
  *
  * @author Ivo Jansch <ivo@achievo.org>
@@ -45,11 +45,11 @@ abstract class atkAttributeTestCase extends atkTestCase
     }
 
     /**
-     * Perform api test. 
+     * Perform api test.
      *
      * Checks an attribute for general characteristics, like
      * valid return types for often overriden methods, the ability to
-     * check, add, remove flags, compatibility of value2db with db2value, 
+     * check, add, remove flags, compatibility of value2db with db2value,
      * and canonical reactions to methods like isEmpty when called with empty
      * records.
      *
@@ -126,7 +126,7 @@ abstract class atkAttributeTestCase extends atkTestCase
     /**
      * Assert if a value is a boolean (true or false).
      * @param mixed $value Value to check
-     * @param String $msg Message to display for test
+     * @param string $msg Message to display for test
      */
     function assertBoolean($value, $msg = "")
     {
@@ -137,7 +137,7 @@ abstract class atkAttributeTestCase extends atkTestCase
      * Assert if a value is numeric (checks only the actual value, not its
      * type).
      * @param mixed $value Value to check
-     * @param String $msg Message to display for test
+     * @param string $msg Message to display for test
      */
     function assertNumeric($value, $msg = "")
     {
@@ -147,7 +147,7 @@ abstract class atkAttributeTestCase extends atkTestCase
     /**
      * Assert if a value is an integer.
      * @param mixed $value Value to check
-     * @param String $msg Message to display for test
+     * @param string $msg Message to display for test
      */
     function assertInteger($value, $msg = "")
     {
@@ -158,7 +158,7 @@ abstract class atkAttributeTestCase extends atkTestCase
      * Assert if a value matches the dbFieldSize() output, which can be int or 'x,x'
      *
      * @param mixed $value Value to check
-     * @param String $msg Message to display for test
+     * @param string $msg Message to display for test
      */
     function assertDbFieldSize($value, $msg = "")
     {
@@ -168,7 +168,7 @@ abstract class atkAttributeTestCase extends atkTestCase
     /**
      * Get canonical test message (attribute classname + custom message + %s.
      * @access private
-     * @param String $msg Message to display for test
+     * @param string $msg Message to display for test
      */
     function _getMsg($msg = "")
     {
@@ -177,8 +177,8 @@ abstract class atkAttributeTestCase extends atkTestCase
 
     /**
      * Return the testvalue of the attribute.
-     * 
-     * @return String returns the testvalue which will be used by 
+     *
+     * @return String returns the testvalue which will be used by
      *                the testcases for inserting data in the database.
      */
     function getTestValue()

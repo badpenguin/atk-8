@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -20,7 +20,7 @@
 atkimport("atk.db.atkquery");
 
 /**
- * SQL Builder for MySQL databases. 
+ * SQL Builder for MySQL databases.
  *
  * @author Ivo Jansch <ivo@achievo.org>
  * @package atk
@@ -34,11 +34,11 @@ class atkMysqlQuery extends atkQuery
     /**
      * Generate an SQL searchcondition for a regular expression match.
      *
-     * @param String $field The fieldname on which the regular expression
+     * @param string $field The fieldname on which the regular expression
      *                      match will be performed.
-     * @param String $value The regular expression to search for.
-     * @param boolean $inverse Set to false (default) to perform a normal 
-     *                         match. Set to true to generate a SQL string 
+     * @param string $value The regular expression to search for.
+     * @param boolean $inverse Set to false (default) to perform a normal
+     *                         match. Set to true to generate a SQL string
      *                         that searches for values dat do not match.
      * @return String A SQL regexp expression.
      */
@@ -54,11 +54,11 @@ class atkMysqlQuery extends atkQuery
     /**
      * Generate an SQL searchcondition for a soundex match.
      *
-     * @param String $field The fieldname on which the soundex match will 
+     * @param string $field The fieldname on which the soundex match will
      *                      be performed.
-     * @param String $value The value to search for.
-     * @param boolean $inverse Set to false (default) to perform a normal 
-     *                         match. Set to true to generate a SQL string 
+     * @param string $value The value to search for.
+     * @param boolean $inverse Set to false (default) to perform a normal
+     *                         match. Set to true to generate a SQL string
      *                         that searches for values dat do not match.
      * @return String A SQL soundex expression.
      */
@@ -72,9 +72,9 @@ class atkMysqlQuery extends atkQuery
     }
 
     /**
-     * Prepare the query for a limit. 
+     * Prepare the query for a limit.
      * @access private
-     * @param String $query The SQL query that is being constructed.
+     * @param string $query The SQL query that is being constructed.
      */
     function _addLimiter(&$query)
     {

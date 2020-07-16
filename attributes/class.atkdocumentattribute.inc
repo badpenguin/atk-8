@@ -50,9 +50,9 @@ class atkDocumentAttribute extends atkDummyAttribute
      * Gets the display code for the document selector in the specified mode
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return string HTML code for selection control
      */
     function edit($record = '', $fieldprefix = '', $mode = '')
@@ -85,7 +85,7 @@ class atkDocumentAttribute extends atkDummyAttribute
     function getDocumentFiles($path, $record)
     {
         // Read the directory contents using the directorytraverser
-        $dirtrav = &atknew("atk.utils.atkdirectorytraverser");
+        $dirtrav = atknew("atk.utils.atkdirectorytraverser");
         return $dirtrav->getDirContents($path);
     }
 

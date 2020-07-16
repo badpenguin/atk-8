@@ -44,10 +44,10 @@ class atkDDL
     var $m_db;
 
     /**
-     * Postfix for index names                                                      
-     *                                                                              
-     * @access private                                                              
-     * @var string                                                                  
+     * Postfix for index names
+     *
+     * @access private
+     * @var string
      */
     protected $m_idxnameFormat = "%s_idx";
 
@@ -56,7 +56,7 @@ class atkDDL
      */
     function __construct()
     {
-        
+
     }
 
     /**
@@ -64,7 +64,7 @@ class atkDDL
      * method will determine the database type (mysql, oci, etc) and
      * instantiate the correct DDL class.
      *
-     * @param String $database The database driver to use
+     * @param string $database The database driver to use
      * @return atkDDL instance of db specific DDL driver
      */
     static function &create($database = NULL)
@@ -597,19 +597,19 @@ class atkDDL
     }
 
     /**
-     * Create an index                                                                                                                        
-     *                                                                                                                                        
-     * @param string $name Index name                                                                                                         
-     * @param array $definition associative array that defines properties of the index to be created.                                         
-     *                                                                                                                                        
-     *                          example                                                                                                       
-     *                          array('fields' => array('user_id' => array('sorting' => 'ascending'                                           
-     *                                                                     'length' => 3                                                      
-     *                                                                      ),                                                                
-     *                                                  'lastname' => array()                                                                 
-     *                                                  )                                                                                     
-     *                               )                                                                                                        
-     * @return boolean                                                                                                                        
+     * Create an index
+     *
+     * @param string $name Index name
+     * @param array $definition associative array that defines properties of the index to be created.
+     *
+     *                          example
+     *                          array('fields' => array('user_id' => array('sorting' => 'ascending'
+     *                                                                     'length' => 3
+     *                                                                      ),
+     *                                                  'lastname' => array()
+     *                                                  )
+     *                               )
+     * @return boolean
      */
     function createIndex($name, $definition)
     {
@@ -630,10 +630,10 @@ class atkDDL
     }
 
     /**
-     * Drop an existing index                                                                                                                 
-     *                                                                                                                                        
-     * @param string $name Index name                                                                                                         
-     * @return boolean                                                                                                                        
+     * Drop an existing index
+     *
+     * @param string $name Index name
+     * @return boolean
      */
     function dropIndex($name)
     {

@@ -128,7 +128,7 @@ class atkAdminHandler extends atkActionHandler
     /**
      * Renders the recordlist for the admin mode
      *
-     * @param Array $actions An array with the actions for the admin mode
+     * @param array $actions An array with the actions for the admin mode
      * @return String The HTML for the admin recordlist
      */
     function renderAdminList($actions = "")

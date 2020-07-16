@@ -35,8 +35,8 @@ $output = &atkOutput::getInstance();
 if ($ATK_VARS["atknodetype"] == "" || $session["login"] != 1) {
     // no nodetype passed, or session expired
 
-    $page = &atknew("atk.ui.atkpage");
-    $ui = &atkinstance("atk.ui.atkui");
+    $page = atknew("atk.ui.atkpage");
+    $ui =  atkinstance("atk.ui.atkui");
     $theme = &atkTheme::getInstance();
 
 
@@ -67,13 +67,13 @@ else {
 
     $flags = array_key_exists("atkpartial", $ATK_VARS) ? HTML_PARTIAL : HTML_STRICT;
 
-    //Load controller   
+    //Load controller
     if ($ATK_VARS["atkcontroller"] == "")
-        $controller = &atkinstance("atk.atkcontroller");
+        $controller =  atkinstance("atk.atkcontroller");
     else
-        $controller = &atkinstance($ATK_VARS["atkcontroller"]);
+        $controller =  atkinstance($ATK_VARS["atkcontroller"]);
 
-    //Handle http request  
+    //Handle http request
     $controller->dispatch($ATK_VARS, $flags);
 }
 $output->outputFlush();

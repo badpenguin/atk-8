@@ -33,8 +33,8 @@ class atkMetaOneToManyRelation extends atkOneToManyRelation
     /**
      * Default constructor.
      * 
-     * @param String $name The name of the relation
-     * @param String $destination The full name of the node that is the other
+     * @param string $name The name of the relation
+     * @param string $destination The full name of the node that is the other
      *                            end of the relation.
      * @param string $template The descriptor template
      * @param array $options Array with options

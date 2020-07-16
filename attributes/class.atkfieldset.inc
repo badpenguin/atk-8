@@ -26,7 +26,7 @@
 
  /* AGX: new flag to make the field obligatory */
 define("AF_FIELDSET_OBLIGATORY", AF_SPECIFIC_1);
-  
+
 class atkFieldSet extends atkAttribute
 {
     private $m_template;
@@ -151,7 +151,7 @@ class atkFieldSet extends atkAttribute
 		// AGX
 	    // This patch its not necessary anymore - 2017.06.14
 		/*if ($this->hasFlag(AF_FIELDSET_OBLIGATORY)) {
-			$theme = &atkinstance("atk.ui.atktheme");
+			$theme =  atkinstance("atk.ui.atktheme");
 			$reqimg = '<img align="top" src="' . $theme->imgPath("required_field.gif") . '" border="0"
                    alt="' . atktext("field_obligatory") . '" title="' . atktext("field_obligatory") . '">';
 		} else {

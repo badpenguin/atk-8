@@ -95,13 +95,13 @@ class atkRecordList
      * Render the recordlist
      *
      * @param atkNode $node         the node
-     * @param Array   $recordset    the list of records
-     * @param Array   $actions      the default actions array
+     * @param array   $recordset    the list of records
+     * @param array   $actions      the default actions array
      * @param Integer $flags        recordlist flags (see the top of this file)
-     * @param Array   $suppressList fields we don't display
-     * @param String  $formName     if embedded the form name in which we are embedded
-     * @param Array   $navigation   Navigation links
-     * @param String  $embedprefix  The prefix for embeded fields
+     * @param array   $suppressList fields we don't display
+     * @param string  $formName     if embedded the form name in which we are embedded
+     * @param array   $navigation   Navigation links
+     * @param string  $embedprefix  The prefix for embeded fields
      * @return String The rendered recordlist
      */
     function render(&$node, $recordset, $actions, $flags = 0, $suppressList = "", $formName = "", $navigation = array(), $embedprefix = "")
@@ -128,13 +128,13 @@ class atkRecordList
     /**
      * Get records for a recordlist without actually rendering the recordlist.
      * @param atkNode $node         the node
-     * @param Array   $recordset    the list of records
-     * @param Array   $actions      the default actions array
+     * @param array   $recordset    the list of records
+     * @param array   $actions      the default actions array
      * @param Integer $flags        recordlist flags (see the top of this file)
-     * @param Array   $suppressList fields we don't display
-     * @param String  $formName     if embedded the form name in which we are embedded
-     * @param Array   $navigation   Navigation links
-     * @param String  $embedprefix  The prefix for embeded fields
+     * @param array   $suppressList fields we don't display
+     * @param string  $formName     if embedded the form name in which we are embedded
+     * @param array   $navigation   Navigation links
+     * @param string  $embedprefix  The prefix for embeded fields
      * @return String The rendered recordlist
      */
     function getRecordlistData(&$node, $recordset, $actions, $flags = 0, $suppressList = "", $formName = "", $navigation = array(), $embedprefix = "")
@@ -142,7 +142,7 @@ class atkRecordList
         $this->setNode($node);
         $this->m_flags = $flags;
 
-        $theme = &atkinstance("atk.ui.atktheme");
+        $theme =  atkinstance("atk.ui.atktheme");
         $page = &atkPage::getInstance();
         $page->register_style($theme->stylePath("recordlist.css", $this->m_node->m_module));
 
@@ -576,7 +576,7 @@ class atkRecordList
      * Checks wether the recordlist should display a column which holds the actions.
      *
      * @access private
-     * @param Array $list The recordlist data
+     * @param array $list The recordlist data
      * @return bool Wether the list should display an extra column to hold the actions
      */
     function _hasActionColumn($list)
@@ -620,12 +620,12 @@ class atkRecordList
     /**
      * Function outputs an array with all information necessary to output a recordlist.
      *
-     * @param Array   $recordset    List of records that need to be displayed
+     * @param array   $recordset    List of records that need to be displayed
      * @param Integer $flags        Recordlist flags
-     * @param String  $prefix       Prefix for each column name (used for subcalls)
-     * @param Array   $actions      List of default actions for each record
-     * @param Array   $suppress     An array of fields that you want to hide
-     * @param String  $embedprefix  The prefix for embeded fields
+     * @param string  $prefix       Prefix for each column name (used for subcalls)
+     * @param array   $actions      List of default actions for each record
+     * @param array   $suppress     An array of fields that you want to hide
+     * @param string  $embedprefix  The prefix for embeded fields
      *
      * The result array contains the following information:
      *  "heading"  => for each visible column an array containing: "title" {, "url"}

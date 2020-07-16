@@ -81,7 +81,7 @@ class atkDocumentHandler extends atkActionHandler
      * the generic vars)
      *
      * @param atkDocumentWriter $documentWriter DocumentWriter to which the variables should be assigned
-     * @param String $selector String containing the selector used to get the document from the database
+     * @param string $selector String containing the selector used to get the document from the database
      */
     function assignDocumentVars(&$documentWriter, $selector)
     {
@@ -98,7 +98,7 @@ class atkDocumentHandler extends atkActionHandler
     /**
      * Compose the filename to be used (doctemplatedir/module/node/<docmentfilename)
      *
-     * @param String $template
+     * @param string $template
      * @return String
      */
     function getFilenameForTemplate($template)

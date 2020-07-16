@@ -81,7 +81,7 @@ class atkUrlVault
      * If there are more URLS in the vault than its capacity, the oldest
      * URLS are purged.
      *
-     * @param String $url The url to add to the vault.
+     * @param string $url The url to add to the vault.
      */
     function addUrl($url)
     {
@@ -92,7 +92,7 @@ class atkUrlVault
     /**
      * Check if an url is in the vault.
      *
-     * @param String $url
+     * @param string $url
      * @return True if the url is in the vault. False if not.
      */
     function containsUrl($url)

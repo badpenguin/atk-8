@@ -51,8 +51,8 @@ class atkTabbedPane extends atkAttribute
 
     /**
      * Constructor
-     * @param String $name The name of the attribute
-     * @param Array  $tabs The arrays looks like array("tabname1"=>("attribname1,"attribname2),"tabname1"=>(..),..)
+     * @param string $name The name of the attribute
+     * @param array  $tabs The arrays looks like array("tabname1"=>("attribname1,"attribname2),"tabname1"=>(..),..)
      * @param int $flags The flags for this attribute
      */
     function __construct($name, $tabs = array(), $flags = 0)
@@ -68,8 +68,8 @@ class atkTabbedPane extends atkAttribute
 
     /**
      * Add attribute to tabbedpane
-     * @param String $attrib The name of the attribute
-     * @param String  $tab The name of tab. If empty, attribute name used
+     * @param string $attrib The name of the attribute
+     * @param string  $tab The name of tab. If empty, attribute name used
      */
     function add($attrib, $tab = "")
     {
@@ -92,8 +92,8 @@ class atkTabbedPane extends atkAttribute
 
     /**
      * Return list of all tabs, having in this attribute
-     * @param String $action An action name. Don't use now
-     * @return Array  $tab The array name of tab.
+     * @param string $action An action name. Don't use now
+     * @return array  $tab The array name of tab.
      */
     function getPaneTabs($action)
     {
@@ -126,7 +126,7 @@ class atkTabbedPane extends atkAttribute
 
     /**
      * Check if attribute is single on the tab
-     * @param String $name The name of attribute
+     * @param string $name The name of attribute
      * @return Bool  True if single.
      * $todo Take into accout AF_HIDE_VIEW,AF_HIDE_EDIT flag of attribute -
      * attribute can be placed on tab, but only in edit action - 2 attribute when edit and 1  -if view
@@ -146,11 +146,11 @@ class atkTabbedPane extends atkAttribute
     /**
      * Adds the attribute's edit / hide HTML code to the edit array.
      *
-     * @param String $mode     the edit mode ("add" or "edit")
+     * @param string $mode     the edit mode ("add" or "edit")
      * @param array  $arr      pointer to the edit array
      * @param array  $defaults pointer to the default values array
      * @param array  $error    pointer to the error array
-     * @param String $fieldprefix   the fieldprefix
+     * @param string $fieldprefix   the fieldprefix
      */
     function _addToEditArray($mode, &$arr, &$defaults, &$error, $fieldprefix)
     {
@@ -197,9 +197,9 @@ class atkTabbedPane extends atkAttribute
      * attribute's value.
      *
      * @param array $defaults The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($defaults = "", $fieldprefix = "", $mode = "")
@@ -264,7 +264,7 @@ class atkTabbedPane extends atkAttribute
 
         // Handle fields
         // load images
-        $theme = &atkinstance("atk.ui.atktheme");
+        $theme =  atkinstance("atk.ui.atktheme");
         $tipimg = $theme->imgPath("help.gif");
         $reqimg = '<img align="top" src="' . $theme->imgPath("required_field.gif") . '" border="0"
                   alt="' . atktext("field_obligatory") . '" title="' . atktext("field_obligatory") . '">';
@@ -295,7 +295,7 @@ class atkTabbedPane extends atkAttribute
                 $tplfield["line"] = "<hr>";
             }
             /* double separator, ignore */ elseif ($field["html"] == "-") {
-                
+
             }
             /* only full HTML */ elseif (isset($field["line"])) {
                 $tplfield["line"] = $field["line"];
@@ -423,7 +423,7 @@ class atkTabbedPane extends atkAttribute
                     $ttip = atktext($node->m_type . "_" . $name . "_tooltip", $module, "", "", "", true);
 
                     if ($ttip) {
-                        $theme = &atkinstance("atk.ui.atktheme");
+                        $theme =  atkinstance("atk.ui.atktheme");
                         $tipimg = $theme->imgPath("help.gif");
 
                         $onelinetip = preg_replace('/([\r\n])/e', "", $ttip);
@@ -497,7 +497,7 @@ class atkTabbedPane extends atkAttribute
      * This doesn't generate the actual HTML code, but returns the data for
      * the tabs (title, selected, urls that should be loaded upon click of the
      * tab etc).
-     * @param String $action The action for which the tabs should be generated.
+     * @param string $action The action for which the tabs should be generated.
      * @param string $fieldprefix The fieldprefix
      * @return array List of tabs
      * @todo Make translation of tabs module aware
@@ -555,8 +555,8 @@ class atkTabbedPane extends atkAttribute
     /**
      * Determine the load type of this attribute.
      *
-     * @param String $mode The type of load (view,admin,edit etc)
-     * @param boolean $searching 
+     * @param string $mode The type of load (view,admin,edit etc)
+     * @param boolean $searching
      *
      * @return int NOLOAD     - nor load(), nor addtoquery() should be
      *                          called (attribute can not be loaded from the
@@ -571,7 +571,7 @@ class atkTabbedPane extends atkAttribute
     /**
      * Determine the storage type of this attribute.
      *
-     * @param String $mode The type of storage ("add" or "update")
+     * @param string $mode The type of storage ("add" or "update")
      *
      * @return int NOSTORE    - nor store(), nor addtoquery() should be
      *                          called (attribute can not be stored in the

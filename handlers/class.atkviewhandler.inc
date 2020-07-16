@@ -32,7 +32,7 @@ class atkViewHandler extends atkViewEditBase
     /**
      * The action handler method.
      *
-     * @param Bool $renderbox Render this action in a renderbox or just output the HTML
+     *  @param boolean $renderbox Render this action in a renderbox or just output the HTML
      */
     function action_view($renderbox = true)
     {
@@ -83,7 +83,7 @@ class atkViewHandler extends atkViewEditBase
      * Returns an htmlpage displaying all displayable attributes.
      * @param array $record The record to display.
      * @param atkNode $node The node for which a viewPage is displayed.
-     * @param Bool $renderbox Render this action in a renderbox or just output the HTML
+     *  @param boolean $renderbox Render this action in a renderbox or just output the HTML
      * @return String The html page with a reaonly view of relevant fields.
      */
     function viewPage($record, $node, $renderbox = true)
@@ -155,9 +155,9 @@ class atkViewHandler extends atkViewEditBase
     /**
      * Get the view page
      *
-     * @param Array $record The record
-     * @param String $mode The mode we're in (defaults to "view")
-     * @param String $template The template to use for the view form
+     * @param array $record The record
+     * @param string $mode The mode we're in (defaults to "view")
+     * @param string $template The template to use for the view form
      * @return String HTML code of the page
      */
     function viewForm($record, $mode = "view", $template = "")
@@ -217,7 +217,7 @@ class atkViewHandler extends atkViewEditBase
                 $tplfield["line"] = "<hr>";
             }
             /* double separator, ignore */ elseif ($field["html"] == "-") {
-                
+
             }
             /* sections */ elseif ($field["html"] == "section") {
                 $tplfield["line"] = $this->getSectionControl($field, $mode);

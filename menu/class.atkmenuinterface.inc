@@ -41,8 +41,8 @@ class atkmenuinterface
     /**
      * Translates a menuitem with the menu_ prefix, or if not found without
      *
-     * @param String $menuitem Menuitem to translate
-     * @param String $modname Module to which the menuitem belongs
+     * @param string $menuitem Menuitem to translate
+     * @param string $modname Module to which the menuitem belongs
      * @return Translation of the given menuitem
      */
     function getMenuTranslation($menuitem, $modname = 'atk')

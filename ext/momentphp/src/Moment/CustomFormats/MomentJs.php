@@ -97,7 +97,7 @@ class MomentJs implements FormatsInterface
     }
 
     /**
-     * @param String $format
+     * @param string $format
      *
      * @return string
      */

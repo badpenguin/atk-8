@@ -134,7 +134,7 @@ class atkdb2db extends atkDb
      * @param $query the query
      * @param $offset offset in record list
      * @param $limit maximum number of records
-     * 
+     *
      * @todo Convert to DB2
      */
     function query($query, $offset = -1, $limit = -1)
@@ -357,7 +357,7 @@ class atkdb2db extends atkDb
 
     /**
      * Return the meta data of a certain table
-     * @param String $table the table name (optionally in 'database.tablename' format)
+     * @param string $table the table name (optionally in 'database.tablename' format)
      * @param boolean $full all meta data or not
      * @return array with meta data
      */
@@ -444,7 +444,7 @@ class atkdb2db extends atkDb
      * This function checks the database for a table with
      * the provide name
      *
-     * @param String $tableName the table to find
+     * @param string $tableName the table to find
      * @return boolean true if found, false if not found
      */
     function tableExists($tablename)
@@ -473,15 +473,15 @@ class atkdb2db extends atkDb
      * Each database driver should override this method to perform vendor
      * specific conversion.
      *
-     * @param String $fieldname The field to generate the to_char for.
-     * @param String $format Format specifier. The format is compatible with
+     * @param string $fieldname The field to generate the to_char for.
+     * @param string $format Format specifier. The format is compatible with
      *                       php's date() function (http://www.php.net/date)
      *                       The default is what's specified by
      *                       $config_date_to_char, or "Y-m-d" if not
      *                       set in the configuration.
      * @return String Piece of sql query that converts a date field to char
      *                for the current database
-     * 
+     *
      * @todo make me db2
      */
     function func_datetochar($fieldname, $format = "")
@@ -495,10 +495,10 @@ class atkdb2db extends atkDb
      *
      * Note that currently, only the common specifiers Y, m, d, H, h, i and
      * s are supported.
-     * @param String $format Format specifier. The format is compatible with
+     * @param string $format Format specifier. The format is compatible with
      *                       php's date() function (http://www.php.net/date)
      * @return String Mysql specific format specifier.
-     * 
+     *
      * @todo make me db2
      */
     function vendorDateFormat($format)
@@ -512,7 +512,7 @@ class atkdb2db extends atkDb
      * Get TO_CHAR() equivalent for the current database.
      *
      * TODO/FIXME: add format paramater. Current format is always yyyy-mm-dd hh:mi.
-     * 
+     *
      * @todo make me db2
      */
     function func_datetimetochar($fieldname)
@@ -549,8 +549,8 @@ class atkdb2db extends atkDb
         $result = array();
 
         // IBM DB2 doesn't support LIMIT syntax as MySQL and PostgreSQL do.
-        // We have to seek through the results to go to a certain offset 
-        // and retrieve only the number of rows specified in the limit. 
+        // We have to seek through the results to go to a certain offset
+        // and retrieve only the number of rows specified in the limit.
         // In class.atkdb2query.inc we add a fake LIMIT clause which we
         // remove here and transform to values for the offset and limit
         // parameters.
@@ -596,7 +596,7 @@ class atkdb2db extends atkDb
      * instead of ASCII. Figure out what fields need to get a special treatment.
      *
      * @param string $query The query we want to execute
-     * @return Array An array with fieldnames that will be returned in EBCDIC
+     * @return array An array with fieldnames that will be returned in EBCDIC
      */
     function getEbcdicFields($query)
     {

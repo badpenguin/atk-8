@@ -70,8 +70,8 @@ class atkTheme
      * actually installed.
      *
      * @static
-     * @param String $relpath The relative path to convert
-     * @param String $location
+     * @param string $relpath The relative path to convert
+     * @param string $location
      * @return String The absolute path
      */
     static function absPath($relpath, $location = '')

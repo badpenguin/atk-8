@@ -26,8 +26,8 @@
 $config_atkroot = "./";
 include_once("atk.inc");
 
-$page = &atknew("atk.ui.atkpage");
-$ui = &atkinstance("atk.ui.atkui");
+$page = atknew("atk.ui.atkpage");
+$ui =  atkinstance("atk.ui.atkui");
 $theme = &atkTheme::getInstance();
 $output = &atkOutput::getInstance();
 

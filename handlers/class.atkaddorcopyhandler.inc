@@ -344,7 +344,7 @@ class atkAddOrCopyHandler extends atkActionHandler
     /**
      * Creates a drop-down with copyable records.
      *
-     * @param Array $records Array with records
+     * @param array $records Array with records
      * @return string copyable records drop-down
      */
     function getCopyDropDown($records)
@@ -362,9 +362,9 @@ class atkAddOrCopyHandler extends atkActionHandler
     /**
      * Returns a HTML fragment which allows the user to select nested
      * one-to-many relations he/she wants to include in the copy.
-     * 
+     *
      * @param atkNode $node The node to get the onetomany relations from
-     * @param String $prefix The field prefix
+     * @param string $prefix The field prefix
      * @param Integer $level The level of the includes
      */
     function getCopyIncludes($node, $prefix = '', $level = 0)

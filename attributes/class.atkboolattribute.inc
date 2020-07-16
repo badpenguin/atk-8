@@ -101,9 +101,9 @@ class atkBoolAttribute extends atkAttribute
      * attribute's value.
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return piece of html code with a checkbox
      */
     function edit($record = "", $fieldprefix = "", $mode = "")
@@ -176,10 +176,10 @@ class atkBoolAttribute extends atkAttribute
      * Creates a searchcondition for the field
      *
      * @param atkQuery $query     The query object where the search condition should be placed on
-     * @param String $table       The name of the table in which this attribute
+     * @param string $table       The name of the table in which this attribute
      *                              is stored
      * @param mixed $value        The value the user has entered in the searchbox
-     * @param String $searchmode  The searchmode to use. This can be any one
+     * @param string $searchmode  The searchmode to use. This can be any one
      *                              of the supported modes, as returned by this
      *                              attribute's getSearchModes() method.
      * @return String The searchcondition to use.
@@ -195,7 +195,7 @@ class atkBoolAttribute extends atkAttribute
     /**
      * Returns a displayable string for this value.
      * @param array $record Array with boolean field
-     * @param String $mode
+     * @param string $mode
      * @return string
      */
     function display($record, $mode = '')
@@ -300,7 +300,7 @@ class atkBoolAttribute extends atkAttribute
      * This implementation converts 'y/j/yes/on/true/1/*' to 1
      * All other values are converted to 0
      *
-     * @param String $stringvalue The value to parse.
+     * @param string $stringvalue The value to parse.
      * @return boolean Internal value
      */
     function parseStringValue($stringvalue)
@@ -315,7 +315,7 @@ class atkBoolAttribute extends atkAttribute
      * while still posting its value. (<input type="hidden">)
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
      * @return String A piece of htmlcode with hidden form elements that post
      *                this attribute's value without showing it.

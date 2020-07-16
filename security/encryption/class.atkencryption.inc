@@ -2,9 +2,9 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
- * 
+ *
  * @package atk
  * @subpackage security
  *
@@ -17,7 +17,7 @@
  * Base class for all ATK encryption methods
  *
  * @todo Currently, 2 weak encryption implementations are available for
- *       testing purposes. Strong encryption using the mcrypt() php 
+ *       testing purposes. Strong encryption using the mcrypt() php
  *       extension is yet to be implemented.
  *
  * @author Mark Baaijens <mark@ibuildings.nl>
@@ -32,11 +32,11 @@ class atkEncryption
     /**
      * Get function for encryption
      *
-     * Gets a new instance of an encryption class with the type we passed 
+     * Gets a new instance of an encryption class with the type we passed
      * along
-     * @param string $type The type of encryption we want, 
+     * @param string $type The type of encryption we want,
      *                     defaults to $config)_encryption_defaultmethod
-     * @return obj the node with which to encrypt or decrypt your data
+     * @return object the node with which to encrypt or decrypt your data
      */
     function &getEncryption($type = "")
     {

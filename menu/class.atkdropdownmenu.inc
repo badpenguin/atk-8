@@ -33,7 +33,7 @@ class atkDropdownMenu extends atkPlainMenu
      */
     function render()
     {
-        $page = &atkinstance("atk.ui.atkpage");
+        $page =  atkinstance("atk.ui.atkpage");
         $menu = $this->load();
         $page->addContent($menu);
 

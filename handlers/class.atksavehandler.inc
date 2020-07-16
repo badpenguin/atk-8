@@ -296,7 +296,7 @@ class atkSaveHandler extends atkActionHandler
     /**
      * Go back to the add page
      *
-     * @param Array $record The record with reject info
+     * @param array $record The record with reject info
      */
     function goBack($record)
     {
@@ -307,7 +307,7 @@ class atkSaveHandler extends atkActionHandler
     /**
      * Validate record.
      *
-     * @param Array &$record The record to validate
+     * @param array &$record The record to validate
      */
     function validate(&$record)
     {

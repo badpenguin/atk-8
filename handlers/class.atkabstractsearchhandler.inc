@@ -80,7 +80,7 @@ abstract class atkAbstractSearchHandler extends atkActionHandler
     /**
      * List criteria.
      *
-     * @return Array criteria list
+     * @return array criteria list
      */
     function listCriteria()
     {
@@ -101,7 +101,7 @@ abstract class atkAbstractSearchHandler extends atkActionHandler
     /**
      * Remove search criteria.
      *
-     * @param String $name name of the search criteria
+     * @param string $name name of the search criteria
      */
     function forgetCriteria($name)
     {
@@ -121,8 +121,8 @@ abstract class atkAbstractSearchHandler extends atkActionHandler
      * NOTE:
      * This method will overwrite existing criteria with the same name.
      *
-     * @param String $name     name for the search criteria
-     * @param Array  $criteria search criteria data
+     * @param string $name     name for the search criteria
+     * @param array  $criteria search criteria data
      */
     function saveCriteria($name, $criteria)
     {
@@ -139,8 +139,8 @@ abstract class atkAbstractSearchHandler extends atkActionHandler
     /**
      * Load search criteria.
      *
-     * @param String $name name of the search criteria
-     * @return Array search criteria
+     * @param string $name name of the search criteria
+     * @return array search criteria
      */
     function loadCriteria($name)
     {
@@ -162,7 +162,7 @@ abstract class atkAbstractSearchHandler extends atkActionHandler
     /**
      * Load base criteria.
      *
-     * @return Array search criteria
+     * @return array search criteria
      */
     function loadBaseCriteria()
     {
@@ -173,7 +173,7 @@ abstract class atkAbstractSearchHandler extends atkActionHandler
      * Returns a select list of loadable criteria which will on-selection
      * refresh the smart search page with the loaded criteria.
      *
-     * @param String $current The current load criteria
+     * @param string $current The current load criteria
      * @return String criteria load HTML
      */
     function getLoadCriteria($current)
@@ -247,7 +247,7 @@ abstract class atkAbstractSearchHandler extends atkActionHandler
      * Returns a link for removing the currently selected criteria. If
      * nothing (valid) is selected nothing is returned.
      *
-     * @param String $current currently loaded criteria
+     * @param string $current currently loaded criteria
      * @return String forget url
      */
     function getForgetCriteria($current)
@@ -271,8 +271,8 @@ abstract class atkAbstractSearchHandler extends atkActionHandler
     /**
      * Returns a textfield for entering a name to save the search criteria as.
      *
-     * @param String $current currently loaded criteria
-     * @param String textfield HTML
+     * @param string $current currently loaded criteria
+     * @param string textfield HTML
      */
     function getSaveCriteria($current)
     {

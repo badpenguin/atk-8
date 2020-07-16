@@ -79,7 +79,7 @@ class atkActionHandler
      */
     function __construct()
     {
-        
+
     }
 
     /**
@@ -92,7 +92,7 @@ class atkActionHandler
      * instead let the partial method handle the action.
      *
      * @param atkNode $node The node on which the action should be performed.
-     * @param String $action The action that is being performed.
+     * @param string $action The action that is being performed.
      * @param array $postvars Any variables from the request
      *
      */
@@ -127,7 +127,7 @@ class atkActionHandler
      * This is used by the atkAddHandler and atkEditHandler to
      * show the validation errors
      *
-     * @return Array The reject info
+     * @return array The reject info
      */
     function getRejectInfo()
     {
@@ -250,7 +250,7 @@ class atkActionHandler
      * if present, or editPage($record, $mode) in the handler if the node has
      * no override.
      *
-     * @param String $methodname The name of the method to call.
+     * @param string $methodname The name of the method to call.
      * @return mixed The method returns the return value of the invoked
      *               method.
      */
@@ -283,7 +283,7 @@ class atkActionHandler
      * actionhandler's handle() mehod is called.
      * @static
      *
-     * @param String $action The action for which an action handler should be
+     * @param string $action The action for which an action handler should be
      *                       retrieved.
      */
     static function getDefaultHandler($action)
@@ -324,7 +324,7 @@ class atkActionHandler
     {
         static $recordlistcache;
         if (!$recordlistcache) {
-            $recordlistcache = &atknew("atk.recordlist.atkrecordlistcache");
+            $recordlistcache = atknew("atk.recordlist.atkrecordlistcache");
             $recordlistcache->setNode($this->m_node);
             $recordlistcache->setPostvars($this->m_postvars);
         }
@@ -435,7 +435,7 @@ class atkActionHandler
     /**
      * Render message dialog contents.
      *
-     * @param String $message The message to render in a dialog
+     * @param string $message The message to render in a dialog
      * @return String The message dialog
      */
     function renderMessageDialog($message)
@@ -502,9 +502,9 @@ class atkActionHandler
 
     /**
      * Get/generate CSRF token for the current session stack.
-     * 
+     *
      * http://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet
-     * 
+     *
      * @return string CSRF token
      */
     public function getCSRFToken()
@@ -525,7 +525,7 @@ class atkActionHandler
     /**
      * Checks whatever the given CSRF token matches the one stored in the
      * session stack.
-     * 
+     *
      * @return boolean is valid CSRF token?
      */
     protected function isValidCSRFToken($token)

@@ -32,11 +32,11 @@ class atkMetaManyToOneRelation extends atkManyToOneRelation
     /**
      * Default constructor.
      * 
-     * @param String $name The unique name of the attribute. In slave mode,
+     * @param string $name The unique name of the attribute. In slave mode,
      *                     this corresponds to the foreign key field in the
      *                     database table.  (The name is also used as the section 
      *                     heading.)
-     * @param String $destination the destination node (in module.nodename
+     * @param string $destination the destination node (in module.nodename
      *                            notation)
      * @param string $template The descriptor template
      * @param array $options Array with options 

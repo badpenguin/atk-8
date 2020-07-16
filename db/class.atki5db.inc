@@ -223,7 +223,7 @@ class atki5db extends atkdb2db
 
     /**
      * Return the meta data of a certain table
-     * @param String $table the table name (optionally in 'database.tablename' format)
+     * @param string $table the table name (optionally in 'database.tablename' format)
      * @param boolean $full all meta data or not
      * @return array with meta data
      */

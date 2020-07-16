@@ -55,7 +55,7 @@ class atkFrameSet extends atkAbstractFrame
      *                         frameset. Possible values: FRAMESET_VERTICAL,
      *                         FRAMESET_HORIZONTAL.
      * @param int $border The width in pixels of the border of the frameset.
-     * @param String $noframes The text to display instead of the frameset if
+     * @param string $noframes The text to display instead of the frameset if
      *                         frames are not supported by the browser. This 
      *                         param needs to be specified only for the
      *                         outmost frameset. It is ignored by inner 
@@ -143,9 +143,9 @@ class atkFrame extends atkAbstractFrame
      *                       parent frameset. Whether you are specifying
      *                       height or width depends on the orientation of the
      *                       parent frameset. 
-     * @param String $name The name of the frame. 
-     * @param String $src The url to load into the frame.
-     * @param String $scrolling The scrolling policy for this frame. Possible 
+     * @param string $name The name of the frame. 
+     * @param string $src The url to load into the frame.
+     * @param string $scrolling The scrolling policy for this frame. Possible 
      *                          values: FRAME_SCROLL_YES, FRAME_SCROLL_NO and
      *                          FRAME_SCROLL_AUTO.
      * @param boolean $resize When set to true, the frame is resizable by the

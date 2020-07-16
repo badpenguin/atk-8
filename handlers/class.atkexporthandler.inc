@@ -532,7 +532,7 @@ class atkExportHandler extends atkActionHandler
         if (!is_array($actions)) {
             $actions = $node->defaultActions("export");
         }
-        $rl = &atknew("atk.recordlist.atkcustomrecordlist");
+        $rl = atknew("atk.recordlist.atkcustomrecordlist");
         $flags = ($node_bk->hasFlag(NF_MRA) ? RL_MRA : 0) | ($node_bk->hasFlag(NF_MRPA)
                     ? RL_MRPA : 0) | ($node_bk->hasFlag(NF_LOCK) ? RL_LOCK : 0);
         $node_bk->m_postvars = $session_back;

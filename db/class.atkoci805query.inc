@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -20,7 +20,7 @@
 require_once(atkconfig("atkroot") . "atk/db/class.atkoci8query.inc");
 
 /**
- * SQL Querybuilder for Oracle 8.0.5 databases. 
+ * SQL Querybuilder for Oracle 8.0.5 databases.
  *
  * @author Ivo Jansch <ivo@achievo.org>
  * @package atk
@@ -42,7 +42,7 @@ class atkOci805Query extends atkOci8Query
      * by using group by.
      *
      * @access private
-     * @param String $query The SQL query that is being constructed.
+     * @param string $query The SQL query that is being constructed.
      */
     function _addOrderBy(&$query)
     {
@@ -64,7 +64,7 @@ class atkOci805Query extends atkOci8Query
                 $query.= " GROUP BY " . implode(",", $groupfields);
                 $query = str_replace(" DESC", " ", $query); // CENDRIS(ibsticket: 2269) 01-04-2003 Phe:
                 // DESC sort doesn't work in the sorting
-                // method we use for 805. 
+                // method we use for 805.
             }
         } else {
             // no unsupported condition, just call baseclass version

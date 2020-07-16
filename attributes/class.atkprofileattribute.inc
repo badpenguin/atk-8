@@ -178,7 +178,7 @@ class atkProfileAttribute extends atkAttribute
      * while still posting its value. (<input type="hidden">)
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
      * @return String A piece of htmlcode with hidden form elements that post
      *                this attribute's value without showing it.
@@ -428,9 +428,9 @@ class atkProfileAttribute extends atkAttribute
      * attribute's value.
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($record = "", $fieldprefix = "", $mode = "")

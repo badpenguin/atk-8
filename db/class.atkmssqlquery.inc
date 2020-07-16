@@ -33,9 +33,9 @@ class atkMssqlQuery extends atkMysqlQuery
     /**
      * Generate an SQL searchcondition for a regular expression match.
      *
-     * @param String $field The fieldname on which the regular expression
+     * @param string $field The fieldname on which the regular expression
      *                      match will be performed.
-     * @param String $value The regular expression to search for.
+     * @param string $value The regular expression to search for.
      * @param boolean $inverse Set to false (default) to perform a normal
      *                         match. Set to true to generate a SQL string
      *                         that searches for values dat do not match.
@@ -51,9 +51,9 @@ class atkMssqlQuery extends atkMysqlQuery
     /**
      * Generate an SQL searchcondition for a soundex match.
      *
-     * @param String $field The fieldname on which the soundex match will
+     * @param string $field The fieldname on which the soundex match will
      *                      be performed.
-     * @param String $value The value to search for.
+     * @param string $value The value to search for.
      * @param boolean $inverse Set to false (default) to perform a normal
      *                         match. Set to true to generate a SQL string
      *                         that searches for values dat do not match.
@@ -69,7 +69,7 @@ class atkMssqlQuery extends atkMysqlQuery
     /**
      * Prepare the query for a limit.
      * @access private
-     * @param String $query The SQL query that is being constructed.
+     * @param string $query The SQL query that is being constructed.
      */
     function _addLimiter(&$query)
     {

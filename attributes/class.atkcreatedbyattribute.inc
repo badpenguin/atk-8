@@ -34,7 +34,7 @@ class atkCreatedByAttribute extends atkUpdatedByAttribute
     /**
      * Constructor.
      *
-     * @param String $name Name of the field
+     * @param string $name Name of the field
      * @param int $flags Flags for this attribute.
      * @return atkCreatedByAttribute
      */

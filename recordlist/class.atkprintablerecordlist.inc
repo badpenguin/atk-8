@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -18,7 +18,7 @@
 atkimport("atk.recordlist.atkrecordlist");
 
 /**
- * Recordlist implementation that renders a recordlist that is 
+ * Recordlist implementation that renders a recordlist that is
  * 'printer-friendly'.
  *
  * It doesn't render any actions or links, and can only be used as a
@@ -42,8 +42,8 @@ class atkPrintableRecordList extends atkRecordList
      * obsolete by specialRecordList
      *
      * @param atkNode $node         the node
-     * @param Array   $recordset    the list of records
-     * @param Array   $suppressList fields we don't display
+     * @param array   $recordset    the list of records
+     * @param array   $suppressList fields we don't display
      * @param int  		$flags  			The prefix for embeded fields
      * @return String The rendered recordlist
      */

@@ -39,7 +39,7 @@ class atkController
     /**
      * Reference to the instance of currently selected atkNode
      *
-     * @var unknown_type
+     * @var atkNode
      */
     var $m_node = NULL;
 
@@ -62,14 +62,14 @@ class atkController
      * handleRequest method should be returned as a string
      * or the output should be outputted by atkOutput.
      *
-     * @var unknown_type
+     * @var bool
      */
     var $m_return_output = false;
 
     /**
      * Key/value Array containing which are be send als post or get vars
      * @access private
-     * @var Array
+     * @var array
      */
     var $m_hidden_vars = array();
 
@@ -98,7 +98,7 @@ class atkController
      * @access private
      * @param string $class
      * @param boolean $replace
-     * @return instance of controller
+     * @return atkController instance of controller
      */
     static function &_instance($class = "", $replace = false)
     {
@@ -200,7 +200,7 @@ class atkController
 
         // This is the end of all things for this page..
         // so we clean up some resources..
-        $db = &$node->getDb();
+        $db = $node->getDb();
         if (is_object($db))
             $db->disconnect();
         atkdebug("disconnected from the database");
@@ -249,7 +249,7 @@ class atkController
     /**
      * Get m_node variable or if not set make instance of atkNode class (determined by using the postvars)
      *
-     * @return reference to atknode
+     * @return atkNode reference to atknode
      */
     function &getNode()
     {
@@ -336,7 +336,7 @@ class atkController
 
     /**
      * Render a generic page, with a box, title, stacktrace etc.
-     * @param String $title The pagetitle and if $content is a string, also
+     * @param string $title The pagetitle and if $content is a string, also
      *                      the boxtitle.
      * @param mixed $content The content to display on the page. This can be:
      *                       - A string which will be the content of a single
@@ -377,7 +377,7 @@ class atkController
      *
      * Renders actionpage.tpl for the desired action. This includes the
      * given block(s) and a pagetrial, but not a box.
-     * @param String $action The action for which the page is rendered.
+     * @param string $action The action for which the page is rendered.
      * @param mixed $blocks Pieces of html content to be rendered. Can be a
      *                      single string with content, or an array with
      *                      multiple content blocks.
@@ -419,10 +419,10 @@ class atkController
      * The $record parameter is ignored by the default implementation, but
      * derived classes may override this method to perform record-specific
      * feedback.
-     * @param String $action The action that was performed
+     * @param string $action The action that was performed
      * @param int $status The status of the action.
      * @param array $record The record on which the action was performed.
-     * @param String $message An optional message to pass to the feedbackpage,
+     * @param string $message An optional message to pass to the feedbackpage,
      *                        for example to explain the reason why an action
      *                        failed.
      * @param integer $levelskip The number of levels to skip
@@ -480,7 +480,7 @@ class atkController
      * Returns the form buttons for a certain page.
      *
      * Can be overridden by derived classes to define custom buttons.
-     * @param String $mode The action for which the buttons are retrieved.
+     * @param string $mode The action for which the buttons are retrieved.
      * @param array $record The record currently displayed/edited in the form.
      *                      This param can be used to define record specific
      *                      buttons.
@@ -564,9 +564,9 @@ class atkController
     /**
      * Create a button.
      *
-     * @param String $action
-     * @param Bool $default Add the atkdefaultbutton class?
-     * @return HTML
+     * @param string $action
+     *  @param boolean $default Add the atkdefaultbutton class?
+     * @return string HTML
      */
     function getButton($action, $default = false, $label = null)
     {
@@ -641,11 +641,11 @@ class atkController
     /**
      * Create a dialog button.
      *
-     * @param String $action The action ('save' or 'cancel')
-     * @param String $label The label for this button
-     * @param String $url
+     * @param string $action The action ('save' or 'cancel')
+     * @param string $label The label for this button
+     * @param string $url
      * @param array  $extraParams
-     * @return HTML
+     * @return string HTML
      */
     function getDialogButton($action, $label = null, $url = null, $extraParams = array())
     {
@@ -726,6 +726,7 @@ class atkController
     {
         if (count($this->m_hidden_vars) == 0)
             return "";
+	    $varString = '';
         foreach ($this->m_hidden_vars as $hiddenVarName => $hiddenVarValue) {
             $varString .= '<input type="hidden" name="' . $hiddenVarName . '" value="' . $hiddenVarValue . '">';
         }
@@ -760,7 +761,7 @@ class atkController
      */
     function &getPage()
     {
-        $page = &atkinstance("atk.ui.atkpage");
+        $page =  atkinstance("atk.ui.atkpage");
         return $page;
     }
 
@@ -771,6 +772,7 @@ class atkController
      */
     function &getUi()
     {
+    	/** @var atkUi $ui */
         $ui = atkinstance("atk.ui.atkui");
         return $ui;
     }
@@ -804,7 +806,7 @@ class atkController
      * if present, or dispatch($postvars, $flags) in the handler if the node has
      * no override.
      *
-     * @param String $methodname The name of the method to call.
+     * @param string $methodname The name of the method to call.
      * @return mixed The method returns the return value of the invoked
      *               method.
      */

@@ -216,7 +216,7 @@ class atkSearchHandler extends atkAbstractSearchHandler
     /**
      * Fetch posted criteria.
      *
-     * @return Array fetched criteria
+     * @return array fetched criteria
      */
     function fetchCriteria()
     {

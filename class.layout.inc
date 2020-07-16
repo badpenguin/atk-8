@@ -70,7 +70,7 @@ class layout
     function constructUI()
     {
         if ($this->m_atkui == NULL) {
-            $this->m_atkui = &atkinstance("atk.ui.atkui");
+            $this->m_atkui =  atkinstance("atk.ui.atkui");
         }
     }
 
@@ -137,7 +137,7 @@ class layout
 
     /**
      * Output text to page
-     * @param $txt Text
+     * @param string $txt Text
      */
     function output($txt)
     {
@@ -147,7 +147,7 @@ class layout
 
     /**
      * Output rawtext to page
-     * @param $txt Text
+     * @param string $txt Text
      */
     function rawoutput($txt)
     {
@@ -181,8 +181,8 @@ class layout
 
     /**
      * Error report
-     * @param $title Title of the window
-     * @param $txt Error message
+     * @param string $title Title of the window
+     * @param string $txt Error message
      */
     function error($title, $txt)
     {
@@ -219,7 +219,7 @@ class layout
 
     /**
      * Register a javascript for use withing the page
-     * @param $file the filename of the external javascript file
+     * @param string $file the filename of the external javascript file
      */
     function register_script($file)
     {
@@ -237,7 +237,7 @@ class layout
 
     /**
      * Register a Cascading StyleSheet for use withing the page
-     * @param $file the filename of the external stylesheet
+     * @param string $file the filename of the external stylesheet
      */
     function register_style($file)
     {
@@ -260,7 +260,7 @@ class layout
 
     /**
      * Output a HTML header
-     * @param $title Titel van het window
+     * @param string $title Titel van het window
      */
     function head($title)
     {
@@ -275,13 +275,13 @@ class layout
     // Dummy, creates an atkPage if one does not exist (for backward compatibility).
     function &getPage()
     {
-        $page = &atkinstance("atk.ui.atkpage");
+        $page =  atkinstance("atk.ui.atkpage");
         return $page;
     }
 
     /**
      * Return a HTML header
-     * @param $title Titel van het window
+     * @param string $title Titel van het window
      */
     function ret_head($title)
     {
@@ -718,7 +718,7 @@ class layout
     function initTheme()
     {
         atkdebug("Obsolete use of layout::initTheme()!");
-        $theme = &atkinstance("atk.ui.atktheme");
+        $theme =  atkinstance("atk.ui.atktheme");
         $this->m_tpldir = $theme->themeDir();
     }
 

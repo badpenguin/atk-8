@@ -34,7 +34,7 @@ class atkActionListener
     /**
      * The list of actions the action listener should listen to.
      * @access private
-     * @var Array
+     * @var array
      */
     var $m_actionfilter = array();
 
@@ -76,7 +76,7 @@ class atkActionListener
      * node. Depending on the actionfilter passed in the constructor, the
      * call is forwarded to the actionPerformed($action, $record) method.
      *
-     * @param String $action The action being performed
+     * @param string $action The action being performed
      * @param array $record The record on which the action is performed
      */
     function notify($action, $record)
@@ -93,12 +93,12 @@ class atkActionListener
      * This method should be overriden in custom action listeners, to catch
      * the action event.
      * @abstract
-     * @param String $action The action being performed
+     * @param string $action The action being performed
      * @param array $record The record on which the action is performed
      */
     function actionPerformed($action, $record)
     {
-        
+
     }
 
     /**
@@ -108,7 +108,7 @@ class atkActionListener
      * node. Depending on the actionfilter passed in the constructor, the
      * call is forwarded to the preActionPerformed($action, $record) method.
      *
-     * @param String $action The action about to be performed
+     * @param string $action The action about to be performed
      * @param array $record The record on which the action is about to be performed
      */
     function preNotify($action, &$record)
@@ -125,12 +125,12 @@ class atkActionListener
      * This method should be overriden in custom action listeners, to catch
      * the action event.
      * @abstract
-     * @param String $action The action about to be performed
+     * @param string $action The action about to be performed
      * @param array $record The record on which the action is about to be performed
      */
     function preActionPerformed($action, &$record)
     {
-        
+
     }
 
 }

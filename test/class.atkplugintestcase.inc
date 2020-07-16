@@ -17,7 +17,7 @@
 
 /**
  * atkPluginTestCase is a testcase class for testing Smarty plugins.
- * 
+ *
  * It is different from the regular atkTestCase in that it features
  * utility methods to call smarty plugins.
  *
@@ -32,8 +32,8 @@ class atkPluginTestCase extends atkTestCase
     /**
      * Run an arbitrary Smarty plugin
      *
-     * @param String $type The type of plugin (block, function)
-     * @param String $plugin The name of the plugin
+     * @param string $type The type of plugin (block, function)
+     * @param string $plugin The name of the plugin
      * @param array $params Any parameter to pass to the plugin
      * @return String the result of the plugin.
      */
@@ -47,9 +47,9 @@ class atkPluginTestCase extends atkTestCase
     }
 
     /**
-     * Run a Smarty plugin of the 'function' type. 
-     *     
-     * @param String $plugin The name of the plugin
+     * Run a Smarty plugin of the 'function' type.
+     *
+     * @param string $plugin The name of the plugin
      * @param array $params Any parameter to pass to the plugin
      * @return String the result of the plugin.
      */
@@ -59,9 +59,9 @@ class atkPluginTestCase extends atkTestCase
     }
 
     /**
-     * Run a Smarty plugin of the 'block' type. 
-     *     
-     * @param String $plugin The name of the plugin
+     * Run a Smarty plugin of the 'block' type.
+     *
+     * @param string $plugin The name of the plugin
      * @param array $params Any parameter to pass to the plugin
      * @return String the result of the plugin.
      */

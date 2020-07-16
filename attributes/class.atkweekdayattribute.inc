@@ -53,7 +53,7 @@ class atkWeekdayAttribute extends atkNumberAttribute
     /**
      * Constructor.
      *
-     * @param String $name Name of the attribute (unique within a node, and
+     * @param string $name Name of the attribute (unique within a node, and
      *                     corresponds to the name of the datetime field
      *                     in the database where the stamp is stored.
      * @param int $extraOrFlags Flags for the attribute or array of extra options
@@ -95,9 +95,9 @@ class atkWeekdayAttribute extends atkNumberAttribute
      * attribute's value.
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($record = "", $fieldprefix = "", $mode = 'add')
@@ -140,7 +140,7 @@ class atkWeekdayAttribute extends atkNumberAttribute
      * In this case, the timestamp is returned in human readable format.
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $mode The display mode ("view" for viewpages, or "list"
+     * @param string $mode The display mode ("view" for viewpages, or "list"
      *                     for displaying in recordlists). The regular
      *                     atkAttribute does not use this parameter, but
      *                     derived attributes may use it to distinguish

@@ -16,12 +16,12 @@
  */
 
 /**
- * Wrapper for turning any attribute into a multilanguage enabled 
+ * Wrapper for turning any attribute into a multilanguage enabled
  * attribute.
  *
- * This attribute implements the 'decorator' pattern. It takes an 
+ * This attribute implements the 'decorator' pattern. It takes an
  * attribute as constructor parameter, and turns that attribute into
- * an internationalised attribute, compatible with the existing 
+ * an internationalised attribute, compatible with the existing
  * atkMl*Attributes.
  *
  * <i>Example usages</i>
@@ -60,7 +60,7 @@ class atkMlWrapper extends atkAttribute
 
     /**
      * Return possible languages
-     * 
+     *
      * @return array with supported languages
      */
     function getLanguages()
@@ -140,7 +140,7 @@ class atkMlWrapper extends atkAttribute
 
     /**
      * Register a piece of script to execute upon language change
-     * 
+     *
      * @return string with script code
      */
     function getMlSwitchCode()
@@ -153,7 +153,7 @@ class atkMlWrapper extends atkAttribute
      * while still posting its value. (<input type="hidden">)
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
      * @return String A piece of htmlcode with hidden form elements that post
      *                this attribute's value without showing it.
@@ -176,7 +176,7 @@ class atkMlWrapper extends atkAttribute
      * methods to prepare a value for display, unless $mode is "cvs".
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $mode The display mode ("view" for viewpages, or "list"
+     * @param string $mode The display mode ("view" for viewpages, or "list"
      *                     for displaying in recordlists, "edit" for
      *                     displaying in editscreens, "add" for displaying in
      *                     add screens. "csv" for csv files. Applications can
@@ -198,11 +198,11 @@ class atkMlWrapper extends atkAttribute
      * This method is called by the node if it wants the data needed to create
      * an edit form.
      *
-     * @param String $mode     the edit mode ("add" or "edit")
+     * @param string $mode     the edit mode ("add" or "edit")
      * @param array  $arr      pointer to the edit array
      * @param array  $defaults pointer to the default values array
      * @param array  $error    pointer to the error array
-     * @param String $fieldprefix   the fieldprefix
+     * @param string $fieldprefix   the fieldprefix
      */
     function addToEditArray($mode, &$arr, &$defaults, &$error, $fieldprefix)
     {
@@ -269,7 +269,7 @@ class atkMlWrapper extends atkAttribute
      * @param array $record The record that holds the value for this
      *                      attribute. If an error occurs, the error will
      *                      be stored in the 'atkerror' field of the record.
-     * @param String $mode The mode for which should be validated ("add" or
+     * @param string $mode The mode for which should be validated ("add" or
      *                     "update")
      */
     function validate(&$record, $mode)
@@ -289,16 +289,16 @@ class atkMlWrapper extends atkAttribute
      * this method.
      *
      * @param atkQuery $query The SQL query object
-     * @param String $tablename The name of the table of this attribute
-     * @param String $fieldaliasprefix Prefix to use in front of the alias
+     * @param string $tablename The name of the table of this attribute
+     * @param string $fieldaliasprefix Prefix to use in front of the alias
      *                                 in the query.
-     * @param Array $rec The record that contains the value of this attribute.
+     * @param array $rec The record that contains the value of this attribute.
      * @param int $level Recursion level if relations point to eachother, an
      *                   endless loop could occur if they keep loading
      *                   eachothers data. The $level is used to detect this
      *                   loop. If overriden in a derived class, any subcall to
      *                   an addToQuery method should pass the $level+1.
-     * @param String $mode Indicates what kind of query is being processing:
+     * @param string $mode Indicates what kind of query is being processing:
      *                     This can be any action performed on a node (edit,
      *                     add, etc) Mind you that "add" and "update" are the
      *                     actions that store something in the database,
@@ -390,7 +390,7 @@ class atkMlWrapper extends atkAttribute
      * Framework method. It should not be necesary to call this method
      * directly.
      *
-     * @param String $mode The type of storage ("add" or "update")
+     * @param string $mode The type of storage ("add" or "update")
      *
      * @return int Bitmask containing information about storage requirements.
      *             Note that since it is a bitmask, multiple storage types
@@ -422,7 +422,7 @@ class atkMlWrapper extends atkAttribute
      * Framework method. It should not be necesary to call this method
      * directly.
      *
-     * @param String $mode The type of load (view,admin,edit etc)
+     * @param string $mode The type of load (view,admin,edit etc)
      * @param boolean $searching
      *
      * @return int Bitmask containing information about load requirements.
@@ -459,10 +459,10 @@ class atkMlWrapper extends atkAttribute
      * searchcondition() also immediately adds the search condition.
      *
      * @param atkQuery $query     The query object where the search condition should be placed on
-     * @param String $table       The name of the table in which this attribute
+     * @param string $table       The name of the table in which this attribute
      *                              is stored
      * @param mixed $value        The value the user has entered in the searchbox
-     * @param String $searchmode  The searchmode to use. This can be any one
+     * @param string $searchmode  The searchmode to use. This can be any one
      *                              of the supported modes, as returned by this
      *                              attribute's getSearchModes() method.
      * @return String The searchcondition to use.

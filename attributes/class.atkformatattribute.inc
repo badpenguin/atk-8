@@ -40,9 +40,9 @@ class atkFormatAttribute extends atkAttribute
      *       Finally, there should be an option if 'AA' accepts 'z' or only
      *       'zz'
      *
-     * @param String $name Name of the attribute (unique within a node, and
+     * @param string $name Name of the attribute (unique within a node, and
      *                     corresponds to a field in the database.
-     * @param String $format The format specifier. Each character defines
+     * @param string $format The format specifier. Each character defines
      *                       what type of input is expected.
      *                       Currently supported format characters:
      *                       * - Accept any character
@@ -67,7 +67,7 @@ class atkFormatAttribute extends atkAttribute
      * with triggerError if a value is not valid.
      *
      * @param array $record The record to validate
-     * @param String $mode Insert or update mode (ignored by this attribute)
+     * @param string $mode Insert or update mode (ignored by this attribute)
      */
     function validate(&$record, $mode)
     {
@@ -89,7 +89,7 @@ class atkFormatAttribute extends atkAttribute
      * attribute's value.
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
      * @return String A piece of htmlcode for editing this attribute
      */
@@ -130,9 +130,9 @@ class atkFormatAttribute extends atkAttribute
      * @access private
      * @param int $size The maximum size of the input box.
      * @param int $elemnr The position of the element within the format.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of the html element.
-     * @param String $value The current value.
+     * @param string $value The current value.
      * @return String An html input element string.
      */
     function _inputField($size, $elemnr, $fieldprefix, $value)
@@ -147,7 +147,7 @@ class atkFormatAttribute extends atkAttribute
      * @access private
      * @param char $specifier Char indicating the format that the String must
      *                        adhere to. Can be any of #9A*
-     * @param String $string The string to check.
+     * @param string $string The string to check.
      * @return boolean True if string matches the specifier, false if not.
      */
     function _checkString($specifier, $string)
@@ -231,7 +231,7 @@ class atkFormatAttribute extends atkAttribute
      * Converts a string value into a structural breakdown into
      * elements of the format string.
      * @access private
-     * @param String $valuestr The value to convert
+     * @param string $valuestr The value to convert
      * @return array Array containing all values.
      */
     function _valueBreakDown($valuestr)
@@ -305,7 +305,7 @@ class atkFormatAttribute extends atkAttribute
      * @todo specifier type is not yet used.
      * @param char $type The specifier (9#A*)
      * @param int $size The desired size of the value.
-     * @param String $value The value to pad.
+     * @param string $value The value to pad.
      * @return String The padded value.
      */
     function _pad($type, $size, $value)

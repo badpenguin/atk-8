@@ -44,7 +44,7 @@ class atkIndexPage
     var $m_output;
 
     /**
-     * @var Array
+     * @var array
      */
     var $m_user;
     var $m_topsearchpiece;

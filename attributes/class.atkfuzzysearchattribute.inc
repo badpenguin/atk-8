@@ -47,7 +47,7 @@ class atkFuzzySearchAttribute extends atkAttribute
 
     /**
      * The matches we got from the search
-     * @var Array
+     * @var array
      * @access private
      */
     var $m_matches = array();
@@ -74,12 +74,12 @@ class atkFuzzySearchAttribute extends atkAttribute
      * - select           make the user select
      * - selectperkeyword make the user select for every keyword
      * - multiselect      ?
-     * @param String $name       The name of the attribute
-     * @param String $searchnode The node to search on
-     * @param String $callback   The function of the owner node to call
+     * @param string $name       The name of the attribute
+     * @param string $searchnode The node to search on
+     * @param string $callback   The function of the owner node to call
      *                           with the record to store and the results of the search
      *                           Has to return a status (true or false)
-     * @param String $mode       The mode of the search (all(default)|first|firstperkeyword|
+     * @param string $mode       The mode of the search (all(default)|first|firstperkeyword|
      *                                                   select|selectperkeyword|multiselect)
      * @param int    $flags      The flags of the attribute
      * @param int    $size       The size of the search field
@@ -99,7 +99,7 @@ class atkFuzzySearchAttribute extends atkAttribute
     /**
      * Creates an instance of the node we are searching on and stores it
      * in a member variable ($this->m_searchnodeInstance)
-     * 
+     *
      * @return boolean
      */
     function createSearchNodeInstance()
@@ -120,7 +120,7 @@ class atkFuzzySearchAttribute extends atkAttribute
      * @param array $rec    The record that holds the value for this
      *                      attribute. If an error occurs, the error will
      *                      be stored in the 'atkerror' field of the record.
-     * @param String $mode The mode for which should be validated ("add" or
+     * @param string $mode The mode for which should be validated ("add" or
      *                     "update")
      */
     function validate(&$rec, $mode)
@@ -166,9 +166,9 @@ class atkFuzzySearchAttribute extends atkAttribute
      * attribute's value.
      *
      * @param array $rec The record that holds the value for this attribute.
-     * @param String $prefix The fieldprefix to put in front of the name
+     * @param string $prefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($rec = "", $prefix = "", $mode = "")
@@ -258,8 +258,8 @@ class atkFuzzySearchAttribute extends atkAttribute
 
     /**
      * The actual function that does the searching
-     * @param String $searchstring The string to search for
-     * @return Array The matches
+     * @param string $searchstring The string to search for
+     * @return array The matches
      */
     function getMatches($searchstring)
     {
@@ -366,7 +366,7 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
     function load()
     {
-        
+
     }
 
     /**
@@ -374,7 +374,7 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
     function addToQuery()
     {
-        
+
     }
 
     /**
@@ -382,7 +382,7 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
     function hide()
     {
-        
+
     }
 
     /**
@@ -390,12 +390,12 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
 	public function search($record = array(), $extended = false, $fieldprefix = "", atkDataGrid $grid = null)
     {
-        
+
     }
 
     /**
      * Dummy method to prevent loading/storing of data.
-     * @return Array empty array
+     * @return array empty array
      */
     function getSearchModes()
     {
@@ -407,7 +407,7 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
     function searchCondition()
     {
-        
+
     }
 
     /**
@@ -415,7 +415,7 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
     function getSearchCondition()
     {
-        
+
     }
 
     /**
@@ -423,7 +423,7 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
     function fetchMeta()
     {
-        
+
     }
 
     /**
@@ -431,7 +431,7 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
     function dbFieldSize()
     {
-        
+
     }
 
     /**
@@ -439,14 +439,14 @@ class atkFuzzySearchAttribute extends atkAttribute
      */
     function dbFieldType()
     {
-        
+
     }
 
     /**
      * Adds a filter on the instance of the searchnode
-     * @param String $filter The fieldname you want to filter OR a SQL where
+     * @param string $filter The fieldname you want to filter OR a SQL where
      *                       clause expression.
-     * @param String $value Required value. (Ommit this parameter if you pass
+     * @param string $value Required value. (Ommit this parameter if you pass
      *                      an SQL expression for $filter.)
      */
     function addSearchFilter($filter, $value = "")
@@ -467,7 +467,7 @@ class atkFuzzySearchAttribute extends atkAttribute
 
     /**
      * Sets the destination filter.
-     * @param String $filter The destination filter.
+     * @param string $filter The destination filter.
      */
     function setDestinationFilter($filter)
     {

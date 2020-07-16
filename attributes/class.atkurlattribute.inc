@@ -67,7 +67,7 @@ class atkUrlAttribute extends atkAttribute
     /**
      * The atk url attribute
      *
-     * @param String $name Name of the attribute (unique within a node, and
+     * @param string $name Name of the attribute (unique within a node, and
      *                     for most attributes, corresponds to a field in
      *                     the database.
      * @param int $flags Flags for the attribute.
@@ -101,7 +101,7 @@ class atkUrlAttribute extends atkAttribute
      * Returns a displayable string for this value, to be used in HTML pages.
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $mode The display mode ("view" for viewpages, or "list"
+     * @param string $mode The display mode ("view" for viewpages, or "list"
      *                     for displaying in recordlists, "edit" for
      *                     displaying in editscreens, "add" for displaying in
      *                     add screens. "csv" for csv files. Applications can
@@ -184,7 +184,7 @@ class atkUrlAttribute extends atkAttribute
      * @param array $record The record that holds the value for this
      *                      attribute. If an error occurs, the error will
      *                      be stored in the 'atkerror' field of the record.
-     * @param String $mode The mode for which should be validated ("add" or
+     * @param string $mode The mode for which should be validated ("add" or
      *                     "update")
      */
     function validate(&$record, $mode)
@@ -198,7 +198,7 @@ class atkUrlAttribute extends atkAttribute
      * @param array $record Record that contains value to be validated.
      *                      Errors are saved in this record, in the 'atkerror'
      *                      field.
-     * @param String $mode Validation mode. Can be either "add" or "update"
+     * @param string $mode Validation mode. Can be either "add" or "update"
      * @param boolean $show_error fire a triggerError when validation fails
      */
     function validateUrl(&$record, $mode, $show_error = false)

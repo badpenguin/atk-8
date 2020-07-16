@@ -50,7 +50,7 @@ class atkExcelCSVRecordList extends atkCustomRecordList
      * Replace line feeds within cell values with another string.
      * Note: Excel 2003 requires this feature for csv imports.
      *
-     * @param String $string The line feed replacement string
+     * @param string $string The line feed replacement string
      */
     function setLfReplacementString($string)
     {

@@ -21,7 +21,7 @@
  *
  * All db drivers should derive a class from this baseclass and implement
  * the necessary methods.
- * 
+ *
  * @todo add bind parameter support
  *
  * @author Ivo Jansch <ivo@achievo.org>
@@ -119,7 +119,7 @@ class atkQuery
     /**
      * Wether or not a field should be quoted in a query
      *
-     * @var Array
+     * @var array
      * @access private
      */
     var $m_quotedfields = array();
@@ -129,7 +129,7 @@ class atkQuery
      * if any of these are used ATK MUST quote the fieldname
      * or the database engine will not be able to make any sense of the queries.
      *
-     * @var Array
+     * @var array
      * @access private
      */
     var $m_reservedNames = array('from', 'select', 'order', 'group', 'release', 'index', 'table');
@@ -161,7 +161,7 @@ class atkQuery
 
     /**
      * Sets the database instance.
-     * 
+     *
      * @var atkDb $db database instance
      */
     public function setDb($db)
@@ -228,13 +228,13 @@ class atkQuery
 
     /**
      * Add's a sequence field to the query.
-     * 
+     *
      * @param string $fieldName field name
      * @param int    $value     field to store the new sequence value in, note certain drivers
-     *                          might populate this field only after the insert query has been 
+     *                          might populate this field only after the insert query has been
      *                          executed
      * @param string $seqName   sequence name (optional for certain drivers)
-     * 
+     *
      * @return atkQuery
      */
     public function addSequenceField($fieldName, &$value, $seqName = null)
@@ -337,7 +337,7 @@ class atkQuery
     /**
      * Add a group-by statement
      *
-     * @param String $element Group by expression
+     * @param string $element Group by expression
      * @return atkQuery The query object itself (for fluent usage)
      */
     function &addGroupBy($element)
@@ -349,7 +349,7 @@ class atkQuery
     /**
      * Add order-by statement
      *
-     * @param String $element Order by expression
+     * @param string $element Order by expression
      * @return atkQuery The query object itself (for fluent usage)
      */
     function &addOrderBy($element)
@@ -360,7 +360,7 @@ class atkQuery
 
     /**
      * Add a query condition (conditions are where-expressions that are AND-ed)
-     * 
+     *
      * @param string $condition Condition
      * @return atkQuery The query object itself (for fluent usage)
      */
@@ -377,7 +377,7 @@ class atkQuery
 
     /**
      * Sets this queries search method.
-     * 
+     *
      * @param string $searchMethod search method
      */
     public function setSearchMethod($searchMethod)
@@ -390,7 +390,7 @@ class atkQuery
      * Add search condition to the query. Basically similar to addCondition, but
      * searchconditions make use of the searchmode setting to determine whether the
      * different searchconditions should be and'ed or or'ed.
-     * 
+     *
      * @param string $condition Condition
      * @return atkQuery The query object itself (for fluent usage)
      */
@@ -405,8 +405,8 @@ class atkQuery
      * Set the 'distinct' mode for the query.
      * If set to true, a 'SELECT DISTINCT' will be performed. If set to false,
      * a regular 'SELECT' will be performed.
-     * 
-     * @param Bool $distinct Set to true to perform a distinct select,
+     *
+     *  @param boolean $distinct Set to true to perform a distinct select,
      *                          false for a regular select.
      * @return atkQuery The query object itself (for fluent usage)
      */
@@ -502,8 +502,8 @@ class atkQuery
 
     /**
      * Add FROM clause to query.
-     * 
-     * @param String $query The query
+     *
+     * @param string $query The query
      */
     function _addFrom(&$query)
     {
@@ -533,7 +533,7 @@ class atkQuery
     /**
      * Add limiting clauses to the query.
      * Default implementation: no limit supported. Derived classes should implement this.
-     * 
+     *
      * @param string $query The query to add the limiter to
      */
     function _addLimiter(&$query)
@@ -544,7 +544,7 @@ class atkQuery
     /**
      * Add the ORDER BY clause
      *
-     * @param String $query The query
+     * @param string $query The query
      */
     function _addOrderBy(&$query)
     {
@@ -712,9 +712,9 @@ class atkQuery
 
     /**
      * Generate a searchcondition that checks if the field is null.
-     * 
-     * @param String $field
-     * @param Bool $emptyStringIsNull
+     *
+     * @param string $field
+     *  @param boolean $emptyStringIsNull
      */
     function nullCondition($field, $emptyStringIsNull = false)
     {
@@ -726,9 +726,9 @@ class atkQuery
 
     /**
      * Generate a searchcondition that checks if the field is not null.
-     * 
-     * @param String $field
-     * @param Bool $emptyStringIsNull
+     *
+     * @param string $field
+     *  @param boolean $emptyStringIsNull
      */
     function notNullCondition($field, $emptyStringIsNull = false)
     {
@@ -770,9 +770,9 @@ class atkQuery
 
     /**
      * Generate a searchcondition that checks whether $field contains $value .
-     * 
-     * @param String $field The field
-     * @param String $value The value
+     *
+     * @param string $field The field
+     * @param string $value The value
      * @return String The substring condition
      */
     function substringCondition($field, $value)
@@ -786,9 +786,9 @@ class atkQuery
 
     /**
      * Generate a searchcondition that accepts '*' as wildcard character.
-     * 
-     * @param String $field
-     * @param String $value
+     *
+     * @param string $field
+     * @param string $value
      */
     function wildcardCondition($field, $value)
     {
@@ -801,9 +801,9 @@ class atkQuery
 
     /**
      * Generate searchcondition with greater than
-     * 
-     * @param String $field The database field
-     * @param String $value The value
+     *
+     * @param string $field The database field
+     * @param string $value The value
      */
     function greaterthanCondition($field, $value)
     {
@@ -816,9 +816,9 @@ class atkQuery
 
     /**
      * Generate searchcondition with greater than
-     * 
-     * @param String $field The database field
-     * @param String $value The value
+     *
+     * @param string $field The database field
+     * @param string $value The value
      */
     function greaterthanequalCondition($field, $value)
     {
@@ -831,9 +831,9 @@ class atkQuery
 
     /**
      * Generate searchcondition with less than
-     * 
-     * @param String $field The database field
-     * @param String $value The value
+     *
+     * @param string $field The database field
+     * @param string $value The value
      */
     function lessthanCondition($field, $value)
     {
@@ -846,9 +846,9 @@ class atkQuery
 
     /**
      * Generate searchcondition with less than
-     * 
-     * @param String $field The database field
-     * @param String $value The value
+     *
+     * @param string $field The database field
+     * @param string $value The value
      */
     function lessthanequalCondition($field, $value)
     {
@@ -862,10 +862,10 @@ class atkQuery
     /**
      * Get the between condition
      *
-     * @param String $field The database field
+     * @param string $field The database field
      * @param Mixed $value1 The first value
      * @param Mixed $value2 The second value
-     * @param Bool $quote Add quotes?
+     *  @param boolean $quote Add quotes?
      * @return unknown
      */
     function betweenCondition($field, $value1, $value2, $quote = true)
@@ -893,7 +893,7 @@ class atkQuery
      * If we set a m_fieldquote you can pass a field to this function and it will
      * quote all the identifiers (db, table, column, etc...) in the field.
      *
-     * @param String $field The field to add quotes too
+     * @param string $field The field to add quotes too
      * @return The quoted field, if we have a fieldquote
      */
     function quoteField($field)
@@ -920,8 +920,8 @@ class atkQuery
      * Quote an array of fields if m_fieldquote is set.
      * Uses $this->quoteField($field)
      *
-     * @param Array $fields The fields to add quotes to
-     * @return Array The quoted fields
+     * @param array $fields The fields to add quotes to
+     * @return array The quoted fields
      */
     function quoteFields($fields)
     {

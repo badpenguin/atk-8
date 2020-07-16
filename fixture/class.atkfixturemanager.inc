@@ -83,7 +83,7 @@ class atkFixtureManager
 
         if (!isset($this->m_loaders[$class])) {
             atkimport('atk.fixture.atkabstractfixtureloader');
-            $this->m_loaders[$class] = &atknew($class);
+            $this->m_loaders[$class] = atknew($class);
         }
 
         return $this->m_loaders[$class];
@@ -113,7 +113,7 @@ class atkFixtureManager
             count($parts) == 2 &&
             !is_dir(atkconfig("atkroot") . $parts[0] . '/' . $parts[1]) &&
             moduleExists($parts[0])) {
-            $module = &getModule($parts[0]);
+            $module = getModule($parts[0]);
             $path = $module->getFixturePath($fullname);
         }
 

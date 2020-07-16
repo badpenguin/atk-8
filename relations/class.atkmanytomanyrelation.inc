@@ -52,8 +52,8 @@ class atkManyToManyRelation extends atkRelation
 
     /**
      * Constructor
-     * @param String $name The name of the relation
-     * @param String $link The full name of the node that is used as
+     * @param string $name The name of the relation
+     * @param string $link The full name of the node that is used as
      *                     intermediairy node. The intermediairy node is
      *                     assumed to have 2 attributes that are named
      *                     after the nodes at both ends of the relation.
@@ -63,7 +63,7 @@ class atkManyToManyRelation extends atkRelation
      *                     named 'project' and one that is named 'activity'.
      *                     You can set your own keys by calling setLocalKey()
      *                     and setRemoteKey()
-     * @param String $destination The full name of the node that is the other
+     * @param string $destination The full name of the node that is the other
      *                            end of the relation.
      * @param int $flags Flags for the relation.
      */
@@ -325,7 +325,7 @@ class atkManyToManyRelation extends atkRelation
      * Determine the name of the foreign key based on the name of the
      *  relation.
      *
-     * @param String $name the name of the relation
+     * @param string $name the name of the relation
      * @return the probable name of the foreign key
      */
     function determineKeyName($name)
@@ -347,7 +347,7 @@ class atkManyToManyRelation extends atkRelation
     /**
      * Change the name of the attribute of the intermediary node that points
      * to the node on the other side of the relation.
-     * @param String $attributename The name of the attribute.
+     * @param string $attributename The name of the attribute.
      */
     function setRemoteKey($attributename)
     {
@@ -358,7 +358,7 @@ class atkManyToManyRelation extends atkRelation
      * Returns a displayable string for this value.
      * 
      * @param array $record The record that holds the value for this attribute
-     * @param String $mode The display mode ("view" for viewpages, or "list"
+     * @param string $mode The display mode ("view" for viewpages, or "list"
      *                     for displaying in recordlists, "edit" for
      *                     displaying in editscreens, "add" for displaying in
      *                     add screens. "csv" for csv files. Applications can
@@ -402,9 +402,9 @@ class atkManyToManyRelation extends atkRelation
      * Dummy function
      * 
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($record = "", $fieldprefix = "", $mode = "")
@@ -415,16 +415,16 @@ class atkManyToManyRelation extends atkRelation
     /**
      * Dummy function (we don't add ourselves to the query)
      * @param atkQuery $query The SQL query object
-     * @param String $tablename The name of the table of this attribute
-     * @param String $fieldaliasprefix Prefix to use in front of the alias
+     * @param string $tablename The name of the table of this attribute
+     * @param string $fieldaliasprefix Prefix to use in front of the alias
      *                                 in the query.
-     * @param Array $rec The record that contains the value of this attribute.
+     * @param array $rec The record that contains the value of this attribute.
      * @param int $level Recursion level if relations point to eachother, an
      *                   endless loop could occur if they keep loading
      *                   eachothers data. The $level is used to detect this
      *                   loop. If overriden in a derived class, any subcall to
      *                   an addToQuery method should pass the $level+1.
-     * @param String $mode Indicates what kind of query is being processing:
+     * @param string $mode Indicates what kind of query is being processing:
      *                     This can be any action performed on a node (edit,
      *                     add, etc) Mind you that "add" and "update" are the
      *                     actions that store something in the database,
@@ -686,7 +686,7 @@ class atkManyToManyRelation extends atkRelation
      * while still posting its value. (<input type="hidden">)
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
      * @return String A piece of htmlcode with hidden form elements that post
      *                This attribute's value without showing it.
@@ -761,10 +761,10 @@ class atkManyToManyRelation extends atkRelation
      * Creates an search condition for a given search value
      * 
      * @param atkQuery $query The query to which the condition will be added.
-     * @param String $table The name of the table in which this attribute
+     * @param string $table The name of the table in which this attribute
      *                      is stored
      * @param mixed $value The value the user has entered in the searchbox
-     * @param String $searchmode The searchmode to use. This can be any one
+     * @param string $searchmode The searchmode to use. This can be any one
      *                           of the supported modes, as returned by this
      *                           attribute's getSearchModes() method.
      * @param string $fieldaliasprefix optional prefix for the fieldalias in the table
@@ -826,7 +826,7 @@ class atkManyToManyRelation extends atkRelation
      * If the template field is NULL, although it is not specified in the NOT IN (1,2,3), it will not be deleted.
      * An extra check can be added just in case the template value is not NULL but 0 or '' (which would delete the phase).
      *
-     * @param String $filter The filter that is used when deleting records in the store function.
+     * @param string $filter The filter that is used when deleting records in the store function.
      * @return none
      */
     function setStoreDeletionFilter($filter)

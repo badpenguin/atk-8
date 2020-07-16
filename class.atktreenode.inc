@@ -61,7 +61,7 @@ class atkTreeNode extends atkNode
 
     /**
      * Constructor
-     * @param String $name Node name
+     * @param string $name Node name
      * @param int $flags Node flags
      */
     function __construct($name, $flags = 0)
@@ -217,7 +217,7 @@ class atkTreeNode extends atkNode
      */
     function getIcon($name)
     {
-        $theme = &atkInstance("atk.ui.atktheme");
+        $theme = atkInstance("atk.ui.atktheme");
         return $theme->iconPath("tree_$name", "tree", $this->m_module);
     }
 
@@ -659,7 +659,7 @@ class atkTreeNode extends atkNode
             }
         }
 
-        $db = &$this->getDb();
+        $db = $this->getDb();
         $query = "DELETE FROM " . $this->m_table . " WHERE " . $selector;
         $db->query($query);
 
@@ -699,7 +699,7 @@ class atkTreeNode extends atkNode
             }
         }
 
-        $db = &$this->getDb();
+        $db = $this->getDb();
         $query = "DELETE FROM " . $this->m_table . " WHERE " . $selector;
         $db->query($query);
     }

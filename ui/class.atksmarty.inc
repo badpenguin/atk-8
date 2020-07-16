@@ -109,7 +109,7 @@ class atkSmarty
     /**
      * Add a plugin dir to Smarty.
      * @static
-     * @param String $path The plugin dir to add
+     * @param string $path The plugin dir to add
      */
     function addPluginDir($path)
     {

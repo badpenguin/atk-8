@@ -30,9 +30,9 @@ atksession();
 atksecure();
 
 $page = &atkNew("atk.ui.atkpage");
-$ui = &atkInstance("atk.ui.atkui");
-$theme = &atkInstance("atk.ui.atktheme");
-$output = &atkInstance("atk.ui.atkoutput");
+$ui = atkInstance("atk.ui.atkui");
+$theme = atkInstance("atk.ui.atktheme");
+$output = atkInstance("atk.ui.atkoutput");
 
 $page->register_style($theme->stylePath("style.css"));
 $page->register_style($theme->stylePath("top.css"));

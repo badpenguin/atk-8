@@ -196,7 +196,7 @@ function elapsed()
  * Function atkdebug
  *
  * Adds debug text to the debug log
- * @param String $txt The text that will be added to the log
+ * @param string $txt The text that will be added to the log
  * @param Integer $flags An optional combination of DEBUG_ flags
  */
 function atkdebug($txt, $flags = 0)
@@ -234,7 +234,7 @@ function atkdebug($txt, $flags = 0)
  * Send a notice to the debug log.
  * A notice doesn't get show unless your debug level is 3 or higher.
  *
- * @param String $txt The text that will be added to the log
+ * @param string $txt The text that will be added to the log
  */
 function atknotice($txt)
 {
@@ -438,8 +438,8 @@ function atk_get_trace($format = "html")
 /**
  * Writes info to a given file.
  * Useful for writing to any log files.
- * @param String $text text to write to the logfile
- * @param String $file the file name
+ * @param string $text text to write to the logfile
+ * @param string $file the file name
  */
 function atkWriteToFile($text, $file = "")
 {
@@ -455,7 +455,7 @@ function atkWriteToFile($text, $file = "")
  * Please notice this feature will heavily decrease the performance
  * and should therefore only be used for debugging and development
  * purposes.
- * @param String $text text to write to the logfile
+ * @param string $text text to write to the logfile
  */
 function atkWriteLog($text)
 {
@@ -471,11 +471,11 @@ function atkWriteLog($text)
  * @param mixed $string string or array of strings containing the name(s) of the string to return
  *                                when an array of strings is passed, the second will be the fallback if
  *                                the first one isn't found, and so forth
- * @param String $module module in which the language file should be looked for,
+ * @param string $module module in which the language file should be looked for,
  *                                defaults to core module with fallback to ATK
- * @param String $node the node to which the string belongs
- * @param String $lng ISO 639-1 language code, defaults to config variable
- * @param String $firstfallback the first module to check as part of the fallback
+ * @param string $node the node to which the string belongs
+ * @param string $lng ISO 639-1 language code, defaults to config variable
+ * @param string $firstfallback the first module to check as part of the fallback
  * @param boolean $nodefaulttext if true, then it doesn't return a default text
  *                                when it can't find a translation
  * @return String the string from the languagefile
@@ -495,11 +495,11 @@ function text($string, $node = "", $module = "", $lng = "", $firstfallback = "",
  * @param mixed $string string or array of strings containing the name(s) of the string to return
  *                                when an array of strings is passed, the second will be the fallback if
  *                                the first one isn't found, and so forth
- * @param String $module module in which the language file should be looked for,
+ * @param string $module module in which the language file should be looked for,
  *                                defaults to core module with fallback to ATK
- * @param String $node the node to which the string belongs
- * @param String $lng ISO 639-1 language code, defaults to config variable
- * @param String $firstfallback the first module to check as part of the fallback
+ * @param string $node the node to which the string belongs
+ * @param string $lng ISO 639-1 language code, defaults to config variable
+ * @param string $firstfallback the first module to check as part of the fallback
  * @param boolean $nodefaulttext if true, then it doesn't return a default text
  *                                when it can't find a translation
  * @param boolean $modulefallback Wether or not to use all the modules of the application in the fallback,
@@ -570,7 +570,7 @@ function atkHref($url, $name = "", $sessionstatus = SESSION_DEFAULT, $saveform =
  * </p>
  * @param array $array2 [optional]
  * @param array $_ [optional]
- * @return Array The result of the merge between $array1 and $array2
+ * @return array The result of the merge between $array1 and $array2
  */
 function atk_array_merge(array $array1, array $array2 = null, array $_ = null)
 {
@@ -610,8 +610,8 @@ function atk_array_merge_recursive($array1, $array2)
  * association in case of numerical indexes. Supports unlimited number
  * of arrays as arguments.
  *
- * @param Array $array unlimited number of arrays
- * @return Array The result of the merge between the given arrays
+ * @param array $array unlimited number of arrays
+ * @return array The result of the merge between the given arrays
  */
 function atk_array_merge_keys()
 {
@@ -632,7 +632,7 @@ function atk_array_merge_keys()
  * doesn't get an error message.
  *
  * @param mixed $needle The value to search for.
- * @param Array $haystack The array to search.
+ * @param array $haystack The array to search.
  * @param boolean $strict If true, type must match.
  * @return bool wether or not the value is in the array
  */
@@ -738,7 +738,7 @@ function encodeKeyValueSet($set)
 /**
  * Same as strip_slashes from php, but if the passed value is an array,
  * all elements of the array are stripped. Recursive function.
- * @param var &$var the value/array to strip the slashes of
+ * @param string|string[] &$var the value/array to strip the slashes of
  */
 function atk_stripslashes(&$var)
 {
@@ -923,7 +923,7 @@ function _wordwrap($line)
 
 /**
  * Wrapper for escapeSQL function
- * @param String $string The string to escape.
+ * @param string $string The string to escape.
  * @param boolean $wildcard Set to true to convert wildcard chars ('%').
  *                          False (default) will leave them unescaped.
  * @return String A SQL compatible version of the input string.
@@ -945,7 +945,7 @@ function atkversion()
 
 /**
  * Convenience wrapper for atkDb::getInstance()
- * @param String $conn The name of the connection to retrieve
+ * @param string $conn The name of the connection to retrieve
  * @return atkDb Database connection instance
  */
 function &atkGetDb($conn = 'default', $reset = false, $mode = "r")
@@ -977,7 +977,7 @@ function atkPopup($target, $params, $winName, $width, $height, $scroll = 'no', $
  * Adds new element to error array en $record. When
  * $msg is empty the multilange error string is used.
  * @param array &$rec var in which to add element to error array
- * @param var $attrib attributename or an array with attribute names
+ * @param string|string[] $attrib attributename or an array with attribute names
  * @param string $err multilanguage error string
  * @param string $msg optinal error string
  */
@@ -1068,8 +1068,8 @@ if (!function_exists("var_export")) {
 /**
  * Does a var dump of an array. Makes use of atkdebug for displaying the values.
  *
- * @param $a data to be displayed
- * @param $d name of the data that's being displayed.
+ * @param mixed $a data to be displayed
+ * @param string $d name of the data that's being displayed.
  */
 function atk_var_dump($a, $d = "")
 {
@@ -1291,7 +1291,7 @@ function getUniqueID($sequence)
 /**
  * Checks if the variable $var contains the given flag ($flag).
  * @param string $var the variable which might contain flags
- * @param var $flag the flag you want to check for
+ * @param int $flag the flag you want to check for
  * @return bool result of check
  */
 function hasFlag($var, $flag)
@@ -1359,7 +1359,7 @@ function atkMakeHiddenPostVarsRecursion($key, $val, &$inputs, $name = null)
 
 /**
  * Returns a string representation of an action status.
- * @param var $status status of the action
+ * @param int $status status of the action
  *                    (ACTION_FAILED|ACTION_SUCCESS|ACTION_CANCELLED)
  */
 function atkActionStatus($status)
@@ -1498,7 +1498,7 @@ function atkTrace($msg = "")
  * Creates a session aware button
  * @param string $text the text to display on the button
  * @param string $url the url to use for the button
- * @param var $sessionstatus the session flags
+ * @param int $sessionstatus the session flags
  *              (SESSION_DEFAULT (default)|SESSION_NEW|SESSION_REPLACE|
  *               SESSION_NESTED|SESSION_BACK)
  * @param string $cssclass the css class the button should get
@@ -1604,7 +1604,7 @@ function getClassName($classpath, $class = true)
 /**
  * Returns a new instance of a class
  * @param string $fullclassname the ATK classname of the class ("map1.map2.classname")
- * @return obj instance of the class
+ * @return object instance of the class
  */
 function atknew($fullclassname)
 {
@@ -1620,7 +1620,7 @@ function atknew($fullclassname)
  * This works for all singletons that implement the getInstance() method.
  *
  * @param string $fullclassname the ATK classname of the class ("map1.map2.classname")
- * @return obj instance of the class
+ * @return object instance of the class
  * */
 function atkinstance($fullclassname, $reset = false)
 {
@@ -1677,7 +1677,7 @@ function atkArrayDiff($array1, $array2)
  * and if you have a value linking back to it's self in one way or another,
  * you may spend a loooong time waiting on your application
  *
- * @param Array $array The array that
+ * @param array $array The array that
  * @return bool Wether or not we found anything
  */
 function atk_value_in_array($array)
@@ -1701,8 +1701,8 @@ function atk_value_in_array($array)
  * and if you have a value linking back to it's self in one way or another,
  * you may spend a loooong time waiting on your application
  *
- * @param String $needle The value which will be searched in the haystack
- * @param Array $haystack Array with values
+ * @param string $needle The value which will be searched in the haystack
+ * @param array $haystack Array with values
  * @return Boolean True if needle exists in haystack
  */
 function atk_in_array_recursive($needle, $haystack)
@@ -1724,7 +1724,7 @@ function atk_in_array_recursive($needle, $haystack)
  * When there are predefined characters used this function will escape them
  * and returns right pattern.
  *
- * @param String $pattern Raw string to be escaped
+ * @param string $pattern Raw string to be escaped
  * @return String Returns a pattern with the predefined pattern escaped
  */
 function escapeForRegex($pattern)
@@ -1761,9 +1761,9 @@ function atkGetPostVar($key = "")
  * htmlentities function, but falls back to atkGetCharset() instead of
  * PHP's default charset, if no charset is given.
  *
- * @param String $string string to convert
+ * @param string $string string to convert
  * @param int $quote_style quote style (defaults to ENT_COMPAT)
- * @param String $charset character set to use (default to atkGetCharset())
+ * @param string $charset character set to use (default to atkGetCharset())
  *
  * @return String encoded string
  */
@@ -1777,9 +1777,9 @@ function atk_htmlentities($string, $quote_style = ENT_COMPAT, $charset = null)
  * html_entity_decode function, but falls back to atkGetCharset() instead of
  * PHP's default charset, if no charset is given.
  *
- * @param String $string string to convert
+ * @param string $string string to convert
  * @param int $quote_style quote style (defaults to ENT_COMPAT)
- * @param String $charset character set to use (default to atkGetCharset())
+ * @param string $charset character set to use (default to atkGetCharset())
  *
  * @return String encoded string
  */
@@ -1875,7 +1875,7 @@ function atkArrayNvl($array, $key, $defaultvalue = null)
  * method resolves the initial classname to its overloaded version
  * (if any).
  *
- * @param String $class The name of the class to resolve
+ * @param string $class The name of the class to resolve
  * @return String The resolved classname
  */
 function atkResolveClass($class)
@@ -1984,9 +1984,9 @@ function atkEcho($message)
  * Format date according to a format string, uses ATK's language files to translate
  * months, weekdays etc.
  *
- * @param $date    timestamp or date array (gotten with getdate())
- * @param $format  format string, compatible with PHP's date format functions
- * @param $weekday always include day-of-week or not
+ * @param int|array $date    timestamp or date array (gotten with getdate())
+ * @param string $format  format string, compatible with PHP's date format functions
+ * @param boolean $weekday always include day-of-week or not
  *
  * @return string formatted date
  */

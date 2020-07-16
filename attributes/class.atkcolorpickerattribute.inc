@@ -197,7 +197,7 @@ class atkColorPickerAttribute extends atkAttribute
      *
      * Other modes are not supported yet, but could be implemented in the future.
      *
-     * @param String $mode
+     * @param string $mode
      */
     function setColorMode($mode = NULL)
     {
@@ -222,9 +222,9 @@ class atkColorPickerAttribute extends atkAttribute
      * attribute's value.
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($record = "", $fieldprefix = "", $mode = "")
@@ -278,7 +278,7 @@ class atkColorPickerAttribute extends atkAttribute
      * @param array $record The record that holds the value for this
      *                      attribute. If an error occurs, the error will
      *                      be stored in the 'atkerror' field of the record.
-     * @param String $mode The mode for which should be validated ("add" or
+     * @param string $mode The mode for which should be validated ("add" or
      *                     "update")
      */
     function validate(&$record, $mode)
@@ -391,7 +391,7 @@ class atkColorPickerAttribute extends atkAttribute
     /**
      * Check if the determined type matches the mode that was set.
      *
-     * @param String $type
+     * @param string $type
      * @return True if valid, false otherwise
      */
     function checkTypeAndMode($type)
@@ -414,7 +414,7 @@ class atkColorPickerAttribute extends atkAttribute
     /**
      * Check the hex color (also based on the mode).
      *
-     * @param String $colors
+     * @param string $colors
      * @return True if valid, false otherwise
      */
     function checkHexColor($colors)

@@ -24,7 +24,7 @@
  * new version of 'someimg.jpg', then {atkthemeimg someimg.jpg} will
  * display the path to the default theme version of the same.
  *
- * Params: 
+ * Params:
  * - name: the name of the icon to retrieve
  * - type: the icon type (recordlist etc.)
  *
@@ -36,6 +36,6 @@
  */
 function smarty_function_atkthemeicon($params, &$smarty)
 {
-    $theme = &atkinstance("atk.ui.atktheme");
+    $theme =  atkinstance("atk.ui.atktheme");
     return $theme->iconPath($params['name'], $params['type']);
 }

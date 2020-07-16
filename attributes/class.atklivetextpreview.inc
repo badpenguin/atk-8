@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -15,7 +15,7 @@
  * $Id$
  */
 /**
- * Base class include 
+ * Base class include
  */
 useattrib("atkdummyattribute");
 
@@ -27,8 +27,8 @@ define("AF_LIVETEXT_NL2BR", AF_SPECIFIC_2);
 
 /**
  * The atkLiveTextPreview adds a preview to the page that previews realtime
- * the content of any atkAttribute or atkTextAttribute while it is being 
- * edited.   
+ * the content of any atkAttribute or atkTextAttribute while it is being
+ * edited.
  *
  * @author Ivo Jansch <ivo@achievo.org>
  * @package atk
@@ -42,11 +42,11 @@ class atkLiveTextPreview extends atkDummyAttribute
 
     /**
      * Constructor
-     * @param String $name The name of the attribute
-     * @param String $masterattribute The attribute that should be previewed.
+     * @param string $name The name of the attribute
+     * @param string $masterattribute The attribute that should be previewed.
      * @param int $flags Flags for this attribute. Use AF_LIVETEXT_SHOWLABEL if the
-     *                   preview should be labeled. 
-     *                   Use AF_LIVETEXT_NL2BR if the data should be nl2br'd before 
+     *                   preview should be labeled.
+     *                   Use AF_LIVETEXT_NL2BR if the data should be nl2br'd before
      *                   display.
      */
     function __construct($name, $masterattribute, $flags = 0)
@@ -57,9 +57,9 @@ class atkLiveTextPreview extends atkDummyAttribute
 
     /**
      * Edit record
-     * Thie method will display a live preview. 
+     * Thie method will display a live preview.
      * @param array $record Array with fields
-     * @param String $fieldprefix Fieldprefix for embedded forms.
+     * @param string $fieldprefix Fieldprefix for embedded forms.
      * @return String Parsed string
      */
 	function edit($record = "", $fieldprefix = "", $mode = "")

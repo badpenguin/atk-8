@@ -52,7 +52,7 @@ class atkCaptchaAttribute extends atkAttribute
      * @param array $record Array with fields
      * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return Parsed string
      */
     function edit($record = "", $fieldprefix = "", $mode = "")

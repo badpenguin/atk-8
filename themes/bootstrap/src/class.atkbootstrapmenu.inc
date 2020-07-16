@@ -91,7 +91,7 @@ class atkBootstrapMenu extends atkPlainMenu
         /** @var atkPage $page */
         $page = & atkinstance("atk.ui.atkpage");
         /** @var atkTheme $theme */
-        $theme = &atkinstance('atk.ui.atktheme');
+        $theme =  atkinstance('atk.ui.atktheme');
         $page->register_style($theme->absPath("atk/themes/bootstrap/lib/bootstrap-submenu/css/bootstrap-submenu.min.css"));
         $page->register_script($theme->absPath("atk/themes/bootstrap/lib/bootstrap-submenu/js/bootstrap-submenu.min.js"));
         $page->register_script($theme->absPath("atk/themes/bootstrap/js/menu.js"));

@@ -63,7 +63,7 @@ class atkCountryAttribute extends atkListAttribute
      * @param array $valueArray Array with values. If you don't use this parameter,
      *                    values are assumed to be the same as the options.
      * @param int $flags Flags for the attribute
-     * @param bool $defaulttocurrent Set the default selected country to the 
+     * @param bool $defaulttocurrent Set the default selected country to the
      *                               current country based on the atk language
      */
     function __construct($name, $switch = "world", $optionArray = "", $valueArray = "", $flags = 0, $defaulttocurrent = true)
@@ -126,9 +126,9 @@ class atkCountryAttribute extends atkListAttribute
      * attribute's value.
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($record = "", $fieldprefix = "", $mode='')

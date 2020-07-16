@@ -2,10 +2,10 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
- * @package atk   
+ * @package atk
  *
  * Contains a set of functions for general node manipulation.
  *
@@ -18,15 +18,16 @@
 
 /**
  * Tells ATK that a node exists, and what actions are available to
- * perform on that node.  Note that registerNode() is not involved in 
- * deciding which users can do what, only in establishing the full set 
+ * perform on that node.  Note that registerNode() is not involved in
+ * deciding which users can do what, only in establishing the full set
  * of actions that can potentially be performed on the node.
- * 
+ *
  * @param string $node name of the node
  * @param $action array with actions that can be performed on the node
  * @param $tabs array of tabnames for which security should be handled.
  *              Note that tabs that every user may see need not be
  *              registered.
+ * @param string $section
  */
 function registerNode($node, $action, $tabs = array(), $section = null)
 {

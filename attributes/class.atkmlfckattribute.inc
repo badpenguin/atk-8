@@ -80,11 +80,11 @@ class atkMlFckAttribute extends atkMlTextAttribute
      * This method is called by the node if it wants the data needed to create
      * an edit form.
      *
-     * @param String $mode     the edit mode ("add" or "edit")
+     * @param string $mode     the edit mode ("add" or "edit")
      * @param array  $arr      pointer to the edit array
      * @param array  $defaults pointer to the default values array
      * @param array  $error    pointer to the error array
-     * @param String $fieldprefix   the fieldprefix
+     * @param string $fieldprefix   the fieldprefix
      */
     public function addToEditArray($mode, &$arr, &$defaults, &$error, $fieldprefix)
     {

@@ -89,7 +89,7 @@ class atkConfig
 
     /**
      * Returns the value for a global configuration variable.
-     * 
+     *
      * @param string $name    configuration variable name (without the config_ prefix)
      * @param mixed  $default default (fallback) value
      */
@@ -105,9 +105,9 @@ class atkConfig
 
     /**
      * Sets the value of a global configuration variable.
-     * 
+     *
      * Only works for configuration variables where no function for exists.
-     * 
+     *
      * @param string $name  configuration variable name (without the config_ prefix)
      * @param mixed  $value new value
      */
@@ -238,7 +238,7 @@ class atkConfig
      * found returns the default level.
      *
      * @param int $default The default debug level
-     * @param array $options  
+     * @param array $options
      * @static
      */
     function smartDebugLevel($default, $options = array())
@@ -285,9 +285,9 @@ class atkConfig
      * made for an attribute, the attribute is considered unrestricted and every
      * user has access.
      *
-     * @param String $node The node on which access is restricted.
-     * @param String $attrib The name of the attribute that is to be restricted.
-     * @param String $mode The action to restrict ("edit" or "view")
+     * @param string $node The node on which access is restricted.
+     * @param string $attrib The name of the attribute that is to be restricted.
+     * @param string $mode The action to restrict ("edit" or "view")
      * @param mixed $entity The level/group that has access to the attribute.
      */
     function attribRestrict($node, $attrib, $mode, $entity)
@@ -301,8 +301,8 @@ class atkConfig
      * When $config_authorization is set to "config", this method can be used
      * in the configfile to grant privileges.
      *
-     * @param String $node The node on which to grant a privilege.
-     * @param String $action The action (privilege) that is granted.
+     * @param string $node The node on which to grant a privilege.
+     * @param string $action The action (privilege) that is granted.
      * @param mixed $entity The entity (securitylevel or group) to which the
      *                      privilege is granted.
      */
@@ -320,9 +320,9 @@ class atkConfig
      * encounters the specified substring in a server response, the specified
      * message is displayed.
      *
-     * @param String $substring The substring to look for in the server
+     * @param string $substring The substring to look for in the server
      *                          response.
-     * @param String $message The message to display to the user upon encounter
+     * @param string $message The message to display to the user upon encounter
      *                        of the substring.
      */
     function addPop3Response($substring, $message)
@@ -339,8 +339,8 @@ class atkConfig
      * access on the config file, can read the passwords. It is advisable to
      * use a more secure authentication method like "db" or "pop3".
      *
-     * @param String $name The login name.
-     * @param String $password The password of the user.
+     * @param string $name The login name.
+     * @param string $password The password of the user.
      * @param mixed $securitylevel The securitylevel or group of the user.
      *                             Permissions are granted on level/group basis,
      *                             depending on the setting of
@@ -360,7 +360,7 @@ class atkConfig
  * configuration setting. Any setting defined as $config_something can be
  * retrieved as atkconfig("something").
  *
- * @param String $tag The name of the configuration variable (without the
+ * @param string $tag The name of the configuration variable (without the
  *                    '$config_' prefix!
  * @param mixed $default The default variable you want to use when the
  *                       configuration variable is missing from the
@@ -411,8 +411,8 @@ define("MF_NO_PRELOAD", 32);
  * This method is used in the config.inc.php or config.modules.inc file to
  * load the modules.
  *
- * @param String $name The name of the module to load.
- * @param String path The path where the module is located (relative or
+ * @param string $name The name of the module to load.
+ * @param string path The path where the module is located (relative or
  *                    absolute). If omitted, ATK assumes that the module is
  *                    installed in the default module dir (identified by
  *                    $config_module_path).

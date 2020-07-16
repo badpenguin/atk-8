@@ -25,9 +25,9 @@ class atkSmartMenu extends atkDropdownMenu
         global $ATK_VARS, $g_menu;
 
         /** @var atkPage $page */
-        $page = &atkinstance('atk.ui.atkpage');
+        $page =  atkinstance('atk.ui.atkpage');
         /** @var atkTheme $theme */
-        $theme = &atkinstance("atk.ui.atktheme");
+        $theme =  atkinstance("atk.ui.atktheme");
 
 
         /** CONFIGURATION */

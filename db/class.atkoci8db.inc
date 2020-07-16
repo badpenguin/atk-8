@@ -97,7 +97,7 @@ class atkOci8Db extends atkDb
      * Translate a driver specific error to a generic ATK db error code.
      * @access private
      * 
-     * @param Array $err Error code.
+     * @param array $err Error code.
      * @return int One of the generic DB_* constants
      */
     function _translateError($err)
@@ -169,7 +169,7 @@ class atkOci8Db extends atkDb
     /**
      * Rollback the the current transaction.
      * 
-     * @param String $savepoint
+     * @param string $savepoint
      * @return Bool true 
      */
     function rollback($savepoint = "")
@@ -190,7 +190,7 @@ class atkOci8Db extends atkDb
      * If the query is a select query, the rows can be retrieved using the
      * next_record() method.
      *
-     * @param String $query The SQL query to execute
+     * @param string $query The SQL query to execute
      * @param int $offset Retrieve the results starting at the specified
      *                    record number. Pass -1 or 0 to start at the first
      *                    record.
@@ -302,8 +302,8 @@ class atkOci8Db extends atkDb
     /**
      * Lock a table in the database.
      *
-     * @param String $table The name of the table to lock.
-     * @param String $mode The lock type. Note that this driver only supports
+     * @param string $table The name of the table to lock.
+     * @param string $mode The lock type. Note that this driver only supports
      *                     "write".
      *
      * @return boolean True if succesful, false if not.
@@ -471,7 +471,7 @@ class atkOci8Db extends atkDb
     /**
      * Return the meta data of a certain table
      *
-     * @param String $table The name of the table
+     * @param string $table The name of the table
      * @param boolean $full If set to true, more metadata is retrieved than
      *                      when set to false.
      * @return array The retrieved metadata. See documentation for
@@ -593,7 +593,7 @@ class atkOci8Db extends atkDb
     /**
      * This function checks in the database if a table exists.
      *
-     * @param String $table The name of the table to check.
+     * @param string $table The name of the table to check.
      * @return boolean True if the table exists, false if not.
      */
     function tableExists($table)
@@ -619,7 +619,7 @@ class atkOci8Db extends atkDb
      * operation. It just returns a piece of valid SQL code that can be used
      * in a query.
      *
-     * @param String $fieldname The name of the field to perform a substring
+     * @param string $fieldname The name of the field to perform a substring
      *                          operation on.
      * @param int $startat The character at which to start.
      * @param int $length The number of charachters to retrieve.
@@ -647,7 +647,7 @@ class atkOci8Db extends atkDb
      * characters inside a string. When actually searching for wildcards,
      * those wildcards should not be escaped.
      *
-     * @param String $string The string to escape.
+     * @param string $string The string to escape.
      * @param boolean $wildcard Set to true to convert wildcard chars ('%').
      *                          False will leave them unescaped.
      * @return String A SQL compatible version of the input string.

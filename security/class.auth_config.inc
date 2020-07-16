@@ -35,8 +35,8 @@ class auth_config extends auth_interface
     /**
      * Authenticate a user.
      *
-     * @param String $user The login of the user to authenticate.
-     * @param String $passwd The password of the user. Note: if the canMd5
+     * @param string $user The login of the user to authenticate.
+     * @param string $passwd The password of the user. Note: if the canMd5
      *                       function of an implementation returns true,
      *                       $passwd will be passed as an md5 string.
      *
@@ -87,7 +87,7 @@ class auth_config extends auth_interface
      * Specific implementations of the method may add more information if
      * necessary.
      *
-     * @param String $user The login of the user to retrieve.
+     * @param string $user The login of the user to retrieve.
      * @return array Information about a user.
      */
     function getUser($user)
@@ -99,9 +99,9 @@ class auth_config extends auth_interface
     /**
      * This function returns the level/group(s) that are allowed to perform
      * the given action on a node.
-     * @param String $node The full nodename of the node for which to check
+     * @param string $node The full nodename of the node for which to check
      *                     the privilege. (modulename.nodename)
-     * @param String $action The privilege to check.
+     * @param string $action The privilege to check.
      * @return mixed One (int) or more (array) entities that are allowed to
      *               perform the action.
      */
@@ -128,10 +128,10 @@ class auth_config extends auth_interface
     /**
      * This function returns the level/group(s) that are allowed to
      * view/edit a certain attribute of a given node.
-     * @param String $node The full nodename of the node for which to check
+     * @param string $node The full nodename of the node for which to check
      *                     attribute access.
-     * @param String $attrib The name of the attribute to check
-     * @param String $mode "view" or "edit"
+     * @param string $attrib The name of the attribute to check
+     * @param string $mode "view" or "edit"
      * @param mixed One (int) or more (array) entities that are allowed to
      *              view/edit the attribute.
      */

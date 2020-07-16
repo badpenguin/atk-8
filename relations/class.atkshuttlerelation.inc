@@ -38,7 +38,7 @@ class atkShuttleRelation extends atkManyToManyRelation
      * Renders the onchange code on the page.
      *
      * @access private
-     * @param String $fieldprefix The prefix to the field
+     * @param string $fieldprefix The prefix to the field
      */
     function _renderChangeHandler($fieldprefix)
     {
@@ -95,9 +95,9 @@ class atkShuttleRelation extends atkManyToManyRelation
     /**
      * Return a piece of html code to edit the attribute
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String piece of html code
      */
 	function edit($record = "", $fieldprefix = "", $mode = "")
@@ -214,12 +214,12 @@ class atkShuttleRelation extends atkManyToManyRelation
     /**
      * Render the multiselect list control
      * @access private
-     * @param String $name The name of the list control
+     * @param string $name The name of the list control
      * @param array $recordset The list of records to render in the control
      * @param int $width The width of the control in pixels
-     * @param String $opposite The name of the list control connected to this list control for shuttle actions
-     * @param String $fieldname The fieldname
-     * @param String $filterbox Filter box id (if present)
+     * @param string $opposite The name of the list control connected to this list control for shuttle actions
+     * @param string $fieldname The fieldname
+     * @param string $filterbox Filter box id (if present)
      * @return String piece of html code
      */
     function _renderSelect($name, $recordset, $width, $opposite, $fieldname, $filterbox = false)

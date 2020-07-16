@@ -123,9 +123,9 @@ class atkDataNode extends atkNode
      * Count "rows".
      *
      * Supported parameters are: selector, limit, offset and order.
-     * 
+     *
      * @param array $params parameters
-     * 
+     *
      * @return int number of "records"
      */
     protected function countData($params = array())
@@ -165,7 +165,7 @@ class atkDataNode extends atkNode
      *
      * @param array $data data
      *
-     * @return data
+     * @return array data
      */
     protected function filterColumns($data)
     {
@@ -253,7 +253,7 @@ class atkDataNode extends atkNode
      *
      * @param array $data     data list
      * @param array $criteria selector criteria list
-     * @param array $search   search fields / values 
+     * @param array $search   search fields / values
      *
      * @return array filtered data
      */
@@ -275,7 +275,7 @@ class atkDataNode extends atkNode
      *
      * @param array $record   record
      * @param array $criteria selector criteria list
-     * @param array $search   search fields / values 
+     * @param array $search   search fields / values
      *
      * @return boolean is valid?
      */
@@ -380,7 +380,7 @@ class atkDataNode extends atkNode
      *
      * @return boolean false
      */
-    public function addDb()
+	public function addDb(&$record, $exectrigger = true, $mode = "add", $excludelist = array())
     {
         return false;
     }
@@ -390,7 +390,7 @@ class atkDataNode extends atkNode
      *
      * @return boolean false
      */
-    public function updateDb()
+	public function updateDb(&$record, $exectrigger = true, $excludes = "", $includes = "")
     {
         return false;
     }
@@ -400,7 +400,7 @@ class atkDataNode extends atkNode
      *
      * @return boolean false
      */
-    public function deleteDb()
+	public function deleteDb($selector, $exectrigger = true, $failwhenempty = false)
     {
         return false;
     }
@@ -410,7 +410,7 @@ class atkDataNode extends atkNode
      */
     public function setAttribSizes()
     {
-        
+
     }
 
 }

@@ -7,7 +7,7 @@
  * included in the distribution.
  *
  * String class for multibyte (utf-8) character support
- * 
+ *
  * @package atk
  * @subpackage utils
  *
@@ -21,7 +21,7 @@
 class atkString
 {
     /**
-     * Do we have multibyte support 
+     * Do we have multibyte support
      * @var boolean
      */
     static $s_hasMultiByteSupport = null;
@@ -72,8 +72,8 @@ class atkString
 
     /**
      * Get part of string
-     * @param string $str The string being checked. 
-     * @param int $start The first position used in $str 
+     * @param string $str The string being checked.
+     * @param int $start The first position used in $str
      * @param int $length[optional] The maximum length of the returned string
      * @return string
      */
@@ -99,9 +99,9 @@ class atkString
 
     /**
      *  Find position of first occurrence of string in a string
-     * @param object $haystack The string being checked. 
-     * @param object $needle The position counted from the beginning of haystack . 
-     * @param object $offset[optional] The search offset. If it is not specified, 0 is used. 
+     * @param object $haystack The string being checked.
+     * @param object $needle The position counted from the beginning of haystack .
+     * @param object $offset[optional] The search offset. If it is not specified, 0 is used.
      * @return int|boolean
      */
     public static function strpos($haystack, $needle, $offset = 0)
@@ -115,8 +115,8 @@ class atkString
 
     /**
      * Make a string lowercase
-     * @param string $str The string being lowercased. 
-     * @return string 
+     * @param string $str The string being lowercased.
+     * @return string
      */
     public static function strtolower($str)
     {
@@ -129,8 +129,8 @@ class atkString
 
     /**
      * Make a string uppercase
-     * @param string $str The string being uppercased. 
-     * @return string 
+     * @param string $str The string being uppercased.
+     * @return string
      */
     public static function strtoupper($str)
     {
@@ -147,9 +147,9 @@ class atkString
      * configured charset instead of PHP's default charset, if no
      * charset is given.
      *
-     * @param String $str    string to convert
+     * @param string $str    string to convert
      * @param int $quote_style  quote style (defaults to ENT_COMPAT)
-     * @param String $charset   character set to use (default to atktext('charset', 'atk'))
+     * @param string $charset   character set to use (default to atktext('charset', 'atk'))
      *
      * @return String encoded string
      */
@@ -170,9 +170,9 @@ class atkString
      * htmlentities function, but falls back to atkGetCharset() instead of
      * PHP's default charset, if no charset is given.
      *
-     * @param String $str       string to convert
+     * @param string $str       string to convert
      * @param int $quote_style  quote style (defaults to ENT_COMPAT)
-     * @param String $charset   character set to use (default to atkGetCharset())
+     * @param string $charset   character set to use (default to atkGetCharset())
      *
      * @return String encoded string
      */
@@ -190,7 +190,7 @@ class atkString
 
     /**
      * ATK version of the PHP html_entity_decode function. Works just like PHP's
-     * html_entity_decode function, but falls back to atkGetCharset() instead of 
+     * html_entity_decode function, but falls back to atkGetCharset() instead of
      * PHP's default charset, if no charset is given.
      *
      * @param string $in_charset The input charset
@@ -213,7 +213,7 @@ class atkString
      *
      * @param  string  $string text to truncate
      * @param  integer $max Maximum length of the total result string
-     * @param  string  $replace text to append to the end of the truncated string 
+     * @param  string  $replace text to append to the end of the truncated string
      * @return string  truncated sting
      *
      */

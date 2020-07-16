@@ -23,41 +23,41 @@
 /**
  * A repository of node instances..
  * @access private
- * @var Array
+ * @var array
  */
 $GLOBALS['g_nodeRepository'] = array();
 
 /**
  * A repository of module instances..
  * @access private
- * @var Array
+ * @var array
  */
 $GLOBALS['g_moduleRepository'] = array();
 
 /**
  * registered node action handlers
  * @access private
- * @var Array
+ * @var array
  */
 $GLOBALS['g_nodeHandlers'] = array();
 
 /**
  * registered node listeners
  * @access private
- * @var Array
+ * @var array
  */
 $GLOBALS['g_nodeListeners'] = array();
 
 /**
  * registered node controllers
  * @access private
- * @var Array
+ * @var array
  */
 $GLOBALS['g_nodeControllers'] = array();
 
 /**
  * Gets the node type of a node string
- * @param String $node the node name
+ * @param string $node the node name
  * @return String the node type
  */
 function getNodeType($node)
@@ -71,7 +71,7 @@ function getNodeType($node)
 
 /**
  * Gets the module of the node
- * @param String $node the node name
+ * @param string $node the node name
  * @return String the node's module
  */
 function getNodeModule($node)
@@ -86,9 +86,9 @@ function getNodeModule($node)
 /**
  * Get an instance of a node. If an instance doesn't exist, it is created.
  * @deprecated Use atkGetNode instead.
- * @param String $node     The node string
+ * @param string $node     The node string
  * @param bool   $init     Initialize the node?
- * @param String $cache_id The cache id in the node repository
+ * @param string $cache_id The cache id in the node repository
  * @param bool   $reset    Wether or not to reset the particulair node in the repository
  * @return atkNode the created instance
  */
@@ -99,12 +99,12 @@ function &getNode($node, $init = TRUE, $cache_id = "default", $reset = false)
 
 /**
  * Get an instance of a node. If an instance doesn't exist, it is created.  Note that nodes
- * are cached (unless $reset is true); multiple requests for the same node will return exactly 
- * the same node object.  
- * 
- * @param String $node     The node string
+ * are cached (unless $reset is true); multiple requests for the same node will return exactly
+ * the same node object.
+ *
+ * @param string $node     The node string
  * @param bool   $init     Initialize the node?
- * @param String $cache_id The cache id in the node repository
+ * @param string $cache_id The cache id in the node repository
  * @param bool   $reset    Whether or not to reset the particular node in the repository
  * @return atkNode the node
  */
@@ -124,9 +124,9 @@ function &atkGetNode($node, $init = TRUE, $cache_id = "default", $reset = false)
  *
  * This is useful to replace nodes with mocks for testing purposes.
  *
- * @param String $nodename The full name of the node (module.nodename)
+ * @param string $nodename The full name of the node (module.nodename)
  * @param atkNode $node The node instance to replace the current one
- * @param String $cache_id If set, replaces only the instance with a certain
+ * @param string $cache_id If set, replaces only the instance with a certain
  *                         cache_id
  * @return atkNode The current node, useful to restore afterwards. Can be
  *                 NULL.
@@ -134,7 +134,7 @@ function &atkGetNode($node, $init = TRUE, $cache_id = "default", $reset = false)
 function &atkSetNode($nodename, &$node, $cache_id = "default")
 {
     global $g_nodeRepository;
-    $nodename = strtolower($nodename); // classes / directory names should always be in lower-case    
+    $nodename = strtolower($nodename); // classes / directory names should always be in lower-case
     $org = &$g_nodeRepository[$cache_id][$nodename];
     $g_nodeRepository[$cache_id][$nodename] = &$node;
     return $org;
@@ -143,7 +143,7 @@ function &atkSetNode($nodename, &$node, $cache_id = "default")
 /**
  * Retrieves all the registered atkModules
  *
- * @return Array with modules
+ * @return array with modules
  */
 function atkGetModules()
 {
@@ -154,7 +154,7 @@ function atkGetModules()
 /**
  * Retrieve the atkModule with the given name.
  *
- * @param String $modname The name of the module
+ * @param string $modname The name of the module
  * @return atkModule An instance of the atkModule
  */
 function &atkGetModule($modname)
@@ -204,7 +204,7 @@ function &atkGetModule($modname)
  * Retrieve the atkModule with the given name.
  *
  * @deprecated Use atkGetModule instead.
- * @param String $modname The name of the module
+ * @param string $modname The name of the module
  * @return atkModule an instance of the atkModule
  */
 function getModule($modname)
@@ -215,7 +215,7 @@ function getModule($modname)
 /**
  * Retrieve the full filename containing the given node.
  *
- * @param String $node The name of the node (nodename or module.nodename)
+ * @param string $node The name of the node (nodename or module.nodename)
  * @return String The filename
  */
 function nodeFile($node)
@@ -248,7 +248,7 @@ function nodeFile($node)
 
 /**
  * Construct a new node
- * @param String $node the node type
+ * @param string $node the node type
  * @param bool $init initialize the node?
  * @return atkNode new node object
  */
@@ -278,7 +278,7 @@ function &newNode($node, $init = TRUE)
 
 /**
  * Checks if a certain node exists.
- * @param String $node the node type
+ * @param string $node the node type
  * @return bool node exists?
  */
 function nodeExists($node)
@@ -302,7 +302,7 @@ function nodeExists($node)
 
 /**
  * Return the physical directory of a module..
- * @param String name of the module.
+ * @param string name of the module.
  * @return String The path to the module.
  */
 function moduleDir($module)
@@ -331,7 +331,7 @@ function module_url($module, $file)
 
 /**
  * Check wether a module is installed
- * @param String $module The modulename.
+ * @param string $module The modulename.
  * @return bool True if it is, false otherwise
  */
 function moduleExists($module)
@@ -360,7 +360,7 @@ function &getNodeHandler($node, $action)
  * @param $action the node action
  * @param $handler handler functionname or object (is_subclass_of atkActionHandler)
  * @return true if there is no known handler
- * 
+ *
  * @deprecated
  * @see atkRegisterNodeHandler
  */
@@ -390,8 +390,8 @@ function &atkGetNodeHandler($node, $action)
 
 /**
  * Registers a new node action handler.
- * @param String $node the name of the node (* matches all)
- * @param String $action the node action
+ * @param string $node the name of the node (* matches all)
+ * @param string $action the node action
  * @param String/atkActionHandler $handler handler functionname or object (is_subclass_of atkActionHandler)
  * @return bool true if there is no known handler
  */
@@ -413,7 +413,7 @@ function atkRegisterNodeHandler($node, $action, $handler)
  * @param string $class node handler class ATK path
  *
  * @return bool true if there is no known handler
- * 
+ *
  * @deprecated
  * @see atkRegisterNodeHandler
  */
@@ -424,7 +424,7 @@ function atkRegisterNodeHandlerClass($node, $action, $class)
 
 /**
  * Returns a registered node controller.
- * @param String $node the name of the node
+ * @param string $node the name of the node
  * @return object (is_subclass_of atkController)
  *         NULL if no controller exists for the specified node
  */
@@ -441,7 +441,7 @@ function &atkGetNodeController($node)
 
 /**
  * Registers a new node controller.
- * @param String $node the name of the node (* matches all)
+ * @param string $node the name of the node (* matches all)
  * @param atkController $controller object (is_subclass_of atkController)
  * @return bool true if there is no known handler
  */
@@ -466,7 +466,7 @@ function atkRegisterNodeController($node, &$controller)
  * This will return the result of the getStuff calls for all modules in a
  * single array.
  *
- * @param String $function The name of the module member function to be
+ * @param string $function The name of the module member function to be
  *                         called. The function does not have to exist for
  *                         all modules, as atkHarvestModules will check if
  *                         it exists before it makes the call.
@@ -537,8 +537,8 @@ function atkReadOptimizer($newvalue = NULL)
 /**
  * Preload the module
  * @see atkPreloadModules()
- * @param String $modname The modulename
- * @param String $modpath The path to the module.
+ * @param string $modname The modulename
+ * @param string $modpath The path to the module.
  */
 function atkPreloadModule($modname, $modpath)
 {

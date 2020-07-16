@@ -47,7 +47,7 @@ class atkFckAttribute extends atkTextAttribute
 
     /**
      * Constructor
-     * @param String $name Name of the attribute
+     * @param string $name Name of the attribute
      * @param int $size The size of this attribute
      * @param int $flags Flags for the attribute
      * @param array $opt Extra fckeditor configuration options.
@@ -73,7 +73,7 @@ class atkFckAttribute extends atkTextAttribute
      * sets in atk/attributes/fck/fckconfig.js, but please keep in mind
      * that upon upgrade of the atk directory, you may lose these changes.
      *
-     * @param String $toolbarset The FCK toolbarset to use.
+     * @param string $toolbarset The FCK toolbarset to use.
      */
     function setToolbarSet($toolbarset)
     {
@@ -84,7 +84,7 @@ class atkFckAttribute extends atkTextAttribute
      * Returns a displayable string for this value, to be used in HTML pages
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $mode The display mode ("view" for viewpages, or "list"
+     * @param string $mode The display mode ("view" for viewpages, or "list"
      *                     for displaying in recordlists, "edit" for
      *                     displaying in editscreens, "add" for displaying in
      *                     add screens. "csv" for csv files. Applications can
@@ -100,9 +100,9 @@ class atkFckAttribute extends atkTextAttribute
      * Returns a piece of html code that can be used in a form to edit this
      * attribute's value.
      * @param array $record Array with fields
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return piece of html code with a textarea
      */
     function edit($record = "", $fieldprefix = "", $mode = "")

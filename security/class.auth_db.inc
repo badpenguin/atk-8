@@ -50,22 +50,22 @@ class auth_db extends auth_interface
     }
 
     /**
-     * Authenticate a user. 
+     * Authenticate a user.
      *
-     * @param String $user The login of the user to authenticate.
-     * @param String $passwd The password of the user. Note: if the canMd5 
-     *                       function of an implementation returns true,      
+     * @param string $user The login of the user to authenticate.
+     * @param string $passwd The password of the user. Note: if the canMd5
+     *                       function of an implementation returns true,
      *                       $passwd will be passed as an md5 string.
      *
      * @return int AUTH_SUCCESS - Authentication succesful
-     *             AUTH_MISMATCH - Authentication failed, wrong 
+     *             AUTH_MISMATCH - Authentication failed, wrong
      *                             user/password combination
      *             AUTH_LOCKED - Account is locked, can not login
      *                           with current username.
-     *             AUTH_ERROR - Authentication failed due to some 
-     *                          error which cannot be solved by 
-     *                          just trying again. If you return 
-     *                          this value, you *must* also 
+     *             AUTH_ERROR - Authentication failed due to some
+     *                          error which cannot be solved by
+     *                          just trying again. If you return
+     *                          this value, you *must* also
      *                          fill the m_fatalError variable.
      */
     function validateUser($user, $passwd)
@@ -114,7 +114,7 @@ class auth_db extends auth_interface
      * is true, they are only considered a match if $dbpassword is equal to the
      * crypt() of $userpasswd, where $dbpassword itself is used as the 'salt'.
      * (This method is used by Bugzilla, among other apps)
-     * 
+     *
      * @param string $dbpasswd The password from the database
      * @param string $userpasswd The password the user provided
      * @return boolean which indicates if the passwords are equal
@@ -173,7 +173,7 @@ class auth_db extends auth_interface
             // Level and userid are stored in two separate tables. This could
             // mean (but doesn't have to) that a user can have more than one
             // level.
-            $qryobj = &$db->createQuery();
+            $qryobj = $db->createQuery();
             $qryobj->addTable($usertable);
             $qryobj->addField("$usertable.*");
             $qryobj->addField("usergroup.*");
@@ -194,7 +194,7 @@ class auth_db extends auth_interface
     }
 
     /**
-     * Get the parent groups 
+     * Get the parent groups
      *
      * @param array $parents
      * @return array with records of the parent groups
@@ -207,7 +207,7 @@ class auth_db extends auth_interface
         $groupfield = atkconfig("auth_groupfield");
         $groupparentfield = atkconfig("auth_groupparentfield");
 
-        $query = &$db->createQuery();
+        $query = $db->createQuery();
         $query->addField($groupparentfield);
         $query->addTable($grouptable);
         $query->addCondition("$grouptable.$groupfield IN (" . implode(',', $parents) . ")");
@@ -218,7 +218,7 @@ class auth_db extends auth_interface
     /**
      * This function returns information about a user in an associative
      * array with the following elements (minimal):
-     * "name" -> the userid (should normally be the same as the $user 
+     * "name" -> the userid (should normally be the same as the $user
      *           variable that gets passed to it.
      * "level" -> The level/group(s) to which this user belongs.
      * "groups" -> The groups this user belongs to
@@ -226,7 +226,7 @@ class auth_db extends auth_interface
      * The other elemens of the returning array depend on the structure of
      * the user table
      *
-     * @param String $user The login of the user to retrieve.
+     * @param string $user The login of the user to retrieve.
      * @return array Information about a user.
      */
     function getUser($user)
@@ -306,9 +306,9 @@ class auth_db extends auth_interface
     /**
      * This function returns the level/group(s) that are allowed to perform
      * the given action on a node.
-     * @param String $node The full nodename of the node for which to check
+     * @param string $node The full nodename of the node for which to check
      *                     the privilege. (modulename.nodename)
-     * @param String $action The privilege to check.
+     * @param string $action The privilege to check.
      * @return mixed One (int) or more (array) entities that are allowed to
      *               perform the action.
      */
@@ -340,14 +340,14 @@ class auth_db extends auth_interface
     }
 
     /**
-     * This function returns the level/group(s) that are allowed to 
+     * This function returns the level/group(s) that are allowed to
      * view/edit a certain attribute of a given node.
-     * @param String $node The full nodename of the node for which to check
+     * @param string $node The full nodename of the node for which to check
      *                     attribute access.
-     * @param String $attrib The name of the attribute to check
-     * @param String $mode "view" or "edit"
-     * @param mixed One (int) or more (array) entities that are allowed to 
-     *              view/edit the attribute. 
+     * @param string $attrib The name of the attribute to check
+     * @param string $mode "view" or "edit"
+     * @param mixed One (int) or more (array) entities that are allowed to
+     *              view/edit the attribute.
      */
     function getAttribEntity($node, $attrib, $mode)
     {
@@ -373,7 +373,7 @@ class auth_db extends auth_interface
      *
      * @param array $a
      * @param array $b
-     * @return boolean 
+     * @return boolean
      */
     function userListCompare($a, $b)
     {
@@ -384,7 +384,7 @@ class auth_db extends auth_interface
      * This function returns the list of users that may login. This can be
      * used to display a dropdown of users from which to choose.
      *
-     * @return array List of users as an associative array with the following 
+     * @return array List of users as an associative array with the following
      *               format: array of records, each record is an associative
      *               array with a userid and a username field.
      */
@@ -441,7 +441,7 @@ class auth_db extends auth_interface
 
     /**
      * This function returns password or false, if password can't be retrieve/recreate
-     * 
+     *
      * @param string $username User for which the password should be regenerated
      *
      * @return mixed string with password or false

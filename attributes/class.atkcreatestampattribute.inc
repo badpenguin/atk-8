@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -25,9 +25,9 @@ useattrib('atkUpdateStampAttribute');
  * The atkCreateStampAttribute class can be used to automatically store the
  * date and time of the creation of a record.
  * To use this attribute, add a DATETIME field to your table and add this
- * attribute to your node. No params are necessary, no initial_values need 
+ * attribute to your node. No params are necessary, no initial_values need
  * to be set. The timestamps are generated automatically.
- * This attribute is automatically set to readonly, and to af_hide_add 
+ * This attribute is automatically set to readonly, and to af_hide_add
  * (because we only have the timestamp AFTER a record is added).
  *
  * (the attribute was posted at www.achievo.org/forum/viewtopic.php?p=8608)
@@ -43,7 +43,7 @@ class atkCreateStampAttribute extends atkUpdateStampAttribute
     /**
      * Constructor
      *
-     * @param String $name Name of the attribute (unique within a node, and
+     * @param string $name Name of the attribute (unique within a node, and
      *                     corresponds to the name of the datetime field
      *                     in the database where the stamp is stored.
      * @param int $flags Flags for the attribute.

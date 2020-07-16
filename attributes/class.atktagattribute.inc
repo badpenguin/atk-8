@@ -80,9 +80,9 @@ class atkTagAttribute extends atkFuzzySearchAttribute
 
     /**
      * Fetch value.
-     * 
+     *
      * @param array $vars post vars
-     * 
+     *
      * @return string fetched value
      */
     public function fetchValue($vars)
@@ -124,8 +124,8 @@ class atkTagAttribute extends atkFuzzySearchAttribute
     /**
      * Validate the input based on the current mode.
      *
-     * @param Array $rec The record which holds the values to validate
-     * @param String $mode The mode we're in
+     * @param array $rec The record which holds the values to validate
+     * @param string $mode The mode we're in
      * @return True on validation, False otherwise.
      */
     function validate(&$rec, $mode)
@@ -154,8 +154,8 @@ class atkTagAttribute extends atkFuzzySearchAttribute
 
     /**
      * A keyword field may not contain HTML or linefeeds
-     *     
-     * @param String $keyword
+     *
+     * @param string $keyword
      */
     function isValidKeyWord($keyword)
     {
@@ -168,16 +168,16 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      * attribute's value.
      *
      * @param array $rec The record that holds the value for this attribute.
-     * @param String $prefix The fieldprefix to put in front of the name
+     * @param string $prefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
     function edit($rec = "", $prefix = "", $mode = "")
     {
         atkdebug("edit of attribute '$this->fieldName()'");
 
-        $page = &atkinstance('atk.ui.atkpage');
+        $page =  atkinstance('atk.ui.atkpage');
         $page->register_script(atkconfig("atkroot") . "atk/javascript/class.atktagattribute.js");
 
         if ($this->createDestinationInstance()) {
@@ -265,7 +265,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      * Returns a displayable string for this value, to be used in HTML pages.
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $mode The display mode ("view" for viewpages, or "list"
+     * @param string $mode The display mode ("view" for viewpages, or "list"
      *                     for displaying in recordlists, "edit" for
      *                     displaying in editscreens, "add" for displaying in
      *                     add screens. "csv" for csv files. Applications can
@@ -298,8 +298,8 @@ class atkTagAttribute extends atkFuzzySearchAttribute
 
     /**
      * The actual function that does the searching
-     * @param String $searchstring The string to search for
-     * @return Array The matches
+     * @param string $searchstring The string to search for
+     * @return array The matches
      */
     function getMatches($searchstring)
     {
@@ -331,7 +331,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
     }
 
     /**
-     * Get the keywords that did not match. 
+     * Get the keywords that did not match.
      *
      * @return array
      */
@@ -486,7 +486,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      */
     function addToQuery()
     {
-        
+
     }
 
     /**
@@ -495,7 +495,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      */
     function hide()
     {
-        
+
     }
 
     /**
@@ -504,7 +504,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      */
 	public function search($record = array(), $extended = false, $fieldprefix = "", atkDataGrid $grid = null)
     {
-        
+
     }
 
     /**
@@ -522,7 +522,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      */
     function searchCondition()
     {
-        
+
     }
 
     /**
@@ -531,7 +531,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      */
     function getSearchCondition()
     {
-        
+
     }
 
     /**
@@ -540,7 +540,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      */
     function fetchMeta()
     {
-        
+
     }
 
     /**
@@ -549,7 +549,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      */
     function dbFieldSize()
     {
-        
+
     }
 
     /**
@@ -558,14 +558,14 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      */
     function dbFieldType()
     {
-        
+
     }
 
     /**
      * Adds a filter on the instance of the destination
-     * @param String $filter The fieldname you want to filter OR a SQL where
+     * @param string $filter The fieldname you want to filter OR a SQL where
      *                       clause expression.
-     * @param String $value Required value. (Ommit this parameter if you pass
+     * @param string $value Required value. (Ommit this parameter if you pass
      *                      an SQL expression for $filter.)
      */
     function addSearchFilter($filter, $value = "")
@@ -591,7 +591,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
     /**
      * Change the name of the attribute of the intermediairy node that points
      * to the master node.
-     * @param String $attributename The name of the attribute.
+     * @param string $attributename The name of the attribute.
      */
     function setLocalKey($attributename)
     {
@@ -615,7 +615,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
     /**
      * Change the name of the attribute of the intermediairy node that points
      * to the node on the other side of the relation.
-     * @param String $attributename The name of the attribute.
+     * @param string $attributename The name of the attribute.
      */
     function setRemoteKey($attributename)
     {
@@ -626,7 +626,7 @@ class atkTagAttribute extends atkFuzzySearchAttribute
      * Determine the name of the foreign key based on the name of the
      *  relation.
      *
-     * @param String $name the name of the relation
+     * @param string $name the name of the relation
      * @return the probable name of the foreign key
      */
     function determineKeyName($name)

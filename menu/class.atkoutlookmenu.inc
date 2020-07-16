@@ -33,7 +33,7 @@ class atkOutlookMenu extends atkmenuinterface
      */
     function __construct()
     {
-        
+
     }
 
     /**
@@ -45,7 +45,7 @@ class atkOutlookMenu extends atkmenuinterface
     {
         global $g_menu, $ATK_VARS, $g_modules;
         $page = &atkPage::getInstance();
-        $theme = &atkinstance("atk.ui.atktheme");
+        $theme =  atkinstance("atk.ui.atktheme");
         $atkmenutop = $ATK_VARS["atkmenutop"];
         if ($atkmenutop == "")
             $atkmenutop = "main";

@@ -48,8 +48,8 @@ class atkExtendableShuttleRelation extends atkManyToManyRelation
 
     /**
      * Constructor
-     * @param String $name The name of the relation
-     * @param String $link The full name of the node that is used as
+     * @param string $name The name of the relation
+     * @param string $link The full name of the node that is used as
      *                     intermediairy node. The intermediairy node is
      *                     assumed to have 2 attributes that are named
      *                     after the nodes at both ends of the relation.
@@ -59,7 +59,7 @@ class atkExtendableShuttleRelation extends atkManyToManyRelation
      *                     named 'project' and one that is named 'activity'.
      *                     You can set your own keys by calling setLocalKey()
      *                     and setRemoteKey()
-     * @param String $destination The full name of the node that is the other
+     * @param string $destination The full name of the node that is the other
      *                            end of the relation.
      * @param int $flags Flags for the relation.
      */
@@ -223,9 +223,9 @@ class atkExtendableShuttleRelation extends atkManyToManyRelation
      * attribute's value.
      *
      * @param array $record The record that holds the value for this attribute.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return String A piece of htmlcode for editing this attribute
      */
 	function edit($record = "", $fieldprefix = "", $mode = "")
@@ -383,10 +383,10 @@ class atkExtendableShuttleRelation extends atkManyToManyRelation
     /**
      * Render the multiselect list control
      * @access private
-     * @param String $name The name of the list control
+     * @param string $name The name of the list control
      * @param array $recordset The list of records to render in the control
-     * @param String $opposite The name of the list control connected to this list control for shuttle actions
-     * @param String $prefix The prefix which is needed for determining the correct JS name
+     * @param string $opposite The name of the list control connected to this list control for shuttle actions
+     * @param string $prefix The prefix which is needed for determining the correct JS name
      * @param bool $isSelected Whether or not this is the selectbox with the selectedItems (needed for onchangecode)
      * @return String piece of html code
      */
@@ -539,7 +539,7 @@ class atkExtendableShuttleRelation extends atkManyToManyRelation
     /**
      * Get array with all selected fields
      * @param array $record The record with the currently selected fields
-     * @param String $mode for which mode we are rendering
+     * @param string $mode for which mode we are rendering
      * @return array selected records
      */
     public function getSelectedFields($record, $mode = 'add', $selectedFilter = '', $availableFilter = '')
@@ -554,7 +554,7 @@ class atkExtendableShuttleRelation extends atkManyToManyRelation
     /**
      * Get array with all available fields (which are not already selected)
      * @param array $record The record with the currently selected fields
-     * @param String $mode for which mode we are rendering
+     * @param string $mode for which mode we are rendering
      * @return array available records
      */
     public function getAvailableFields($record, $mode = 'add', $availableFilter = '')

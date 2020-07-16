@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -25,9 +25,9 @@ useattrib('atkDateTimeAttribute');
  * The atkUpdateStampAttribute class can be used to automatically store the
  * date and time of the last modification of a record.
  * To use this attribute, add a DATETIME field to your table and add this
- * attribute to your node. No params are necessary, no initial_values need 
+ * attribute to your node. No params are necessary, no initial_values need
  * to be set. The timestamps are generated automatically.
- * This attribute is automatically set to readonly, and to af_hide_add 
+ * This attribute is automatically set to readonly, and to af_hide_add
  * (because we only have the first timestamp AFTER a record is added).
  *
  * @author Ivo Jansch <ivo@achievo.org>
@@ -41,8 +41,8 @@ class atkUpdateStampAttribute extends atkDateTimeAttribute
     /**
      * Constructor
      *
-     * @param String $name Name of the attribute (unique within a node, and
-     *                     corresponds to the name of the datetime field 
+     * @param string $name Name of the attribute (unique within a node, and
+     *                     corresponds to the name of the datetime field
      *                     in the database where the stamp is stored.
      * @param int $flags Flags for the attribute.
      */
@@ -56,7 +56,7 @@ class atkUpdateStampAttribute extends atkDateTimeAttribute
 
     /**
      * Value to DB.
-     * 
+     *
      * @param array $record The record
      * @return The value to store in the database
      */
@@ -83,7 +83,7 @@ class atkUpdateStampAttribute extends atkDateTimeAttribute
      * while still posting its value. (<input type="hidden">)
      *
      * @param array $record The record that holds the value for this attribute
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
      * @return String A piece of htmlcode with hidden form elements that post
      *                This attribute's value without showing it.

@@ -27,18 +27,18 @@
  * Both main menu items, separators, submenus or submenu items can be
  * created, depending on the parameters passed.
  *
- * @param String $name The menuitem name. The name that is displayed in the
+ * @param string $name The menuitem name. The name that is displayed in the
  *                     userinterface can be influenced by putting
  *                     "menu_something" in the language files, where 'something'
  *                     is equal to the $name parameter.
  *                     If "-" is specified as name, the item is a separator.
  *                     In this case, the $url parameter should be empty.
- * @param String $url The url to load in the main application area when the
+ * @param string $url The url to load in the main application area when the
  *                    menuitem is clicked. If set to "", the menu is treated
  *                    as a submenu (or a separator if $name equals "-").
  *                    The dispatch_url() method is a useful function to
  *                    pass as this parameter.
- * @param String $parent The parent menu. If omitted or set to "main", the
+ * @param string $parent The parent menu. If omitted or set to "main", the
  *                       item is added to the main menu.
  * @param mixed $enable This parameter supports the following options:
  *                      1: menuitem is always enabled
@@ -60,7 +60,7 @@
  *                   to the menu, with steps of 100. So, if you have a menu
  *                   with default ordering and you want to place a new
  *                   menuitem at the third position, pass 250 for $order.
- * @param $module The name of the module that added this menuitem. It is usually
+ * @param string $module The name of the module that added this menuitem. It is usually
  *                not necessary to pass this parameter, but is present for
  *                backwardscompatibility reasons.
  */
@@ -105,5 +105,3 @@ function menuitems($menu)
                 $GLOBALS["g_menu_parent"][$items[$i]["name"]] = $parent;
         }
 }
-
-?>

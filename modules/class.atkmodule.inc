@@ -40,7 +40,7 @@ class atkModule
     /**
      * Constructor. The module needs to register it's nodes
      * overhere, create its menuitems etc.
-     * @param String $name The name of the module.
+     * @param string $name The name of the module.
      */
     function __construct($name = "")
     {
@@ -53,7 +53,7 @@ class atkModule
      */
     function getNodes()
     {
-        
+
     }
 
     /**
@@ -63,7 +63,7 @@ class atkModule
      */
     function getAttributes()
     {
-        
+
     }
 
     /**
@@ -74,25 +74,25 @@ class atkModule
      */
     function getMenuItems()
     {
-        
+
     }
 
     /**
-     * Create a new menu item, optionally configuring access control.  This 
+     * Create a new menu item, optionally configuring access control.  This
      * function can also be used to create separators, submenus and submenu items.
      *
-     * @param String $name The menuitem name. The name that is displayed in the
+     * @param string $name The menuitem name. The name that is displayed in the
      *                     userinterface can be influenced by putting
      *                     "menu_something" in the language files, where 'something'
      *                     is equal to the $name parameter.
      *                     If "-" is specified as name, the item is a separator.
      *                     In this case, the $url parameter should be empty.
-     * @param String $url The url to load in the main application area when the
+     * @param string $url The url to load in the main application area when the
      *                    menuitem is clicked. If set to "", the menu is treated
      *                    as a submenu (or a separator if $name equals "-").
      *                    The dispatch_url() method is a useful function to
      *                    pass as this parameter.
-     * @param String $parent The parent menu. If omitted or set to "main", the
+     * @param string $parent The parent menu. If omitted or set to "main", the
      *                       item is added to the main menu.
      * @param mixed $enable This parameter supports the following options:
      *                      1: menuitem is always enabled
@@ -131,7 +131,7 @@ class atkModule
      */
     function getPreferenceLinks()
     {
-        
+
     }
 
     /**
@@ -142,7 +142,7 @@ class atkModule
      */
     function getAdminLinks()
     {
-        
+
     }
 
     /**

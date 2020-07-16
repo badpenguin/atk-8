@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -25,14 +25,14 @@ include_once($config_atkroot . "atk/attributes/class.atkdummyattribute.inc");
  *
  * This attribute only works in Internet Explorer 4 and up.
  *
- * The attribute has no database interaction and does not correspond to a 
+ * The attribute has no database interaction and does not correspond to a
  * database field.
  *
  * @author Ivo Jansch <ivo@achievo.org>
  * @package atk
  * @subpackage attributes
  * @deprecated
- *   
+ *
  */
 class atkToolbar extends atkDummyAttribute
 {
@@ -40,7 +40,7 @@ class atkToolbar extends atkDummyAttribute
     /**
      * Default constructor.
      *
-     * @param String $name Name of the attribute (unique within a node)
+     * @param string $name Name of the attribute (unique within a node)
      * @param int $flags Flags for the attribute.
      */
     function __construct($name, $flags = 0)
@@ -53,7 +53,7 @@ class atkToolbar extends atkDummyAttribute
      * attribute in an HTML form.
      *
      * @param array $record The record that is currently being edited.
-     * @param String $fieldprefix The fieldprefix to put in front of the name
+     * @param string $fieldprefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
      * @return String A piece of htmlcode for editing this attribute
      */
@@ -71,7 +71,7 @@ class atkToolbar extends atkDummyAttribute
         $res .= '<a href="javascript:modifySelection(\'<u>\',\'</u>\');"><img src="' . $theme->iconPath("underline", "toolbar") . '" border="0" alt="Onderstreept"></a>';
 
         // TODO/FIXME:This is platform specific code and should not be here
-        // I think is still needed for older platform version (M1, M2) 
+        // I think is still needed for older platform version (M1, M2)
         $res .= '&nbsp;<img src="' . $theme->iconPath("delimiter", "toolbar") . '" border="0">&nbsp;';
         $res .= '<a href="javascript:popupSelection(\'pagesel.php\',\'pagesel\');" onmouseover="selectie=document.selection.createRange();"><img src="' . $theme->iconPath("link", "toolbar") . '" border="0" alt="Link"></a>';
 

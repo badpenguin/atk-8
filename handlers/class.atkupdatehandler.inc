@@ -124,7 +124,7 @@ class atkUpdatehandler extends atkActionHandler
     /**
      * Get the record for updating
      *
-     * @return Array The record to update
+     * @return array The record to update
      */
     public function getRecord()
     {
@@ -322,7 +322,7 @@ class atkUpdatehandler extends atkActionHandler
     /**
      * Handle the dialog partial
      *
-     * @param String $mode The current mode
+     * @param string $mode The current mode
      */
     function partial_dialog($mode)
     {
@@ -342,7 +342,7 @@ class atkUpdatehandler extends atkActionHandler
     /**
      * Handle the update of a dialog.
      *
-     * @param String $attrRefreshUrl
+     * @param string $attrRefreshUrl
      */
     public function handleUpdate($attrRefreshUrl = null)
     {
@@ -429,7 +429,7 @@ class atkUpdatehandler extends atkActionHandler
      *
      * @deprecated
      *
-     * @param Array $record
+     * @param array $record
      * @return String HTML code for the edit page
      */
     public function getEditPage(&$record)

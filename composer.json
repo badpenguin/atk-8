@@ -4,5 +4,9 @@
     "homepage": "https://github.com/badpenguin/atk-8",
     "type": "library",
     "license": "MIT",
-    "keywords": ["framework"]
+    "keywords": ["framework"],
+  "require": {
+	"ext-mysqli": "*",
+	"ext-pgsql": "*"
+  }
 }

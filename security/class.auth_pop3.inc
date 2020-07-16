@@ -30,8 +30,8 @@ class auth_pop3 extends auth_interface
 
     /**
      * Validate user.
-     * @param String $user the username
-     * @param String $passwd the password
+     * @param string $user the username
+     * @param string $passwd the password
      * @return int AUTH_SUCCESS - Authentication succesful
      *             AUTH_MISMATCH - Authentication failed, wrong 
      *                             user/password combination

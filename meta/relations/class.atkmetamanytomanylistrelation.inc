@@ -34,10 +34,10 @@ class atkMetaManyToManyListRelation extends atkManyToManyListRelation
     /**
      * Default constructor
      *     
-     * @param String $name The name of the relation
-     * @param String $destination The full name of the node that is the other
+     * @param string $name The name of the relation
+     * @param string $destination The full name of the node that is the other
      *                            end of the relation.
-     * @param String $through The full name of the node that is used as
+     * @param string $through The full name of the node that is used as
      *                     intermediairy node. The intermediairy node is
      *                     assumed to have 2 attributes that are named
      *                     after the nodes at both ends of the relation.

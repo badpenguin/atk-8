@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -23,7 +23,7 @@
  */
 function smarty_function_atkdispatchfile($params, &$smarty)
 {
-    $c = &atkinstance("atk.atkcontroller");
+    $c =  atkinstance("atk.atkcontroller");
     return $c->getPhpFile();
 }
 

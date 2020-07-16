@@ -1648,10 +1648,10 @@ class atkMetaPolicy
      * @param mixed $string           string or array of strings containing the name(s) of the string to return
      *                                when an array of strings is passed, the second will be the fallback if
      *                                the first one isn't found, and so forth
-     * @param String $module          module in which the language file should be looked for,
+     * @param string $module          module in which the language file should be looked for,
      *                                defaults to core module with fallback to ATK
-     * @param String $language        ISO 639-1 language code, defaults to config variable
-     * @param String $firstFallback   the first module to check as part of the fallback
+     * @param string $language        ISO 639-1 language code, defaults to config variable
+     * @param string $firstFallback   the first module to check as part of the fallback
      * @param boolean $nodeDefaultText  if true, then it doesn't return a default text
      *                                when it can't find a translation
      * @return String the string from the languagefile

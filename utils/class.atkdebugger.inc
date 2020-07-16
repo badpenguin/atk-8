@@ -85,7 +85,7 @@ class atkDebugger
      *
      * @param string  $query
      * @param boolean $system is system query? (e.g. for retrieving metadata, warnings, setting locks etc.)
-     * 
+     *
      * @return bool Indication if query is added
      */
     public static function addQuery($query, $isSystemQuery = false)
@@ -204,8 +204,8 @@ class atkDebugger
      */
     public function renderConsole()
     {
-        $page = &atkinstance("atk.ui.atkpage");
-        $theme = &atkinstance("atk.ui.atktheme");
+        $page =  atkinstance("atk.ui.atkpage");
+        $theme =  atkinstance("atk.ui.atktheme");
         $page->register_style($theme->stylePath("debugger.css"));
         $data = &$this->getDebuggerData(false, $_REQUEST['atkstackid']);
         $res = $this->consoleControls() . '<br/><br/>';
@@ -471,7 +471,7 @@ class atkDebugger
 
     /**
      * Set redirect URL.
-     * 
+     *
      * @param string $url The redirect url
      * @param bool $force Force to set this redirect url
      */
@@ -537,7 +537,7 @@ class atkDebugger
             ATK.Debug.addContent(' . atkJSON::encode($block) . ');
            </script>';
         } else {
-            $ui = &atkinstance('atk.ui.atkui');
+            $ui =  atkinstance('atk.ui.atkui');
             $stylesheet = $ui->stylePath('atkdebug.css');
             $script = atkconfig('atkroot') . 'atk/javascript/class.atkdebug.js';
 
@@ -569,7 +569,7 @@ class atkDebugger
     }
 
     /**
-     * Gets the elapsed time 
+     * Gets the elapsed time
      *
      * @return string The elapsed time
      */

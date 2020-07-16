@@ -42,7 +42,7 @@ class atkViewEditBase extends atkActionHandler
      * exists, unless we force a reload.
      *
      * @param bool $force Whether or not to force the fetching of the record
-     * @return Array The record for viewing/editting
+     * @return array The record for viewing/editting
      */
     public function getRecord($force = false)
     {

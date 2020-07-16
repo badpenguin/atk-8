@@ -52,7 +52,7 @@ class atkEventLog extends atkActionListener
     /**
      * This method handles the storage of the action in the database.
      *
-     * @param String $action The action being performed
+     * @param string $action The action being performed
      * @param array $record The record on which the action is performed
      */
     function actionPerformed($action, $record)

@@ -36,8 +36,8 @@ class auth_server extends auth_interface
     /**
      * Authenticate a user. 
      *
-     * @param String $user The login of the user to authenticate.
-     * @param String $passwd The password of the user. Note: if the canMd5 
+     * @param string $user The login of the user to authenticate.
+     * @param string $passwd The password of the user. Note: if the canMd5 
      *                       function of an implementation returns true,      
      *                       $passwd will be passed as an md5 string.
      *

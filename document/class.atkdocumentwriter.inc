@@ -39,7 +39,7 @@ class atkDocumentWriter
      */
     function __construct()
     {
-        
+
     }
 
     /**
@@ -66,7 +66,7 @@ class atkDocumentWriter
      * Returns labels for all attributes of a node
      *
      * @param atkNode $node Node for which the labels should be retrieved
-     * @return Array Associative array containing attributename=>label pairs
+     * @return array Associative array containing attributename=>label pairs
      */
     function getRecordLabels(&$node)
     {
@@ -94,8 +94,8 @@ class atkDocumentWriter
      * Returns labels for all attributes of a node
      *
      * @param atkNode $node Node for which the displayvalues should be retrieved
-     * @param Array $record Record for which the display values should be determined
-     * @return Array Associative array containing attributename=>displayvalue pairs
+     * @param array $record Record for which the display values should be determined
+     * @return array Associative array containing attributename=>displayvalue pairs
      */
     function getRecordDisplayValues(&$node, $record)
     {
@@ -127,7 +127,7 @@ class atkDocumentWriter
      * Assigns the labels for all attributes of a node to the documentWriter
      *
      * @param atkNode $node Node for which the labels should be retrieved
-     * @param String $prefix Prefix to be used when assigning the variables (used to avoid conflicting names)
+     * @param string $prefix Prefix to be used when assigning the variables (used to avoid conflicting names)
      */
     function _assignLabels(&$node, $prefix)
     {
@@ -143,8 +143,8 @@ class atkDocumentWriter
      * Enter description here...
      *
      * @param atkNode $node Node to be used when displaying the records
-     * @param Array $records Array of records that should be assigned to the documentwriter
-     * @param String $prefix Prefix to be used when assigning the variables (used to avoid conflicting names)
+     * @param array $records Array of records that should be assigned to the documentwriter
+     * @param string $prefix Prefix to be used when assigning the variables (used to avoid conflicting names)
      */
     function assignDocumentMultiRecord(&$node, $records, $prefix = "")
     {
@@ -173,8 +173,8 @@ class atkDocumentWriter
      * Enter description here...
      *
      * @param atkNode $node Node to be used when displaying the record
-     * @param Array $record Record that should be assigned to the documentwriter
-     * @param String $prefix Prefix to be used when assigning the variables (used to avoid conflicting names)
+     * @param array $record Record that should be assigned to the documentwriter
+     * @param string $prefix Prefix to be used when assigning the variables (used to avoid conflicting names)
      */
     function assignDocumentSingleRecord(&$node, $record, $prefix = "")
     {

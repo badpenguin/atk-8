@@ -189,7 +189,7 @@ $config_test_db_mapping = array('default' => 'test');
  * software relies on numerical indexes (WHICH IS A BAD IDEA!!)
  * @var int
  */
-$config_mysqlfetchmode = defined("MYSQL_ASSOC") ? MYSQL_ASSOC : 0;
+$config_mysqlfetchmode = defined("MYSQLI_ASSOC") ? MYSQLI_ASSOC : 0;
 
 /**
  * Backwardscompatibility setting. Set this to PGSQL_BOTH if your
@@ -531,7 +531,7 @@ $config_debuglog = "";
 
 /**
  *
- * @var Array
+ * @var array
  */
 $config_smart_debug = array();
 
@@ -894,7 +894,7 @@ $config_enable_ie_extensions = false;
 /**
  * Files that are allowed to be included by the include wrapper script
  * NOTE: this has nothing to do with useattrib and userelation etc.!
- * @var Array
+ * @var array
  */
 $config_allowed_includes = array("atk/lock/lock.php", "atk/lock/lock.js.php",
     "atk/popups/help.inc", "atk/popups/colorpicker.inc",

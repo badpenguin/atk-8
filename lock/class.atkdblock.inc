@@ -76,7 +76,7 @@ class atkDbLock extends atkLock
         $this->storeLockList($atklockList);
 
         if (!isset($ATK_VARS['atkpartial']) && $this->m_id > 0) {
-            $page = &atkinstance("atk.ui.atkpage");
+            $page =  atkinstance("atk.ui.atkpage");
             $page->register_script(atkconfig("atkroot") . "atk/javascript/xml.js");
             $page->register_script(session_url("include.php?file=atk/lock/lock.js.php&stack=" . atkStackID() . "&id=" . $this->m_id, SESSION_NEW));
         }
@@ -94,7 +94,7 @@ class atkDbLock extends atkLock
 
     /**
      * Store lock data in session.
-     * 
+     *
      * @param array $list The lock list
      */
     function storeLockList($list)
@@ -133,7 +133,7 @@ class atkDbLock extends atkLock
 
         /* check if the item can be locked */
         if ($mode == self::EXCLUSIVE) {
-            $query = &$db->createQuery();
+            $query = $db->createQuery();
             $query->addField("*");
             $query->addTable("db_lock");
             $query->addCondition("lock_table = '" . escapeSQL($table) . "'");
@@ -156,7 +156,7 @@ class atkDbLock extends atkLock
             if (is_array($user))
                 $user = $user['name'];
 
-            $query = &$db->createQuery();
+            $query = $db->createQuery();
             $query->addField("lock_id", $this->m_id);
             $query->addField("lock_table", escapeSQL($table));
             $query->addField("lock_record", escapeSQL($selector));
@@ -213,7 +213,7 @@ class atkDbLock extends atkLock
         $db->lock("db_lock");
 
         /* extend lock lease */
-        $query = &$db->createQuery();
+        $query = $db->createQuery();
         $query->addTable("db_lock");
         $query->addCondition
             (
@@ -260,7 +260,7 @@ class atkDbLock extends atkLock
         $db->lock("db_lock");
 
         /* extend lock lease */
-        $query = &$db->createQuery();
+        $query = $db->createQuery();
         $dbconfig = atkconfig("db");
         if (substr($dbconfig["default"]["driver"], 0, 3) != 'oci')
             $query->addField("lock_lease", $db->func_now() . " + INTERVAL 60 SECOND", "", "", FALSE);
@@ -317,7 +317,7 @@ class atkDbLock extends atkLock
         /* select all locks for the node table -> cache */
         if (!is_array($_cache[$table])) {
             $db = &atkGetDb();
-            $query = &$db->createQuery();
+            $query = $db->createQuery();
             $query->addField("lock_id");
             $query->addField("lock_record");
             $query->addField("user_id");

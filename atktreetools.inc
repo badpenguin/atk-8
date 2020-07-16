@@ -2,10 +2,10 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
- * @package atk   
+ * @package atk
  * @todo The atktreetools should be moved to the utils subpackage.
  *
  * @copyright (c)2000-2004 Ibuildings.nl BV
@@ -19,7 +19,7 @@
  * Node class, represents a node in a tree.
  *
  * @author Ivo Jansch <ivo@achievo.org>
- * @package atk   
+ * @package atk
  */
 class node
 {
@@ -43,13 +43,13 @@ class node
  * Tree class, used to build trees of nodes.
  *
  * @author Ivo Jansch <ivo@achievo.org>
- * @package atk   
+ * @package atk
  */
 class tree
 {
     var $m_tree = array();
     var $m_allnodes = array();
-    var $m_parentless = array(); // Array to keep stuff that can not yet be inserted into the array. 
+    var $m_parentless = array(); // Array to keep stuff that can not yet be inserted into the array.
 
     function addNode($id, $naam, $parent = 0, $img = "")
     {
@@ -107,7 +107,7 @@ class tree
         } else {
             $realTree = $sessionTree; // use the last known tree
         }
-        $ATK_VARS["atktree"] == $realTree; // postvars now should contain the last Knowtree
+	    $ATK_VARS["atktree"] == $realTree; // postvars now should contain the last Knowtree
     }
 
 }

@@ -37,7 +37,7 @@ class atkUpdatedByAttribute extends atkManyToOneRelation
     /**
      * Constructor.
      *
-     * @param String $name Name of the field
+     * @param string $name Name of the field
      * @param int $flags Flags for this attribute.
      * @return atkUpdatedByAttribute
      */
@@ -64,7 +64,7 @@ class atkUpdatedByAttribute extends atkManyToOneRelation
     /**
      * This method is overriden to make sure that when a form is posted ('save' button), the
      * current record is refreshed so the output on screen is accurate.
-     * 
+     *
      * @return array Array with userinfo, or "" if no user is logged in.
      */
     function initialValue()

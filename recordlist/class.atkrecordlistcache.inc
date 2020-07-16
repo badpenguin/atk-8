@@ -48,7 +48,7 @@ class atkRecordlistCache
 
     /**
      * The postvars for the recordlist
-     * @var Array
+     * @var array
      * @access private
      */
     var $m_postvars;
@@ -63,7 +63,7 @@ class atkRecordlistCache
     /**
      * The cache identifiers
      * These are the variables that make a cacheid unique
-     * @var Array
+     * @var array
      * @access private
      */
     var $m_cacheidentifiers;
@@ -109,7 +109,7 @@ class atkRecordlistCache
         $this->_setCacheId();
 
         if (file_exists($this->m_cacheid) && filesize($this->m_cacheid) && !$this->noCaching()) {
-            $theme = &atkinstance("atk.ui.atktheme");
+            $theme =  atkinstance("atk.ui.atktheme");
             $page = &atkPage::getInstance();
 
             $page->register_style($theme->stylePath("recordlist.css"));
@@ -218,7 +218,7 @@ class atkRecordlistCache
 
     /**
      * Gets all the current identifiers and returns them in an array
-     * @return Array The identifiers
+     * @return array The identifiers
      */
     function getIdentifiers()
     {
@@ -233,9 +233,9 @@ class atkRecordlistCache
 
     /**
      * Formats the identifiers in a '_keyvalue' way
-     * @param Array $identifiers The identifiers to format
-     * @param Array $output The formatted identifiers so far
-     * @return Array The formatted identifiers
+     * @param array $identifiers The identifiers to format
+     * @param array $output The formatted identifiers so far
+     * @return array The formatted identifiers
      */
     function _formatIdentifiers($identifiers, &$output)
     {
@@ -249,7 +249,7 @@ class atkRecordlistCache
 
     /**
      * Adds a cache identifier
-     * @param Array $identifier The extra cache identifier
+     * @param array $identifier The extra cache identifier
      */
     function addCacheIdentifier($identifier)
     {

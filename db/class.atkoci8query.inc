@@ -53,7 +53,7 @@ class atkOci8Query extends atkQuery
      * Add limiting clauses to the query.
      * Default implementation: no limit supported. Derived classes should implement this.
      *
-     * @param String $query The query
+     * @param string $query The query
      */
     function _addLimiter(&$query)
     {
@@ -73,8 +73,8 @@ class atkOci8Query extends atkQuery
      * result so we need to wrap it inside a select query from dual. To prevent 
      * perform loss we try to detect if the comparison field is a subquery or not.  
      * 
-     * @param String $field The field
-     * @param String $value The value
+     * @param string $field The field
+     * @param string $value The value
      * @return String The substring condition
      */
     function substringCondition($field, $value)

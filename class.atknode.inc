@@ -674,14 +674,14 @@ class atkNode
     /**
      * List of action listeners
      * @access protected
-     * @var Array
+     * @var array
      */
     var $m_actionListeners = array();
 
     /**
      * List of trigger listeners
      * @access protected
-     * @var Array
+     * @var array
      */
     var $m_triggerListeners = array();
 
@@ -721,7 +721,7 @@ class atkNode
     /**
      * List of editable list attributes.
      * @access private
-     * @var Array
+     * @var array
      */
     var $m_editableListAttributes = array();
 
@@ -777,7 +777,7 @@ class atkNode
      * <br>
      * <b>Example:</b>
      * <code>$this->atkNode('test',NF_NO_EDIT);</code>
-     * @param String $type The nodetype (by default equal to the classname)
+     * @param string $type The nodetype (by default equal to the classname)
      * @param int $flags Bitmask of node flags (NF_*).
      */
     function __construct($type = "", $flags = 0)
@@ -798,7 +798,7 @@ class atkNode
      * before the dot.
      *
      * @param string $section section name
-     * @return resolved section name
+     * @return string resolved section name
      */
     function resolveSection($section)
     {
@@ -1144,7 +1144,7 @@ class atkNode
      * Note: Since other functionality may already depend on the attribute
      * that you are about to remove, it's often better to just hide an
      * attribute if you don't need it.
-     * @param String $attribname The name of the attribute to remove.
+     * @param string $attribname The name of the attribute to remove.
      */
     function remove($attribname)
     {
@@ -1186,7 +1186,7 @@ class atkNode
 
     /**
      * Get an attribute by name.
-     * @param String $name The name of the attribute to retrieve.
+     * @param string $name The name of the attribute to retrieve.
      * @return atkAttribute The attribute.
      */
     function &getAttribute($name)
@@ -1203,7 +1203,7 @@ class atkNode
      * @param  -
      * @return boolean.
      */
-    function &filledInForm()
+    function filledInForm()
     {
         if (is_null($this->getAttributes()))
             return false;
@@ -1221,7 +1221,7 @@ class atkNode
      * Gets all the attributes.
      * @return array Array with the attributes.
      */
-    function &getAttributes()
+    function getAttributes()
     {
         if (isset($this->m_attribList))
             return $this->m_attribList;
@@ -1426,7 +1426,7 @@ class atkNode
 
     /**
      * Set default sort order for the node.
-     * @param String $orderby Default order by. Can be an attribute name or a
+     * @param string $orderby Default order by. Can be an attribute name or a
      *                        SQL expression.
      */
     function setOrder($orderby)
@@ -1449,8 +1449,8 @@ class atkNode
      *
      * Note: This should be called in the constructor of derived classes,
      * after the base class constructor is called.
-     * @param String $tablename The name of the table to use.
-     * @param String $seq The name of the sequence to use for autoincrement
+     * @param string $tablename The name of the table to use.
+     * @param string $seq The name of the sequence to use for autoincrement
      *                    attributes.
      * @param mixed $db The database connection to use. If ommitted, this
      *                  defaults to the default database connection.
@@ -1499,7 +1499,7 @@ class atkNode
      *
      * Any string- or textbased attribute can be used to create an
      * alphabetical index in admin- and selectpages.
-     * @param String $attribname The name of the attribute for which to create
+     * @param string $attribname The name of the attribute for which to create
      *                           the alphabetical index.
      */
     function setIndex($attribname)
@@ -1543,7 +1543,7 @@ class atkNode
      * attributes to the node.
      * If you accept the default name for the first tab ("default") you do not
      * need to call this method.
-     * @param String $tab the name of the default tab
+     * @param string $tab the name of the default tab
      */
     function setDefaultTab($tab = "default")
     {
@@ -1552,7 +1552,7 @@ class atkNode
 
     /**
      * Get a list of tabs for a certain action.
-     * @param String $action The action for which you want to retrieve the
+     * @param string $action The action for which you want to retrieve the
      *                       list of tabs.
      * @return array The list of tabnames.
      *
@@ -1612,7 +1612,7 @@ class atkNode
     /**
      * Retrieve the sections for the active tab.
      *
-     * @param String $action
+     * @param string $action
      * @return array The active sections.
      */
     function getSections($action)
@@ -1681,7 +1681,7 @@ class atkNode
             // load the $g_nodes array to find out what tabs are required
             if (!isset($g_nodes[$this->m_module][$this->m_module][$this->m_type])) {
                 include_once(atkconfig("atkroot") . "atk/atknodetools.inc");
-                $module = &getModule($this->m_module);
+                $module = getModule($this->m_module);
                 $module->getNodes();
             }
 
@@ -1785,9 +1785,9 @@ class atkNode
 
     /**
      * Add a recordset filter.
-     * @param String $filter The fieldname you want to filter OR a SQL where
+     * @param string $filter The fieldname you want to filter OR a SQL where
      *                       clause expression.
-     * @param String $value Required value. (Ommit this parameter if you pass
+     * @param string $value Required value. (Ommit this parameter if you pass
      *                      an SQL expression for $filter.)
      */
     function addFilter($filter, $value = "")
@@ -1803,8 +1803,8 @@ class atkNode
 
     /**
      * Search and remove a recordset filter.
-     * @param String $filter The filter to search for
-     * @param String $value The value to search for in case it is not a fuzzy filter
+     * @param string $filter The filter to search for
+     * @param string $value The value to search for in case it is not a fuzzy filter
      * @return TRUE if the given filter was found and removed, FALSE otherwise.
      */
     function removeFilter($filter, $value = "")
@@ -1834,7 +1834,7 @@ class atkNode
      * Returns the form buttons for a certain page.
      *
      * Can be overridden by derived classes to define custom buttons.
-     * @param String $mode The action for which the buttons are retrieved.
+     * @param string $mode The action for which the buttons are retrieved.
      * @param array $record The record currently displayed/edited in the form.
      *                      This param can be used to define record specific
      *                      buttons.
@@ -1884,7 +1884,7 @@ class atkNode
      * The default implementation displayes the action name, and the
      * descriptor of the current record between brackets. This can be
      * overridden by derived classes.
-     * @param String $action The action for which the title is generated.
+     * @param string $action The action for which the title is generated.
      * @param array $record The record for which the title is generated.
      * @return String The full title of the action.
      */
@@ -1929,8 +1929,8 @@ class atkNode
 
     /**
      * Place a set of tabs around content.
-     * @param String $action The action for which the tabs are loaded.
-     * @param String $content The content that is to be displayed within the
+     * @param string $action The action for which the tabs are loaded.
+     * @param string $content The content that is to be displayed within the
      *                        tabset.
      * @return String The complete tabset with content.
      */
@@ -2048,13 +2048,13 @@ class atkNode
      *
      * @todo The editArray method should use a set of classes to build the
      *       form, instead of an array with an overly complex structure.
-     * @param String $mode        The edit mode ("add" or "edit")
+     * @param string $mode        The edit mode ("add" or "edit")
      * @param array $record       The record currently being edited.
      * @param array $forceList    A key-value array used to preset certain
      *                            fields to a certain value, regardless of the
      *                            value in the record.
      * @param array $suppressList List of attributenames that you want to hide
-     * @param String $fieldprefix Of set, each form element is prefixed with
+     * @param string $fieldprefix Of set, each form element is prefixed with
      *                            the specified prefix (used in embedded form
      *                            fields)
      * @param bool $ignoreTab  Ignore the tabs an attribute should be shown on.
@@ -2218,7 +2218,7 @@ class atkNode
      *
      * @todo The viewArray method should use a set of classes to build the
      *       form, instead of an array with an overly complex structure.
-     * @param String $mode        The edit mode ("view")
+     * @param string $mode        The edit mode ("view")
      * @param array $record       The record currently being viewed.
      * @param bool $injectSections Inject sections?
      * @return array List of edit fields (per field ( name, html, obligatory,
@@ -2397,11 +2397,11 @@ class atkNode
      * parameter. By using these params, you can have custom templates per
      * action, and/or per tab, and even per record.
      *
-     * @param String $action The action for which you wnat to retrieve the
+     * @param string $action The action for which you wnat to retrieve the
      *                       template.
      * @param array $record  The record for which you want to return the
      *                       template (or NULL if there is no record).
-     * @param String $tab    The name of the tab for which you want to
+     * @param string $tab    The name of the tab for which you want to
      *                       retrieve the template.
      * @return String The filename of the template (without path)
      */
@@ -2422,12 +2422,12 @@ class atkNode
      *
      * This is probably only useful for the atkOneToOneRelation's hide method.
      *
-     * @param String $mode        The edit mode ("add" or "edit")
+     * @param string $mode        The edit mode ("add" or "edit")
      * @param array $record       The record that should be hidden.
      * @param array $forceList    A key-value array used to preset certain
      *                            fields to a certain value, regardless of the
      *                            value in the record.
-     * @param String $fieldprefix Of set, each form element is prefixed with
+     * @param string $fieldprefix Of set, each form element is prefixed with
      *                            the specified prefix (used in embedded form
      *                            fields)
      * @return String HTML fragment containing all hidden elements.
@@ -2442,6 +2442,7 @@ class atkNode
 
         /* get data, transform into "form", return */
         $data = $this->editArray($mode, $record, $forceList, $suppressList, $fieldprefix);
+	    $form = '';
         foreach ($data["hide"] as $hide)
             $form .= $hide;
         return $form;
@@ -2453,7 +2454,7 @@ class atkNode
      * This doesn't generate the actual HTML code, but returns the data for
      * the tabs (title, selected, urls that should be loaded upon click of the
      * tab etc).
-     * @param String $action The action for which the tabs should be generated.
+     * @param string $action The action for which the tabs should be generated.
      * @return array List of tabs
      * @todo Make translation of tabs module aware
      */
@@ -2499,7 +2500,7 @@ class atkNode
      * The actions may contain a [pk] template variable to reference a record,
      * so for each record you should run the stringparser on the action.
      *
-     * @param String $mode The mode for which you want a list of actions.
+     * @param string $mode The mode for which you want a list of actions.
      *                     Currently available modes for this method:
      *                     - "admin" (for actions in adminscreens)
      *                     - "relation" (for the list of actions when
@@ -2609,7 +2610,7 @@ class atkNode
      *                           processed at once. The method uses the
      *                           selector(s) to display the current record(s)
      *                           in the confirmation page.
-     * @param String $action The action for which confirmation is needed.
+     * @param string $action The action for which confirmation is needed.
      * @param boolean $locked Pass true if the current record is locked.
      * @param boolean $checkoverride If set to true, this method will try to
      *                               find a custom method named
@@ -2695,9 +2696,9 @@ class atkNode
 
     /**
      * Determine the confirmation message.
-     * @param String $atkselector The record(s) on which the action is
+     * @param string $atkselector The record(s) on which the action is
      *                            performed.
-     * @param String $action The action being performed.
+     * @param string $action The action being performed.
      * @param boolean $checkoverride If true, returns the output of a custom
      *                               method named "confirm".$action."text()"
      * @return String The confirmation text.
@@ -2755,7 +2756,7 @@ class atkNode
         // modifiers if found.
         if (isset($g_modifiers[$this->atknodetype()])) {
             foreach ($g_modifiers[$this->atknodetype()] as $modulename) {
-                $module = &getModule($modulename);
+                $module = getModule($modulename);
                 $module->modifier($this);
             }
         }
@@ -2774,7 +2775,7 @@ class atkNode
 
         $lockType = atkconfig("lock_type");
         if (!empty($lockType) && $this->hasFlag(NF_LOCK)) {
-            $this->m_lock = &atkinstance("atk.lock.atklock");
+            $this->m_lock =  atkinstance("atk.lock.atklock");
         } else
             $this->removeFlag(NF_LOCK);
 
@@ -2808,7 +2809,7 @@ class atkNode
                     $this->addListener($listener);
                 } else {
                     if (is_string($listener)) {
-                        $listenerobj = &atknew($listener);
+                        $listenerobj = atknew($listener);
                         if (is_object($listenerobj)) {
                             $this->addListener($listenerobj);
                         } else
@@ -2866,7 +2867,7 @@ class atkNode
 
     /**
      * Render a generic page, with a box, title, stacktrace etc.
-     * @param String $title The pagetitle and if $content is a string, also
+     * @param string $title The pagetitle and if $content is a string, also
      *                      the boxtitle.
      * @param mixed $content The content to display on the page. This can be:
      *                       - A string which will be the content of a single
@@ -2888,7 +2889,7 @@ class atkNode
      *
      * Renders actionpage.tpl for the desired action. This includes the
      * given block(s) and a pagetrial, but not a box.
-     * @param String $action The action for which the page is rendered.
+     * @param string $action The action for which the page is rendered.
      * @param mixed $blocks Pieces of html content to be rendered. Can be a
      *                      single string with content, or an array with
      *                      multiple content blocks.
@@ -2963,7 +2964,7 @@ class atkNode
      * atkOutput::outputFlush().
      *
      * @static
-     * @param String $location The url to which you want to redirect the user.
+     * @param string $location The url to which you want to redirect the user.
      *                         If ommitted, the call automatically redirects
      *                         to the previous screen of the user. (one level
      *                         back on the session stack).
@@ -3110,7 +3111,7 @@ class atkNode
 
     /**
      * Sets the descriptor template for this node.
-     * @param String $template The descriptor template.
+     * @param string $template The descriptor template.
      */
     function setDescriptorTemplate($template)
     {
@@ -3235,7 +3236,7 @@ class atkNode
      *           delegates validation to that object.
      *
      * @param array $record The record to validate
-     * @param String $mode The mode for which validation is performed ('add' or 'update')
+     * @param string $mode The mode for which validation is performed ('add' or 'update')
      * @param array $ignoreList The list of attributes that should not be
      *                         validated
      */
@@ -3318,7 +3319,7 @@ class atkNode
     function updateDb(&$record, $exectrigger = true, $excludes = "", $includes = "")
     {
         $db = $this->getDb();
-        $query = &$db->createQuery();
+        $query = $db->createQuery();
 
         $query->addTable($this->m_table);
 
@@ -3367,7 +3368,7 @@ class atkNode
             if ($this->hasFlag(NF_ML) && $record["atkmlsplit"] == "") {
                 $record["atkmlsplit"] = 1;
 
-                $mltool = &atkinstance("atk.utils.atkmlsplitter");
+                $mltool =  atkinstance("atk.utils.atkmlsplitter");
                 $mltool->updateMlRecords($this, $record, "update", $excludes, $includes);
             }
 
@@ -3394,7 +3395,7 @@ class atkNode
      * @param array $storelist The list of attributes for which the
      *                         store() method should be called.
      * @param array $record The master record being stored.
-     * @param String $mode The storage mode ("add", "copy" or "update")
+     * @param string $mode The storage mode ("add", "copy" or "update")
      * @return boolean True if succesful, false if not.
      */
     function _storeAttributes($storelist, &$record, $mode)
@@ -3527,7 +3528,7 @@ class atkNode
      * query, as part of a join.
      * @todo The allfields parameter is too inflexible.
      * @param atkQuery $query The query statement
-     * @param String $alias The aliasprefix to use for fields from this node
+     * @param string $alias The aliasprefix to use for fields from this node
      * @param int $level The recursion level.
      * @param boolean $allfields If set to true, all fields from the node are
      *                           added to the query. If set to false, only
@@ -3580,7 +3581,7 @@ class atkNode
         }
 
         if ($this->hasFlag(NF_ML)) {
-            $mltool = &atkinstance("atk.utils.atkmlsplitter");
+            $mltool =  atkinstance("atk.utils.atkmlsplitter");
             $mltool->addMlCondition($query, $this, $mode, $alias);
         }
     }
@@ -3676,8 +3677,8 @@ class atkNode
             if (!$this->executeTrigger("preAdd", $record, $mode))
                 return atkerror("preAdd() failed!");
 
-        $db = &$this->getDb();
-        $query = &$db->createQuery();
+        $db = $this->getDb();
+        $query = $db->createQuery();
 
         $storelist = array("pre" => array(), "post" => array(), "query" => array());
 
@@ -3714,7 +3715,7 @@ class atkNode
 
         if ($this->hasFlag(NF_ML) && $record["atkmlsplit"] == "") {
             $record["atkmlsplit"] = 1;
-            $mltool = &atkinstance("atk.utils.atkmlsplitter");
+            $mltool =  atkinstance("atk.utils.atkmlsplitter");
             $mltool->updateMlRecords($this, $record, $mode);
         }
 
@@ -3792,7 +3793,7 @@ class atkNode
      * @todo There's a discrepancy between updateDb, addDb and deleteDb:
      *       There should be a deleteDb which accepts a record, instead
      *       of a selector.
-     * @param String $selector SQL expression used as where-clause that
+     * @param string $selector SQL expression used as where-clause that
      *                         indicates which records to delete.
      * @param bool $exectrigger wether to execute the pre/post triggers
      * @param bool $failwhenempty determine whether to throw an error if there is nothing to delete
@@ -3874,7 +3875,7 @@ class atkNode
      * record.
      *
      * @param array $record The record that has just been saved.
-     * @param String $mode The 'mode' indicates whether the added record was a
+     * @param string $mode The 'mode' indicates whether the added record was a
      *                     completely new record ("add") or a copy ("copy").
      * @return boolean True if succesful, false if not.
      */
@@ -4093,7 +4094,7 @@ class atkNode
      * Returns the privilege required to perform a certain action.
      * Usually, the privilege and the action are equal, but in m_securityMap,
      * aliasses may be defined.
-     * @param String $action The action for which you want to determine the
+     * @param string $action The action for which you want to determine the
      *                       privilege.
      * @return String The security privilege required to perform the action.
      */
@@ -4150,7 +4151,7 @@ class atkNode
      * This function determines if the user has the privilege to perform a certain
      * action on the node.
      *
-     * @param String $action The action to be checked.
+     * @param string $action The action to be checked.
      * @param array $record The record on which the action is to be performed.
      *                      The standard implementation ignores this
      *                      parameter, but derived classes may override this
@@ -4215,7 +4216,7 @@ class atkNode
      * Note: When setting an alias for the node, the node no longer has to
      * have a registerNode call in the getNodes method in module.inc.
      *
-     * @param String $alias The node (module.nodename) to set as a security
+     * @param string $alias The node (module.nodename) to set as a security
      *                      alias for this node.
      */
     function setSecurityAlias($alias)
@@ -4238,7 +4239,7 @@ class atkNode
      *
      * This method disables privilege checks for the specified action, for the
      * duration of the current http request.
-     * @param String $action The name of the action for which security is
+     * @param string $action The name of the action for which security is
      *                       disabled.
      */
     function addAllowedAction($action)
@@ -4348,7 +4349,7 @@ class atkNode
      * specified action, this method will call it. If there is no custom
      * external handler, the atkActionHandler object is determined and the
      * actionis invoked on the actionhandler.
-     * @param String $action the node action
+     * @param string $action the node action
      */
     function callHandler($action)
     {
@@ -4380,7 +4381,7 @@ class atkNode
      *
      * The default implementation returns a default handler for the action,
      * but derived classes may override this to return a custom handler.
-     * @param String $action The action for which the handler is retrieved.
+     * @param string $action The action for which the handler is retrieved.
      * @return atkActionHandler The action handler.
      */
     function &getHandler($action)
@@ -4398,7 +4399,7 @@ class atkNode
 
         // The node handler might return a class, then we need to instantiate the handler
         if (is_string($handler) && !function_exists($handler) && atkimport($handler)) {
-            $handler = &atknew($handler);
+            $handler = atknew($handler);
         }
 
         // The node handler might return a function as nodehandler. We cannot
@@ -4438,7 +4439,7 @@ class atkNode
      * has a variable number of arguments).
      * @todo Using func_get_args is non-standard. It's cleaner to accept an
      *       array.
-     * @param String $action The name of the action.
+     * @param string $action The name of the action.
      */
     function setSearchAction()
     {
@@ -4477,7 +4478,7 @@ class atkNode
      * Currently, searchDb only searches those attributes that are of type
      * string or text.
      *
-     * @param String $expression The keyword to search for.
+     * @param string $expression The keyword to search for.
      * @param string $searchmethod
      * @return array Set of records matching the keyword.
      */
@@ -4521,10 +4522,10 @@ class atkNode
      * The $record parameter is ignored by the default implementation, but
      * derived classes may override this method to perform record-specific
      * feedback.
-     * @param String $action The action that was performed
+     * @param string $action The action that was performed
      * @param int $status The status of the action.
      * @param array $record The record on which the action was performed.
-     * @param String $message An optional message to pass to the feedbackpage,
+     * @param string $message An optional message to pass to the feedbackpage,
      *                        for example to explain the reason why an action
      *                        failed.
      * @param int $levelskip Number of levels to skip
@@ -4542,7 +4543,7 @@ class atkNode
      *
      * The theme engine is used to determine the path, and load the correct
      * stylesheet.
-     * @param String $style The filename of the stylesheet (without path).
+     * @param string $style The filename of the stylesheet (without path).
      */
     function addStyle($style)
     {
@@ -4576,7 +4577,7 @@ class atkNode
      * If $mapped is not empty $action kan be a string containing one action of an array with one or more action. In both
      * cases al actions would be mapped to $mappped
      * @param Mixed $action The action that has to be mapped
-     * @param String $mapped The action on witch $action has to be mapped
+     * @param string $mapped The action on witch $action has to be mapped
      */
     function addSecurityMap($action, $mapped = "")
     {
@@ -4631,7 +4632,7 @@ class atkNode
     /**
      * Notify all listeners of the occurance of a certain action.
      *
-     * @param String $action The action that occurred
+     * @param string $action The action that occurred
      * @param array $record The record on which the action was performed
      */
     function notify($action, $record)
@@ -4644,7 +4645,7 @@ class atkNode
     /**
      * Notify all listeners in advance of the occurance of a certain action.
      *
-     * @param String $action The action that will occur
+     * @param string $action The action that will occur
      * @param array $record The record on which the action will be performed
      */
     function preNotify($action, &$record)
@@ -4675,10 +4676,10 @@ class atkNode
      * @param mixed $string           string or array of strings containing the name(s) of the string to return
      *                                when an array of strings is passed, the second will be the fallback if
      *                                the first one isn't found, and so forth
-     * @param String $module          module in which the language file should be looked for,
+     * @param string $module          module in which the language file should be looked for,
      *                                defaults to core module with fallback to ATK
-     * @param String $lng             ISO 639-1 language code, defaults to config variable
-     * @param String $firstfallback   the first module to check as part of the fallback
+     * @param string $lng             ISO 639-1 language code, defaults to config variable
+     * @param string $firstfallback   the first module to check as part of the fallback
      * @param boolean $nodefaulttext  if true, then it doesn't return a default text
      *                                when it can't find a translation
      * @return String the string from the languagefile

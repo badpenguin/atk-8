@@ -40,7 +40,7 @@ class atkThemeCompiler
     /**
      * Compile a theme file for a certain theme.
      *
-     * @param String $name The name of the theme to compile.
+     * @param string $name The name of the theme to compile.
      */
     function compile($name)
     {
@@ -75,8 +75,8 @@ class atkThemeCompiler
      * All themes are implicitly derived from the 'default' theme unless they
      * specify otherwise in their themedef.inc file.
      *
-     * @param String $name The name of the theme
-     * @param String $location The location of the theme ("atk", "app" or "auto")
+     * @param string $name The name of the theme
+     * @param string $location The location of the theme ("atk", "app" or "auto")
      * @return array Theme dData structure
      */
     function readStructure($name, $location = "auto")
@@ -140,8 +140,8 @@ class atkThemeCompiler
     /**
      * Find the location on disk of a theme with a certain name.
      *
-     * @param String $name Name of the theme
-     * @param String $location The location of the theme ("atk", "app" or "auto")
+     * @param string $name Name of the theme
+     * @param string $location The location of the theme ("atk", "app" or "auto")
      *                         If set to auto, the method changes the $location
      *                         value to the actual location.
      * @return String The path relative to atk root, where the theme is located
@@ -172,9 +172,9 @@ class atkThemeCompiler
      *
      * Traverses the theme path and remembers the physical location of all theme files.
      *
-     * @param String $path The path of the theme, relative to atkroot.
-     * @param String $abspath The absolute path of the theme
-     * @param String $data Reference to the data array in which to report the file locations
+     * @param string $path The path of the theme, relative to atkroot.
+     * @param string $abspath The absolute path of the theme
+     * @param string $data Reference to the data array in which to report the file locations
      */
     function scanThemePath($path, $abspath, &$data)
     {
@@ -214,8 +214,8 @@ class atkThemeCompiler
      *
      * Traverses the module path and remembers the physical location of all theme files.
      *
-     * @param String $theme The name of the theme
-     * @param String $data Reference to the data array in which to report the file locations
+     * @param string $theme The name of the theme
+     * @param string $data Reference to the data array in which to report the file locations
      */
     function scanModulePath($theme, &$data)
     {
@@ -251,7 +251,7 @@ class atkThemeCompiler
      * Get files for a directory
      *
      * @param string $path The directory to traverse
-     * @return Array with files from the traversed directory
+     * @return array with files from the traversed directory
      */
     function _dirContents($path)
     {

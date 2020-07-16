@@ -31,7 +31,7 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
     /**
      * Fetch posted criteria.
      *
-     * @return Array fetched criteria
+     * @return array fetched criteria
      */
     function fetchCriteria()
     {
@@ -179,8 +179,8 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
 
     /**
      * Redirect to search results based on the given criteria.
-     * 
-     * @param Array $criteria
+     *
+     * @param array $criteria
      */
     function redirectToResults($criteria)
     {
@@ -216,7 +216,7 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * Returns the template path with the given name.
      * Name can be either 'form' or 'criterium'.
      *
-     * @param String $name template name
+     * @param string $name template name
      * @return full template path
      */
     function getTemplate($name)
@@ -232,9 +232,9 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * Get searchable attributes for the given node.
      *
      * @param atkNode $node     reference to the node
-     * @param Array   $excludes attribute exclude list
+     * @param array   $excludes attribute exclude list
      *
-     * @return Array list of reference to searchable attributes
+     * @return array list of reference to searchable attributes
      */
     function getSearchableAttributes(&$node, $excludes)
     {
@@ -256,7 +256,7 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * Returns a select element with searchable attributes for
      * a certain node.
      *
-     * @param Array  $entry
+     * @param array  $entry
      */
     function getAttributeList($entry)
     {
@@ -305,11 +305,11 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * This method will modify the $path, $includeSelf and $excludes parameters to prepare
      * them for the next call to this method.
      *
-     * @param Array   $path        reference to the current path
+     * @param array   $path        reference to the current path
      * @param atkNode $node        reference to the current node
-     * @param String  $attrName    currently selected attribute
+     * @param string  $attrName    currently selected attribute
      * @param Boolean $includeSelf should we include ourselves?
-     * @param Array   $excludes    attributes to exclude
+     * @param array   $excludes    attributes to exclude
      *
      * @return atkNode next node
      */
@@ -344,8 +344,8 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * Returns the node/attribute path for the given
      * attribute name path.
      *
-     * @param Array $attrPath attribute name path
-     * @return Array node/attribute path
+     * @param array $attrPath attribute name path
+     * @return array node/attribute path
      */
     function getNodeAndAttrPath($attrPath)
     {
@@ -374,8 +374,8 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * Returns the criterium field for the given path.
      *
      * @param Integer $id         criterium id
-     * @param Array   $path       criterium path
-     * @param Array   $scriptCode lines of JavaScript
+     * @param array   $path       criterium path
+     * @param array   $scriptCode lines of JavaScript
      *
      * @return String criterium field HTML
      */
@@ -417,12 +417,12 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * Returns the criterium value or mode field for the given path.
      *
      * @param Integer $id    criterium id
-     * @param Array   $path  criterium path
-     * @param Array   $value current search value
-     * @param Array   $mode  current search mode
-     * @param String  $type  return either 'value' or 'mode' field
+     * @param array   $path  criterium path
+     * @param array   $value current search value
+     * @param array   $mode  current search mode
+     * @param string  $type  return either 'value' or 'mode' field
      *
-     * @param String criterium value or mode field HTML
+     * @param string criterium value or mode field HTML
      */
     function _getCriteriumValueOrMode($id, $path, $value, $mode, $type)
     {
@@ -472,11 +472,11 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * Returns the criterium value field for the given path.
      *
      * @param Integer $id    criterium id
-     * @param Array   $path  criterium path
-     * @param Array   $value current search value
-     * @param Array   $mode  current search mode
+     * @param array   $path  criterium path
+     * @param array   $value current search value
+     * @param array   $mode  current search mode
      *
-     * @param String criterium value field HTML
+     * @param string criterium value field HTML
      */
     function getCriteriumValue($id, $path, $value = array(), $mode = array())
     {
@@ -487,11 +487,11 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * Returns the criterium mode field for the given path.
      *
      * @param Integer $id    criterium id
-     * @param Array   $path  criterium path
-     * @param Array   $value current search value
-     * @param Array   $mode  current search mode
+     * @param array   $path  criterium path
+     * @param array   $value current search value
+     * @param array   $mode  current search mode
      *
-     * @param String criterium mode field HTML
+     * @param string criterium mode field HTML
      */
     function getCriteriumMode($id, $path, $value = array(), $mode = array())
     {
@@ -503,8 +503,8 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
      * structure contains the already known information about the currently
      * selected field and values (if any).
      *
-     * @param String $id   criterium identifier
-     * @param Array  $data criterium data
+     * @param string $id   criterium identifier
+     * @param array  $data criterium data
      */
     function getCriterium($id, $data = array())
     {
@@ -529,7 +529,7 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
     /**
      * Renders a single criterium (field and value).
      *
-     * @param Array $criterium criterium structure (from getCriterium)
+     * @param array $criterium criterium structure (from getCriterium)
      *
      * @return String rendered criterium
      */
@@ -555,8 +555,8 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
     /**
      * This method returns a form that the user can use to search records.
      *
-     * @param String $name
-     * @param Array $criteria
+     * @param string $name
+     * @param array $criteria
      * @return String The searchform in html form.
      */
     function smartSearchForm($name = "", $criteria = array())
@@ -588,8 +588,8 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
     /**
      * This method returns an html page that can be used as a search form.
      *
-     * @param String $name
-     * @param Array $criteria
+     * @param string $name
+     * @param array $criteria
      * @return String The html search page.
      */
     function smartSearchPage($name = "", $criteria = array())
@@ -608,7 +608,7 @@ class atkSmartSearchHandler extends atkAbstractSearchHandler
         useattrib('atkdateattribute');
         atkDateAttribute::registerScriptsAndStyles();
 
-        $theme = &atkinstance("atk.ui.atktheme");
+        $theme =  atkinstance("atk.ui.atktheme");
         $page->register_style($theme->stylePath("atkdateattribute.css"));
 
         $params = array();

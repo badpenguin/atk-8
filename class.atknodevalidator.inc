@@ -50,7 +50,7 @@ class atkNodeValidator
      */
     function __construct()
     {
-        
+
     }
 
     /**
@@ -64,7 +64,7 @@ class atkNodeValidator
 
     /**
      * set the mode in which to validate
-     * @param String $mode The mode ("edit"/"add")
+     * @param string $mode The mode ("edit"/"add")
      */
     function setMode($mode)
     {
@@ -178,7 +178,7 @@ class atkNodeValidator
 
     /**
      * Validate attribute value.
-     * 
+     *
      * @param atkAttribute $p_attrib pointer to the attribute
      * @param array        $record   record
      */
@@ -196,8 +196,8 @@ class atkNodeValidator
 
     /**
      * @deprecated
-     * 
-     * @param array $record 
+     *
+     * @param array $record
      */
     function validateAttributes(&$record)
     {
@@ -222,7 +222,7 @@ class atkNodeValidator
         $db = $this->m_nodeObj->getDb();
         atkimport('atk.db.atkquery');
         foreach ($this->m_nodeObj->m_uniqueFieldSets as $uniqueFieldSet) {
-            $query = &$db->createQuery();
+            $query = $db->createQuery();
             $query->addField('*');
             $query->addTable($this->m_nodeObj->m_table);
 

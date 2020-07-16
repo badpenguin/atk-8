@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -45,10 +45,10 @@ class atkMlTextAttribute extends atkMlAttribute
     /**
      * Returns a piece of html code that can be used in a form to edit this
      * attribute's value.
-     * @param Array $record array with fields
-     * @param String $prefix The fieldprefix to put in front of the name
+     * @param array $record array with fields
+     * @param string $prefix The fieldprefix to put in front of the name
      *                            of any html form element for this attribute.
-     * @param String $mode The mode we're in ('add' or 'edit')
+     * @param string $mode The mode we're in ('add' or 'edit')
      * @return piece of html code with a textarea
      */
     function edit($record = "", $prefix = "", $mode = "")
@@ -86,11 +86,11 @@ class atkMlTextAttribute extends atkMlAttribute
      * This method is called by the node if it wants the data needed to create
      * an edit form.
      *
-     * @param String $mode     the edit mode ("add" or "edit")
+     * @param string $mode     the edit mode ("add" or "edit")
      * @param array  $arr      pointer to the edit array
      * @param array  $defaults pointer to the default values array
      * @param array  $error    pointer to the error array
-     * @param String $fieldprefix   the fieldprefix
+     * @param string $fieldprefix   the fieldprefix
      */
     function addToEditArray($mode, &$arr, &$defaults, &$error, $fieldprefix)
     {

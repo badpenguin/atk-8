@@ -34,7 +34,7 @@ class atkClassLoader
 
     /**
      * Is re-indexed during this request?
-     * 
+     *
      * @var boolean
      */
     static $s_isReindexed = false;
@@ -111,9 +111,9 @@ class atkClassLoader
      * Mount a certain (class) path on a certain prefix. After this you can
      * simply load the classes on the given path using the prefix. This makes
      * it for example possible to load classes outside your atkroot.
-     *  
+     *
      * Note: at the moment only single element prefixes are allowed!
-     * 
+     *
      * Example:
      * atkClassLoader::mountClassPath('frontend', atkconfig('atkroot').'../frontend/');
      * atkClassLoader::newInstance('frontend.helloworld');
@@ -187,11 +187,11 @@ class atkClassLoader
 
     /**
      * Returns a new instance of a class
-     * 
+     *
      * @param string $fullclassname the ATK classname of the class ("map1.map2.classname")
      * @param mixed  ...            all arguments after the class name will be passed to the
      *                              class constructor
-     * 
+     *
      * @return object instance of the class
      */
     static function newInstance($fullclassname)
@@ -204,10 +204,10 @@ class atkClassLoader
 
     /**
      * Returns a new instance of a class
-     * 
+     *
      * @param string $fullclassname the ATK classname of the class ("map1.map2.classname")
      * @param array  $args          arguments for the new instance
-     * 
+     *
      * @return object instance of the class
      */
     static function newInstanceArgs($fullclassname, $args = array())
@@ -238,7 +238,7 @@ class atkClassLoader
      *
      * @param string $fullclassname the ATK classname of the class ("map1.map2.classname")
      * @param bool $reset Force resetting of the instance
-     * @return obj instance of the class
+     * @return object instance of the class
      * */
     static function getSingletonInstance($fullclassname, $reset = false)
     {
@@ -262,7 +262,7 @@ class atkClassLoader
      * (if any).
      *
      * @static
-     * @param String $class The name of the class to resolve
+     * @param string $class The name of the class to resolve
      * @return String The resolved classname
      */
     static function resolveClass($class)
@@ -279,8 +279,8 @@ class atkClassLoader
      * Add a class overloader
      *
      * @static
-     * @param String $original
-     * @param String $overload
+     * @param string $original
+     * @param string $overload
      * @param bool $overwrite
      * @return bool Wether or not we added the overloader
      */
@@ -298,7 +298,7 @@ class atkClassLoader
      * Remove a class overloader for a class
      *
      * @static
-     * @param String $original
+     * @param string $original
      * @return bool Wether or not we removed an overloader
      */
     function removeOverloader($original)
@@ -315,7 +315,7 @@ class atkClassLoader
      * Checks wether or not a class has an overloader defined
      *
      * @static
-     * @param String $original The class to check for
+     * @param string $original The class to check for
      * @return bool Wether or not the class has an overloader
      */
     function hasOverloader($original)
@@ -334,7 +334,7 @@ class atkClassLoader
      *
      * @static
      *
-     * @param String $str The "classname#method" to invoke.
+     * @param string $str The "classname#method" to invoke.
      * @param array  $params Any params to be passed to the invoked method.
      *
      * @return boolean false if the call failed. In all other cases, it
@@ -348,7 +348,7 @@ class atkClassLoader
 
         list($class, $method) = explode("#", $str);
         if ($class != "" && $method != "") {
-            $handler = &atknew($class);
+            $handler = atknew($class);
             if (is_object($handler)) {
                 return call_user_func_array(array($handler, $method), $params);
             }
@@ -362,7 +362,7 @@ class atkClassLoader
      * Finds a class in the current application.
      *
      * @param string $class The classname to find.
-     * 
+     *
      * @return string|bool   The classpath (atkimport statement) of the class
      *                       if found, else false
      */
@@ -392,7 +392,7 @@ class atkClassLoader
      * Gets an array with all the the classes
      *
      * @param bool $force Force reloading of classes, instead of using cache.
-     * @return Array An array with the classes as keys and the path as value.
+     * @return array An array with the classes as keys and the path as value.
      */
     function getAllClasses($force = false)
     {
@@ -421,7 +421,7 @@ class atkClassLoader
      *
      * @todo Make it search and support modules too.
      *
-     * @return Array An array with the classes as keys and the path as value.
+     * @return array An array with the classes as keys and the path as value.
      */
     function findAllClasses()
     {

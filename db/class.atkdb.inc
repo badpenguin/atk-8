@@ -486,8 +486,8 @@ class atkDb
      * If haltonerror is set, this will raise an atkerror. If not, it will
      * place the error in atkdebug and continue.
      * @access protected
-     * 
-     * @param String $message
+     *
+     * @param string $message
      */
     function halt($message = "")
     {
@@ -507,7 +507,7 @@ class atkDb
 
     /**
      * Returns the current query resource.
-     * 
+     *
      * @return mixed query resource
      */
     public function getQueryId()
@@ -517,7 +517,7 @@ class atkDb
 
     /**
      * Sets the current query identifier used for next_record() etc.
-     * 
+     *
      * @param mixed $queryId query resource
      */
     public function setQueryId($queryId)
@@ -526,8 +526,8 @@ class atkDb
     }
 
     /**
-     * Rests the query resource. 
-     * 
+     * Rests the query resource.
+     *
      * NOTE: this doesn't close the query/statement!
      */
     public function resetQueryId()
@@ -546,8 +546,8 @@ class atkDb
 
     /**
      * Connect to the database.
-     * 
-     * @param String $mode The mode to connect
+     *
+     * @param string $mode The mode to connect
      * @return int Connection status
      * @abstract
      */
@@ -572,7 +572,7 @@ class atkDb
      */
     function doConnect($host, $user, $password, $database, $port, $charset)
     {
-        
+
     }
 
     /**
@@ -596,7 +596,7 @@ class atkDb
      */
     function disconnect()
     {
-        
+
     }
 
     /**
@@ -605,7 +605,7 @@ class atkDb
      */
     function commit()
     {
-        
+
     }
 
     /**
@@ -616,7 +616,7 @@ class atkDb
      */
     function savepoint($name)
     {
-        
+
     }
 
     /**
@@ -629,16 +629,16 @@ class atkDb
      */
     function rollback($savepoint = "")
     {
-        
+
     }
 
     /**
      * Creates a new statement for the given query.
-     * 
+     *
      * @see atkStatement
-     * 
+     *
      * @param string $query SQL query
-     * 
+     *
      * @return atkStatement statement
      */
     public function prepare($query)
@@ -662,7 +662,7 @@ class atkDb
      * If the query is a select query, the rows can be retrieved using the
      * next_record() method.
      *
-     * @param String $query The SQL query to execute
+     * @param string $query The SQL query to execute
      * @param int $offset Retrieve the results starting at the specified
      *                    record number. Pass -1 or 0 to start at the first
      *                    record.
@@ -689,8 +689,8 @@ class atkDb
     /**
      * Lock a table in the database.
      *
-     * @param String $table The name of the table to lock.
-     * @param String $mode The lock type.
+     * @param string $table The name of the table to lock.
+     * @param string $mode The lock type.
      * @return boolean True if succesful, false if not.
      * @abstract
      */
@@ -735,7 +735,7 @@ class atkDb
      */
     function nextid($sequence)
     {
-        
+
     }
 
     /**
@@ -795,12 +795,12 @@ class atkDb
 
     /**
      * Returns the first row for the given query.
-     * 
+     *
      * Please note: this method does *not* add a limit to the query
-     * 
+     *
      * @param string  $query    query
      * @param boolean $useLimit add limit to the query (if you have your own limit specify false!)
-     * 
+     *
      * @return array row
      */
     public function getRow($query, $useLimit = false)
@@ -812,16 +812,16 @@ class atkDb
     /**
      * Get all rows for the given query.
      *
-     * NOTE: 
-     * This is not an efficient way to retrieve records, as this 
-     * will load all records into one array into memory. If you 
-     * retrieve a lot of records, you might hit the memory_limit 
+     * NOTE:
+     * This is not an efficient way to retrieve records, as this
+     * will load all records into one array into memory. If you
+     * retrieve a lot of records, you might hit the memory_limit
      * and your script will die.
      *
      * @param string $query  query
      * @param int    $offset offset
      * @param int    $limit  limit
-     * 
+     *
      * @return array rows
      */
     public function getRows($query, $offset = -1, $limit = -1)
@@ -831,18 +831,18 @@ class atkDb
 
     /**
      * Get rows in an associative array with the given column used as key for the rows.
-     * 
-     * NOTE: 
-     * This is not an efficient way to retrieve records, as this 
-     * will load all records into one array into memory. If you 
-     * retrieve a lot of records, you might hit the memory_limit 
+     *
+     * NOTE:
+     * This is not an efficient way to retrieve records, as this
+     * will load all records into one array into memory. If you
+     * retrieve a lot of records, you might hit the memory_limit
      * and your script will die.
      *
      * @param string     $query     query
      * @param int|string $keyColumn column index / name (default first column) to be used as key
      * @param int        $offset    offset
      * @param int        $limit     limit
-     * 
+     *
      * @return array rows
      */
     public function getRowsAssoc($query, $keyColumn = 0, $offset = -1, $limit = -1)
@@ -872,7 +872,7 @@ class atkDb
      * @param mixed      $default     fallback value if the query doesn't return a result
      * @param int|string $valueColumn column index / name (default first column) to be used as value
      * @param boolean    $useLimit    add limit to the query (if you have your own limit specify false!)
-     * 
+     *
      * @return mixed first value or default fallback value
      */
     public function getValue($query, $default = null, $valueColumn = 0, $useLimit = false)
@@ -891,17 +891,17 @@ class atkDb
     /**
      * Get an array with all the values in the specified column.
      *
-     * NOTE: 
-     * This is not an efficient way to retrieve records, as this 
-     * will load all records into one array into memory. If you 
-     * retrieve a lot of records, you might hit the memory_limit 
+     * NOTE:
+     * This is not an efficient way to retrieve records, as this
+     * will load all records into one array into memory. If you
+     * retrieve a lot of records, you might hit the memory_limit
      * and your script will die.
      *
      * @param string     $query       query
      * @param int|string $valueColumn column index / name (default first column) to be used as value
      * @param int        $offset      offset
      * @param int        $limit       limit
-     * 
+     *
      * @return array with values
      */
     function getValues($query, $valueColumn = 0, $offset = -1, $limit = -1)
@@ -912,11 +912,11 @@ class atkDb
     /**
      * Get rows in an associative array with the given key column used as
      * key and the given value column used as value.
-     * 
-     * NOTE: 
-     * This is not an efficient way to retrieve records, as this 
-     * will load all records into one array into memory. If you 
-     * retrieve a lot of records, you might hit the memory_limit 
+     *
+     * NOTE:
+     * This is not an efficient way to retrieve records, as this
+     * will load all records into one array into memory. If you
+     * retrieve a lot of records, you might hit the memory_limit
      * and your script will die.
      *
      * @param string     $query       query
@@ -924,7 +924,7 @@ class atkDb
      * @param int|string $valueColumn column index / name (default first column) to be used as value
      * @param int        $offset      offset
      * @param int        $limit       limit
-     * 
+     *
      * @return array rows
      */
     public function getValuesAssoc($query, $keyColumn = 0, $valueColumn = 1, $offset = -1, $limit = -1)
@@ -1028,10 +1028,10 @@ class atkDb
 
     /**
      * get SUBSTRING() equivalent for the current database.
-     * 
-     * @param String $fieldname The database fieldname
+     *
+     * @param string $fieldname The database fieldname
      * @param Integer $startat The position to start from
-     * @param Integer $length The number of characters 
+     * @param Integer $length The number of characters
      */
     function func_substring($fieldname, $startat = 0, $length = 0)
     {
@@ -1043,8 +1043,8 @@ class atkDb
      * Each database driver should override this method to perform vendor
      * specific conversion.
      *
-     * @param String $fieldname The field to generate the to_char for.
-     * @param String $format Format specifier. The format is compatible with
+     * @param string $fieldname The field to generate the to_char for.
+     * @param string $format Format specifier. The format is compatible with
      *                       php's date() function (http://www.php.net/date)
      *                       The default is what's specified by
      *                       $config_date_to_char, or "Y-m-d" if not
@@ -1080,7 +1080,7 @@ class atkDb
      * @param array $fields
      * @param string $separator
      * @param boolean $remove_all_spaces remove all spaces in result (atkAggrecatedColumns searches for string without spaces)
-     * 
+     *
      * @return string $query_part
      */
     function func_concat_ws($fields, $separator, $remove_all_spaces = false)
@@ -1106,7 +1106,7 @@ class atkDb
      *
      * Note that currently, only the common specifiers Y, m, d, H, h, i and
      * s are supported.
-     * @param String $format Format specifier. The format is compatible with
+     * @param string $format Format specifier. The format is compatible with
      *                       php's date() function (http://www.php.net/date)
      * @return String Vendor specific format specifier.
      */
@@ -1121,8 +1121,8 @@ class atkDb
      * Get TO_CHAR() equivalent for the current database.
      *
      * TODO/FIXME: add format parameter. Current format is always yyyy-mm-dd hh:mi.
-     * 
-     * @param String $fieldname The field to generate the to_char for.
+     *
+     * @param string $fieldname The field to generate the to_char for.
      * @return String Piece of sql query that converts a datetime field to char
      *                for the current database
      */
@@ -1134,7 +1134,7 @@ class atkDb
     /**
      * Returns the maximum length an identifier (tablename, columnname, etc) may have
      *
-     * @return Integer The maximum identifier length 
+     * @return Integer The maximum identifier length
      */
     function maxIdentifierLength()
     {
@@ -1143,9 +1143,9 @@ class atkDb
 
     /**
      * escapes quotes for use in SQL: ' -> '' (and sometimes % -> %%)
-     * 
-     * @param String $string The string to escape
-     * @param Bool $wildcard Use wildcards?
+     *
+     * @param string $string The string to escape
+     *  @param boolean $wildcard Use wildcards?
      * @return String The escaped SQL string
      */
     function escapeSQL($string, $wildcard = false)
@@ -1254,10 +1254,10 @@ class atkDb
      * database instance, depending on the configuration.
      *
      * @static
-     * @param String $conn The name of the connection as defined in the
+     * @param string $conn The name of the connection as defined in the
      *                     config.inc.php file (defaults to 'default')
-     * @param Bool $reset Reset the instance to force the creation of a new instance
-     * @param String $mode The mode to connect with the database
+     *  @param boolean $reset Reset the instance to force the creation of a new instance
+     * @param string $mode The mode to connect with the database
      * @return atkDb Instance of the database class.
      */
     static public function &getInstance($conn = "default", $reset = false, $mode = "rw")
@@ -1290,8 +1290,8 @@ class atkDb
     /**
      * (Re)Initialise a database driver with a connection
      *
-     * @param String $connectionname The connectionname
-     * @param String $mode The mode to connect with
+     * @param string $connectionname The connectionname
+     * @param string $mode The mode to connect with
      * @return atkDb
      */
     public function init($connectionname = 'default', $mode = 'r')
@@ -1353,7 +1353,7 @@ class atkDb
 
     /**
      * Halt on error?
-     * 
+     *
      * @return boolean halt on error?
      */
     public function getHaltOnError()
@@ -1364,7 +1364,7 @@ class atkDb
     /**
      * Halt on error or not?
      *
-     * @param Bool $state
+     *  @param boolean $state
      */
     function setHaltOnError($state = true)
     {

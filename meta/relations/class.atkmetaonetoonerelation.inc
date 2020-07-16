@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATK distribution on GitHub.
  * Detailed copyright and licensing information can be found
- * in the doc/COPYRIGHT and doc/LICENSE files which should be 
+ * in the doc/COPYRIGHT and doc/LICENSE files which should be
  * included in the distribution.
  *
  * @package atk
@@ -31,18 +31,18 @@ class atkMetaOneToOneRelation extends atkOneToOneRelation
     private $m_variants;
 
     /**
-     * Default constructor. 
-     * 
-     * @param String $name The unique name of the attribute. In slave mode,
+     * Default constructor.
+     *
+     * @param string $name The unique name of the attribute. In slave mode,
      *                     this corresponds to the foreign key field in the
-     *                     database table.  (The name is also used as the section 
+     *                     database table.  (The name is also used as the section
      *                     heading.)
-     * @param String $destination the destination node (in module.nodename
+     * @param string $destination the destination node (in module.nodename
      *                            notation)
      * @param string $template The descriptor template
-     * @param array $options Array with options 
+     * @param array $options Array with options
      * @param int $flags Attribute flags that influence this attributes'
-     *                   behavior.   
+     *                   behavior.
      */
     public function __construct($name, $destination, $template, $options, $flags = 0)
     {
@@ -71,7 +71,7 @@ class atkMetaOneToOneRelation extends atkOneToOneRelation
 
         if ($result && is_array($this->m_refKey) && in_array('?', $this->m_refKey)) {
             foreach ($this->m_variants as $variant) {
-                // we *must* use $this->m_destInstance (not $this->getDestination()) else we will create an infinite loop    
+                // we *must* use $this->m_destInstance (not $this->getDestination()) else we will create an infinite loop
                 if ($this->m_destInstance->getAttribute($variant) != null) {
                     $this->m_refKey = array($variant);
                 }

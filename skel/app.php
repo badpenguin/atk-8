@@ -37,7 +37,7 @@ atkimport("atk.menu.atkmenu");
 atkimport("atk.utils.atkframeset");
 
 $menu = &atkMenu::getMenu();
-$theme = &atkinstance('atk.ui.atktheme');
+$theme =  atkinstance('atk.ui.atktheme');
 
 $position = $menu->getPosition();
 $scrolling = ($menu->getScrollable() == MENU_SCROLLABLE ? FRAME_SCROLL_AUTO : FRAME_SCROLL_NO);

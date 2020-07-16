@@ -18,12 +18,12 @@ atkimport("atk.atknode");
 
 /**
  * The atkMockNode class is an atkNode mock object for testing purposes
- * 
+ *
  * The most important feature of the atkMockNode is the ability to
  * influence the result of each function call.
  * If a functioncall has no fixed result, the standard atkNode
  * function is called.
- * 
+ *
  * @todo mock every function call. This can't be done nicely until
  * we feature PHP5. For now, we add mock methods on a per-need basis
  *
@@ -40,7 +40,7 @@ class atkMockNode extends atkNode
     /**
      * Set the result of a function call to a specific result.
      * @todo Support parameter filtering
-     * @param String $function Name of the function for the result
+     * @param string $function Name of the function for the result
      * @param mixed $result The result the function should return
      */
     function setResult($function, $result)
@@ -69,7 +69,7 @@ class atkMockNode extends atkNode
 
     /**
      * Get a list of tabs for a certain action.
-     * @param String $action The action for which you want to retrieve the
+     * @param string $action The action for which you want to retrieve the
      *                       list of tabs.
      * @return array The list of tabnames.
      *
@@ -106,10 +106,10 @@ class atkMockNode extends atkNode
      * @todo Handling atksearch in this method is dirty, this should be
      *       controlable with parameters.
      *
-     * @param String $selector Sql expression used as a where-condition, to
+     * @param string $selector Sql expression used as a where-condition, to
      *                         retrieve only records that match the
      *                         expression.
-     * @param String $order The order in which to retrieve the records.
+     * @param string $order The order in which to retrieve the records.
      * @param array $limit Array containing an "offset" and a "limit" to
      *                     retrieve only part of the resultset. (Pass NULL or
      *                     an empty string to retrieve all records.)
@@ -120,7 +120,7 @@ class atkMockNode extends atkNode
      *                           explicitly exclude attributes.
      * @param array $includeList List of attributes to include in the query,
      *                           regardless of the $mode parameter.
-     * @param String $mode The action for which the selectDb is called.
+     * @param string $mode The action for which the selectDb is called.
      *                     This param is used to determine which attributes
      *                     to include in the query and which not to include.
      * @return array Array containing the retrieved records
