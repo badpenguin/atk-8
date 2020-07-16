@@ -196,10 +196,14 @@ class atkBoolAttribute extends atkAttribute
      * Returns a displayable string for this value.
      * @param array $record Array with boolean field
      * @param String $mode
-     * @return yes or no
+     * @return string
      */
     function display($record, $mode = '')
     {
+        // NEW: allow to count the number of positive flags
+        if ($mode=='total') {
+            return ''.intval($record[$this->fieldName()]);
+        }
         if ($this->hasFlag(AF_BOOL_DISPLAY_CHECKBOX) && $mode == 'list') {
             return '
     		  <div style="text-align: center">

@@ -788,7 +788,8 @@ class atkDGList extends atkDGComponent
             }
             $result['totalraw'] = $selector->getTotals(array_keys($result['total']));
             foreach ($result['totalraw'] as $attrName => $value) {
-                $result['total'][$attrName] = $grid->getNode()->getAttribute($attrName)->getView('list', $result['totalraw']);
+            	// BREAKING CHANGE: list -> total
+                $result['total'][$attrName] = $grid->getNode()->getAttribute($attrName)->getView('total', $result['totalraw']);
             }
         }
 

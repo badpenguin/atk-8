@@ -1,3 +1,14 @@
+IMPORTANT
+=========
+
+Since ATK/Achievo development has been abandoned, i've forked this version and updated it with my own patches.
+
+It works in production with PHP 5.5, 5.6 and PHP 7.0.
+
+PHP 7.1 and 7.2 have not been tested by me and some people already reported that them are not working; some minor fixes are required to make it work.
+If you want to sponsorship this porting please contact me. I've started a branch called php-7.2 for this purpose.
+
+
 ATK Framework
 =============
 The ATK Framework is a special purpose PHP framework targeted at business applications. It allows you to build an application with very small amounts of code.

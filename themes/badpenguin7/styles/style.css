@@ -8,13 +8,13 @@ body {
 }
 */
 
-   
+
 /*.panel,*/ #mainMenu
 {
   float: left;
 }
 
-.panelTitleRight 
+.panelTitleRight
 {
   Height: 26px;
 }
@@ -31,7 +31,7 @@ div.stacktrace
 	margin-bottom: 8px;
 }
 
-.actionpageWrapper 
+.actionpageWrapper
 {
   width:100%;
 }
@@ -112,7 +112,7 @@ div#clouds_tags {
     background-image: -moz-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
     background-image: -webkit-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
     background-image: -ms-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
- 
+
     background-image: -webkit-gradient(
         linear,
         left bottom,
@@ -137,7 +137,7 @@ div#clouds_tags {
     background-image: -moz-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
     background-image: -webkit-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
     background-image: -ms-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
- 
+
     background-image: -webkit-gradient(
         linear,
         left bottom,
@@ -156,6 +156,13 @@ div.gmapbuttonbar {
 }
 
 /* message queue */
+
+.atkmessages_general,
+.atkmessages_success,
+.atkmessages_failure,
+.atkmessages_warning {
+	font-size: 200%;
+}
 
 .atkmessages_success {
     background-color: #33aa33;

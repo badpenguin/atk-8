@@ -86,7 +86,7 @@ class atkRadioAttribute extends atkListAttribute
                 $this->m_amount = $size[1];
             }
         }
-        $this->atkListAttribute($name, $optionArray, $valueArray, $flags, $size); // base class constructor
+	    parent::__construct($name, $optionArray, $valueArray, $flags, $size); // base class constructor
     }
 
     /**

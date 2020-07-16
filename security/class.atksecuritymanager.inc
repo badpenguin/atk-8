@@ -41,7 +41,7 @@ define("AUTH_ERROR", -1);
  */
 class atkSecurityManager
 {
-    var $m_authentication;
+    var $m_authentication = "";
     var $m_authorization = 0;
     var $m_scheme = "none";
     var $m_user = array();
@@ -374,7 +374,7 @@ class atkSecurityManager
                                 ) {
                                     $session['remembermeTokenId'] = $this->rememberMeStore($auth_user);
                                 }
-                                
+
                             }
                         }
                     }
@@ -385,7 +385,7 @@ class atkSecurityManager
             if ($authenticated) {
                 $session["login"] = 1;
             }
-            
+
         } else {
             // using session for authentication, because "login" was registered.
             // but we double check with some more data from the session to see
@@ -487,7 +487,7 @@ class atkSecurityManager
 
         return true;
     }
-    
+
     function storeAuth($auth_user, $authname)
     {
         $this->m_user = $this->m_authorization->getUser($auth_user);
@@ -778,7 +778,7 @@ class atkSecurityManager
     private function rememberMeCookieName() {
         return atkConfig::getGlobal('identifier').'-'.atkConfig::getGlobal('auth_rememberme_cookiename');
     }
-    
+
     /**
      * @param $user
      * @return int $tokenId
