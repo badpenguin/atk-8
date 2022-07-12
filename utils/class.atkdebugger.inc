@@ -455,7 +455,7 @@ class atkDebugger
         $label = "[{$time}h / {$duration}s / {$usage}MB / " . self::$s_queryCount . " Queries / " . self::$s_systemQueryCount . " System Queries] $method $url";
 
         $output = '
-        <div class="atkDebugBlock' . (count($g_error_msg) > 0 ? " atkDebugBlockContainsErrors"
+        <div class="atkDebugBlock' . (count((array)$g_error_msg) > 0 ? " atkDebugBlockContainsErrors"
                     : "") . ' atkDebug' . ($expanded ? 'Expanded' : 'Collapsed') . '">
           <div class="atkDebugToggle" onclick="ATK.Debug.toggle(this)">
            ' . $label . '
@@ -513,7 +513,7 @@ class atkDebugger
         $isPartial = isset($ATK_VARS['atkpartial']);
 
         // only display error messages
-        if (count($g_error_msg) > 0 && atkconfig('display_errors') && atkconfig('debug') <= 0 && !$isPartial) {
+        if (count((array)$g_error_msg) > 0 && atkconfig('display_errors') && atkconfig('debug') <= 0 && !$isPartial) {
             return $this->renderPlainErrorMessages();
         }
 

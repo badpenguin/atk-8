@@ -1671,7 +1671,7 @@ class atkNode
         if (empty($this->m_module))
             return $disable;
 
-        for ($i = 0, $_i = count($tablist); $i < $_i; $i ++) {
+        for ($i = 0, $_i = count((array)$tablist); $i < $_i; $i ++) {
             if ($tablist[$i] == "" || $tablist[$i] == "default")
                 continue;
             $secMgr = &atkGetSecurityManager();
@@ -1679,7 +1679,7 @@ class atkNode
             // load the $g_nodes array to find out what tabs are required
             if (!isset($g_nodes[$this->m_module][$this->m_module][$this->m_type])) {
                 include_once(atkconfig("atkroot") . "atk/atknodetools.inc");
-                $module = &getModule($this->m_module);
+                $module = getModule($this->m_module);
                 $module->getNodes();
             }
 

@@ -438,7 +438,7 @@ class atkDb
      */
     function errorLookup($errno)
     {
-        if (count($this->m_errorLookup) == 0) {
+        if (count((array)$this->m_errorLookup) == 0) {
             $filename = atkconfig("atkroot") . "atk/db/languages/" . $this->m_vendor . "_" . atkconfig('language') . '.lng';
             @include_once($filename);
             $this->m_errorLookup = $txt_db;

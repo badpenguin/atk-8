@@ -514,7 +514,7 @@ class atkEditHandler extends atkViewEditBase
 
         // Handle errors
         $errors = array();
-        if (count($data['error']) > 0) {
+        if (count((array)$data['error']) > 0) {
             $error_title = '<b>' . atktext('error_formdataerror') . '</b>';
 
             foreach ($data["error"] as $error) {

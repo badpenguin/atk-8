@@ -446,9 +446,9 @@ class atkSessionManager
         // Prevent going more than 1 level above the current stack top which
         // causes a new stackitem to be pushed onto the stack at the wrong
         // location.
-        if ($atklevel > count($stack)) {
-            atkdebug("Requested ATKLevel (" . $atklevel . ") too high for stack, lowering to " . count($stack));
-            $atklevel = count($stack);
+        if ($atklevel > count((array)$stack)) {
+            atkdebug("Requested ATKLevel (" . $atklevel . ") too high for stack, lowering to " . count((array)$stack));
+            $atklevel = count((array)$stack);
         }
 
         if (isset($postvars["atkescape"]) && $postvars["atkescape"] != "") {
@@ -539,7 +539,7 @@ class atkSessionManager
 
                 // Posted vars always overwrite anything in the current session..
                 foreach (array_merge($pageVars, $sessionVars) as $var) {
-                    $recursive = $var{strlen($var) - 1} == '*';
+                    $recursive = $var[strlen($var) - 1] == '*';
                     $var = $recursive ? substr($var, 0, -1) : $var;
 
                     if (isset($postvars[$var]) && $postvars[$var] != "") {
@@ -565,10 +565,10 @@ class atkSessionManager
                 }
 
                 foreach ($pageVars as $var) {
-                    $recursive = $var{strlen($var) - 1} == '*';
+                    $recursive = $var[ strlen($var) - 1 ] == '*';
                     $var = $recursive ? substr($var, 0, -1) : $var;
 
-                    if (isset($postvars[$var]) && count($postvars[$var]) > 0 && (!$partial || !in_array($var, $lockedVars))) {
+                    if (isset($postvars[$var]) && count((array)$postvars[$var]) > 0 && (!$partial || !in_array($var, $lockedVars))) {
                         if ($recursive && is_array($currentitem[$var]) && is_array($postvars[$var])) {
                             $currentitem[$var] = atk_array_merge_recursive($currentitem[$var], $postvars[$var]);
                         } else {
@@ -582,7 +582,7 @@ class atkSessionManager
 
                 // session vars need not be remembered..
                 foreach ($sessionVars as $var) {
-                    if (isset($postvars[$var]) && count($postvars[$var]) > 0 && (!$partial || !in_array($var, $lockedVars))) {
+                    if (isset($postvars[$var]) && count((array)$postvars[$var]) > 0 && (!$partial || !in_array($var, $lockedVars))) {
                         $currentitem[$var] = $postvars[$var];
                     }
                 }
@@ -745,7 +745,7 @@ class atkSessionManager
             // (there may be more levels on the stack than we should have, because
             // we forked from another window which might already be at a higher
             // stack level).
-            $deletecount = (count($stack) - 1) - $atkprevlevel;
+            $deletecount = (count((array)$stack) - 1) - $atkprevlevel;
             for ($i = 0; $i < $deletecount; $i++) {
                 atkdebug("popped an item out of the forked stack");
                 array_pop($stack);

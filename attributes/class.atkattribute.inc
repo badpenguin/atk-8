@@ -1469,7 +1469,7 @@ class atkAttribute
      */
     function getError($errors)
     {
-        for ($i = 0; $i < count($errors); $i ++) {
+        for ($i = 0; $i < count((array)$errors); $i ++) {
             if ($errors[$i]['attrib_name'] == $this->fieldName() ||
                 atk_in_array($this->fieldName(), $errors[$i]['attrib_name'])) {
                 return true;

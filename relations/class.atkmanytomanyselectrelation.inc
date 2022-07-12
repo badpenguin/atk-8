@@ -385,7 +385,7 @@ class atkManyToManySelectRelation extends atkManyToManyRelation
         }
 
         $htmlActionLinks = '';
-        if (count($actionLink)) {
+        if (count((array)$actionLink)) {
             $htmlActionLinks = '&nbsp;' . implode(' ', $actionLinks);
         }
         return $htmlActionLinks;
