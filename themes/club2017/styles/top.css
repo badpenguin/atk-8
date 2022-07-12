@@ -1,0 +1,43 @@
+@import '../../steelblue/styles/top.css';
+
+#banner
+{
+  height: 40px; /*29px;*/
+  margin-bottom: 20px;
+  background: #1d1d1b;
+	color: #fff;
+}
+
+
+#bannerLogo
+{
+  top: 4px;
+	left: 4px;
+  height: 32px;
+  width: auto;
+}
+
+#bannerLogo img {
+  max-height: 32px;
+  /*ma-width: 118px;*/
+}
+
+
+#bannerCustomImage
+{
+  display: none;
+}
+
+
+#topLinks
+{
+	right: 4px;
+	top: 4px;
+	padding: 0;
+	margin: 0;
+	height: 32px;
+	text-align: right;
+	color: #FFFFFF;
+	line-height: 32px;
+}
+

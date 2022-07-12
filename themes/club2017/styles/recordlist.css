@@ -1,0 +1,25 @@
+@import '../../steelblue/styles/recordlist.css';
+
+.recordList th {
+	background-color: #523629;
+	color: #f6cf3f !important;
+}
+
+.recordList th a {
+	color: #f6cf3f !important;
+}
+
+table.recordList .row2
+{
+	background-color: #f2d6bb;
+}
+
+
+/*
+	color: #523629;
+	background-color: #f6cf3f;
+ */
+
+small.media-filename {
+	float: right;
+}
