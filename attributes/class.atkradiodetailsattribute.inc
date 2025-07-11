@@ -120,7 +120,7 @@ class atkRadioDetailsAttribute extends atkAttribute
 
             $result .= '
         <input type="radio" class="atkradiodetailsattribute-option" name="' . $name . '" id="' . $name . '_' . $value . '" value="' . $value . '" onchange="' . $onChange . '"' . $checked . '/>
-        <label for="' . $name . '_' . $value . '">' . $this->text($label) . '</label><br/>
+        <label for="' . $name . '_' . $value . '">' . $this->text($label) . '</label><br>
       ';
 
             if ($attrNames != null) {

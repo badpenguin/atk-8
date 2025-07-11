@@ -778,7 +778,7 @@ Class: UI.Logger
 UI.Abstract.Logger = Class.create({
   /*
     Property: level
-      The log level, default value is debug  <br/>
+      The log level, default value is debug  <br>
   */
   level: 'debug'
 });

@@ -481,7 +481,7 @@ class atkImportHandler extends atkActionHandler
 
                 if (is_object($attr)) {
                     $fakeeditarray = array($allField => $this->m_postvars[$allField]);
-                    $content.= ' ' . atktext("value") . ': ' . $attr->edit($fakeeditarray, "", "edit") . '<br/>';
+                    $content.= ' ' . atktext("value") . ': ' . $attr->edit($fakeeditarray, "", "edit") . '<br>';
                 }
             }
             $content.= '</td></tr><tr><td>';

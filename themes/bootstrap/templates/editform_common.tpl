@@ -1,10 +1,10 @@
 <div id="editform">
     {if (count($errors)>0)}
         <div class="alert alert-danger error">
-                {$errortitle}<br/>
+                {$errortitle}<br>
                 {foreach from=$errors item=error}
                     {$error.label}: {$error.message} {if $error.tablink} ({atktext id="error_tab"} {$error.tablink}){/if}
-                    <br/>
+                    <br>
                 {/foreach}
         </div>
     {/if}

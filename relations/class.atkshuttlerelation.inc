@@ -141,7 +141,7 @@ class atkShuttleRelation extends atkManyToManyRelation
             $width = min($this->m_maxlistwidth, $width);
         }
 
-        $result = '<table border="0"><tr><td>' . atktext('available', 'atk') . ':<br/>';
+        $result = '<table border="0"><tr><td>' . atktext('available', 'atk') . ':<br>';
 
         $fieldname = $fieldprefix . $this->fieldName();
         $leftname = $fieldname . "_sel";
@@ -166,12 +166,12 @@ class atkShuttleRelation extends atkManyToManyRelation
             $result .= '<br><br><br>';
         }
 
-        $result .= '<input class="btn btn-default" type="button" value="&gt;" onClick="shuttle_move(\'' . $leftname . '\', \'' . $rightname . '\', \'' . $fieldname . '\');"><br/>';
-        $result .= '<input class="btn btn-default" type="button" value="&lt;" onClick="shuttle_move(\'' . $rightname . '\', \'' . $leftname . '\', \'' . $fieldname . '\');"><br/><br/>';
-        $result .= '<input class="btn btn-default" type="button" value="&gt;&gt;" onClick="shuttle_moveall(\'' . $leftname . '\', \'' . $rightname . '\', \'' . $fieldname . '\');"><br/>';
+        $result .= '<input class="btn btn-default" type="button" value="&gt;" onClick="shuttle_move(\'' . $leftname . '\', \'' . $rightname . '\', \'' . $fieldname . '\');"><br>';
+        $result .= '<input class="btn btn-default" type="button" value="&lt;" onClick="shuttle_move(\'' . $rightname . '\', \'' . $leftname . '\', \'' . $fieldname . '\');"><br><br>';
+        $result .= '<input class="btn btn-default" type="button" value="&gt;&gt;" onClick="shuttle_moveall(\'' . $leftname . '\', \'' . $rightname . '\', \'' . $fieldname . '\');"><br>';
         $result .= '<input class="btn btn-default" type="button" value="&lt;&lt;" onClick="shuttle_moveall(\'' . $rightname . '\', \'' . $leftname . '\', \'' . $fieldname . '\');">';
 
-        $result .= '</td><td>' . atktext('selected', 'atk') . ':<br/>';
+        $result .= '</td><td>' . atktext('selected', 'atk') . ':<br>';
 
         $result .= $this->_renderSelect($rightname, $right, $width, $leftname, $fieldname, $filterbox_right);
 

@@ -14,7 +14,7 @@
     </tr>
     <tr>
         <td>
-            {atktext id='available'}:<br/>
+            {atktext id='available'}:<br>
 
             <div id="{$htmlid}_available">
                 <select class="shuttle_select" id="{$leftname}" name="{$leftname}" multiple size="10"
@@ -27,18 +27,18 @@
         </td>
         <td valign="center" align="center">
             <input type="button" value="&gt;" onClick="shuttle_move('{$leftname}', '{$rightname}', 'add', '{$name}');
-            {$htmlid}_onChange('selected');"><br/>
+            {$htmlid}_onChange('selected');"><br>
             <input type="button" value="&lt;" onClick="shuttle_move('{$rightname}', '{$leftname}', 'del', '{$name}');
-            {$htmlid}_onChange('available');"><br/><br/>
+            {$htmlid}_onChange('available');"><br><br>
             <input type="button" value="&gt;&gt;"
                    onClick="shuttle_moveall('{$leftname}', '{$rightname}', 'add', '{$name}');
-                   {$htmlid}_onChange('selected');"><br/>
+                   {$htmlid}_onChange('selected');"><br>
             <input type="button" value="&lt;&lt;"
                    onClick="shuttle_moveall('{$rightname}', '{$leftname}', 'del', '{$name}');
                    {$htmlid}_onChange('available');">
         </td>
         <td>
-            {atktext id='selected'}:<br/>
+            {atktext id='selected'}:<br>
 
             <div id="{$htmlid}_selected">
                 <select class="shuttle_select" id="{$rightname}" name="{$rightname}" multiple size="10"

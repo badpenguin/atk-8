@@ -2,11 +2,11 @@
     {if (count($errors)>0)}
         <tr>
             <td colspan="2" class="error">
-                {$errortitle}<br/>
+                {$errortitle}<br>
                 {foreach from=$errors item=error}
-                    {$error.label}: {$error.message} {if $error.tablink} ({atktext id='error_tab'} {$error.tablink}){/if}<br/>
+                    {$error.label}: {$error.message} {if $error.tablink} ({atktext id='error_tab'} {$error.tablink}){/if}<br>
                 {/foreach}
-                <br/>
+                <br>
             </td>
         </tr>
     {/if}

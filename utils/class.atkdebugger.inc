@@ -208,7 +208,7 @@ class atkDebugger
         $theme = &atkinstance("atk.ui.atktheme");
         $page->register_style($theme->stylePath("debugger.css"));
         $data = &$this->getDebuggerData(false, $_REQUEST['atkstackid']);
-        $res = $this->consoleControls() . '<br/><br/>';
+        $res = $this->consoleControls() . '<br><br>';
         switch ($_REQUEST["action"]) {
             case "query": $res.= $this->queryDetails($data["queries"], $_REQUEST["query_id"]);
                 break;

@@ -223,7 +223,7 @@ function printForHtml( n ) {
 		// do simple case statement if it's just one character
 		switch ( n ) {
 			case "\n":
-				htmlstr = '<br/>';
+				htmlstr = '<br>';
 				break;
 			case "<":
 				htmlstr = '&lt;';
@@ -236,7 +236,7 @@ function printForHtml( n ) {
 	} else {
 		htmlstr = htmlstr.replace( /</g, '&lt' );
 		htmlstr = htmlstr.replace( />/g, '&gt' );
-		htmlstr = htmlstr.replace( /\n/g, '<br/>' );
+		htmlstr = htmlstr.replace( /\n/g, '<br>' );
 		return htmlstr;
 	}
 */

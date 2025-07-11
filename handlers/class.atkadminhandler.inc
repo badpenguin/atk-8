@@ -378,7 +378,7 @@ class atkAdminHandler extends atkActionHandler
         $result = implode(" | ", $links);
 
         if (strlen(trim($result)) > 0) {
-            $result .= '<br/>';
+            $result .= '<br>';
         }
 
         return $result;

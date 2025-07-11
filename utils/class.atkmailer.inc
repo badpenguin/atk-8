@@ -74,7 +74,7 @@ class atkMailer extends PHPMailer
 
             $mail_redirect = atkconfig("mail_redirect");
             if (!empty($mail_redirect)) {
-                $n = (strpos(strtolower($this->ContentType), 'html') !== false ? "<br/>"
+                $n = (strpos(strtolower($this->ContentType), 'html') !== false ? "<br>"
                             : "\n");
                 $bodyPrefix = "--" . $n .
                     "To: " . $this->recipientFieldToString($this->to) . $n .

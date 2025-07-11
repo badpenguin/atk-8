@@ -2,7 +2,7 @@
     <table border="0" cellpadding="0" cellspacing="0" align="left" valign="top">
         <tr>
             <td width="100%" align="left">
-                <br/>
+                <br>
                 <nav border="0" cellpadding="0" cellspacing="0" class="tabsTabs tabContainer navbar navbar-default"
                      role="navigation">
                     <ul class="nav navbar-nav">
